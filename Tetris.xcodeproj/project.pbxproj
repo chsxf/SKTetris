@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D921651925F1F935007005E7 /* BlockTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = D921651825F1F935007005E7 /* BlockTools.swift */; };
 		D945A21125F18B9500FAE62D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D945A21025F18B9500FAE62D /* AppDelegate.swift */; };
 		D945A21525F18B9700FAE62D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D945A21425F18B9700FAE62D /* Assets.xcassets */; };
 		D945A22825F18C4900FAE62D /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D945A22725F18C4900FAE62D /* GameView.swift */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D921651825F1F935007005E7 /* BlockTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockTools.swift; sourceTree = "<group>"; };
 		D945A20D25F18B9500FAE62D /* Tetris.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tetris.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D945A21025F18B9500FAE62D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D945A21425F18B9700FAE62D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -55,6 +57,7 @@
 			children = (
 				D945A21025F18B9500FAE62D /* AppDelegate.swift */,
 				D945A21425F18B9700FAE62D /* Assets.xcassets */,
+				D921651825F1F935007005E7 /* BlockTools.swift */,
 				D945A22C25F18DC600FAE62D /* GameScene.swift */,
 				D945A22725F18C4900FAE62D /* GameView.swift */,
 				D945A21C25F18B9700FAE62D /* Info.plist */,
@@ -134,6 +137,7 @@
 				D945A22D25F18DC600FAE62D /* GameScene.swift in Sources */,
 				D945A22825F18C4900FAE62D /* GameView.swift in Sources */,
 				D945A21125F18B9500FAE62D /* AppDelegate.swift in Sources */,
+				D921651925F1F935007005E7 /* BlockTools.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
