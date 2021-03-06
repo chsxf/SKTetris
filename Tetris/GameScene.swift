@@ -20,32 +20,32 @@ class GameScene: SKScene {
 		
 		backgroundColor = NSColor.gray
 		
-		let tallPiece = BlockTools.generateTallPiece()
+		let tallPiece = BlockTools.generatePiece(.row)
 		addChild(tallPiece)
 		
-		let tShapedPiece = BlockTools.generateTShapedPiece()
-		tShapedPiece.position = CGPoint(x: 64, y: 0)
-		addChild(tShapedPiece)
-		
-		let squaredPiece = BlockTools.generateSquaredPiece()
+		let squaredPiece = BlockTools.generatePiece(.square)
 		squaredPiece.position = CGPoint(x: -64, y: 0)
 		addChild(squaredPiece)
 		
-		let sShapedPiece = BlockTools.generateSShapedPiece()
+		let jShapedPiece = BlockTools.generatePiece(.jShaped)
+		jShapedPiece.position = CGPoint(x: -96, y: -64)
+		addChild(jShapedPiece)
+
+		let lShapedPiece = BlockTools.generatePiece(.lShaped)
+		lShapedPiece.position = CGPoint(x: -64, y: -64)
+		addChild(lShapedPiece)
+
+		let sShapedPiece = BlockTools.generatePiece(.sShaped)
 		sShapedPiece.position = CGPoint(x: 0, y: -64)
 		addChild(sShapedPiece)
 		
-		let zShapedPiece = BlockTools.generateZShapedPiece()
+		let tShapedPiece = BlockTools.generatePiece(.tShaped)
+		tShapedPiece.position = CGPoint(x: 64, y: 0)
+		addChild(tShapedPiece)
+		
+		let zShapedPiece = BlockTools.generatePiece(.zShaped)
 		zShapedPiece.position = CGPoint(x: 64, y: -64)
 		addChild(zShapedPiece)
-		
-		let lShapedPiece = BlockTools.generateLShapedPiece()
-		lShapedPiece.position = CGPoint(x: -64, y: -64)
-		addChild(lShapedPiece)
-		
-		let jShapedPiece = BlockTools.generateJShapedPiece()
-		jShapedPiece.position = CGPoint(x: -96, y: -64)
-		addChild(jShapedPiece)
 	}
 	
 	required init?(coder aDecoder: NSCoder) {

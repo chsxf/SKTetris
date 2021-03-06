@@ -24,7 +24,26 @@ class BlockTools {
 		}
 	}
 	
-	public static func generateTallPiece() -> SKNode {
+	public static func generatePiece(_ piece: PieceType) -> SKNode {
+		switch piece {
+		case .row:
+			return generateRowPiece()
+		case .square:
+			return generateSquaredPiece()
+		case .jShaped:
+			return generateJShapedPiece()
+		case .lShaped:
+			return generateLShapedPiece()
+		case .sShaped:
+			return generateSShapedPiece()
+		case .tShaped:
+			return generateTShapedPiece()
+		default:
+			return generateZShapedPiece()
+		}
+	}
+
+	fileprivate static func generateRowPiece() -> SKNode {
 		let blockRoot = SKNode()
 		
 		let texture = blockAtlas.textureNamed("blocks1")
@@ -37,7 +56,7 @@ class BlockTools {
 		return blockRoot
 	}
 	
-	public static func generateTShapedPiece() -> SKNode {
+	fileprivate static func generateTShapedPiece() -> SKNode {
 		let blockRoot = SKNode()
 		
 		let texture = blockAtlas.textureNamed("blocks2")
@@ -47,7 +66,7 @@ class BlockTools {
 		return blockRoot
 	}
 	
-	public static func generateSquaredPiece() -> SKNode {
+	fileprivate static func generateSquaredPiece() -> SKNode {
 		let blockRoot = SKNode()
 		
 		let texture = blockAtlas.textureNamed("blocks3")
@@ -57,7 +76,7 @@ class BlockTools {
 		return blockRoot
 	}
 	
-	public static func generateSShapedPiece() -> SKNode {
+	fileprivate static func generateSShapedPiece() -> SKNode {
 		let blockRoot = SKNode()
 		
 		let texture = blockAtlas.textureNamed("blocks4")
@@ -67,7 +86,7 @@ class BlockTools {
 		return blockRoot
 	}
 	
-	public static func generateZShapedPiece() -> SKNode {
+	fileprivate static func generateZShapedPiece() -> SKNode {
 		let blockRoot = SKNode()
 		
 		let texture = blockAtlas.textureNamed("blocks5")
@@ -77,7 +96,7 @@ class BlockTools {
 		return blockRoot
 	}
 	
-	public static func generateLShapedPiece() -> SKNode {
+	fileprivate static func generateLShapedPiece() -> SKNode {
 		let blockRoot = SKNode()
 		
 		let texture = blockAtlas.textureNamed("blocks6")
@@ -87,7 +106,7 @@ class BlockTools {
 		return blockRoot
 	}
 	
-	public static func generateJShapedPiece() -> SKNode {
+	fileprivate static func generateJShapedPiece() -> SKNode {
 		let blockRoot = SKNode()
 		
 		let texture = blockAtlas.textureNamed("blocks7")
@@ -97,7 +116,7 @@ class BlockTools {
 		return blockRoot
 	}
 	
-	public static func generateBlocks(atCoordinates blockCoordinates: [CGPoint], withTexture texture: SKTexture, inParent parent: SKNode) {
+	fileprivate static func generateBlocks(atCoordinates blockCoordinates: [CGPoint], withTexture texture: SKTexture, inParent parent: SKNode) {
 		for point: CGPoint in blockCoordinates {
 			let sprite = SKSpriteNode(texture: texture)
 			sprite.position = point.applying(CGAffineTransform.init(scaleX: CGFloat(BLOCK_SIZE), y: CGFloat(BLOCK_SIZE)))
