@@ -25,4 +25,32 @@ class GameScene: SKScene {
 		super.init(coder: aDecoder)
 	}
 	
+	func startMovingCurrentPieceLeft() -> Void {
+		
+	}
+	
+	func startMovingCurrentPieceRight() -> Void {
+		
+	}
+	
+	func stopMovingPiece() -> Void {
+		
+	}
+	
+	func speedUpCurrentPiece() -> Void {
+		
+	}
+	
+	func resetSpeedForCurrentPiece() -> Void {
+		
+	}
+	
+	func turnCurrentPieceRight() -> Void {
+		
+	}
+	
+	func turnCurrentPieceLeft() -> Void {
+		
+	}
+	
 }

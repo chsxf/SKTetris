@@ -14,6 +14,7 @@
 		D945A22D25F18DC600FAE62D /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D945A22C25F18DC600FAE62D /* GameScene.swift */; };
 		D9A5FFD525F390EF00582E21 /* PieceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A5FFD425F390EF00582E21 /* PieceType.swift */; };
 		D9A5FFE025F3C2A700582E21 /* Background.sks in Resources */ = {isa = PBXBuildFile; fileRef = D9A5FFDF25F3C2A700582E21 /* Background.sks */; };
+		D9AB888F25F3F62300896FDF /* Keycode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AB888E25F3F62300896FDF /* Keycode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		D945A22C25F18DC600FAE62D /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		D9A5FFD425F390EF00582E21 /* PieceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieceType.swift; sourceTree = "<group>"; };
 		D9A5FFDF25F3C2A700582E21 /* Background.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Background.sks; sourceTree = "<group>"; };
+		D9AB888E25F3F62300896FDF /* Keycode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keycode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				D921651825F1F935007005E7 /* BlockTools.swift */,
 				D945A22C25F18DC600FAE62D /* GameScene.swift */,
 				D945A22725F18C4900FAE62D /* GameView.swift */,
+				D9AB888E25F3F62300896FDF /* Keycode.swift */,
 				D9A5FFD425F390EF00582E21 /* PieceType.swift */,
 			);
 			path = Sources;
@@ -151,6 +154,7 @@
 			files = (
 				D945A22D25F18DC600FAE62D /* GameScene.swift in Sources */,
 				D945A22825F18C4900FAE62D /* GameView.swift in Sources */,
+				D9AB888F25F3F62300896FDF /* Keycode.swift in Sources */,
 				D9A5FFD525F390EF00582E21 /* PieceType.swift in Sources */,
 				D945A21125F18B9500FAE62D /* AppDelegate.swift in Sources */,
 				D921651925F1F935007005E7 /* BlockTools.swift in Sources */,
