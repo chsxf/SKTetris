@@ -47,10 +47,7 @@ class BlockTools {
 		let blockRoot = SKNode()
 		
 		let texture = blockAtlas.textureNamed("blocks1")
-		var coordinates = [CGPoint]()
-		for i in 0...3 {
-			coordinates.append(CGPoint(x: 0, y: i))
-		}
+		let coordinates = [CGPoint(), CGPoint(x: 0, y: 1), CGPoint(x: 0, y: -1), CGPoint(x: 0, y: -2)]
 		generateBlocks(atCoordinates: coordinates, withTexture: texture, inParent: blockRoot)
 		
 		return blockRoot

@@ -10,8 +10,12 @@ import SpriteKit
 
 class GameScene: SKScene {
 
+	private var currentPiece: PieceEntity?
+	
 	override init(size: CGSize) {
 		super.init(size: size)
+		
+		scaleMode = .aspectFit
 		
 		let cameraNode = SKCameraNode()
 		cameraNode.position = CGPoint(x: 0, y: 0)
@@ -19,6 +23,13 @@ class GameScene: SKScene {
 		camera = cameraNode
 		
 		backgroundColor = NSColor.gray
+		
+		let set = SKReferenceNode(fileNamed: "Background")
+		addChild(set!)
+		
+		let newPiece = PieceEntity(ofType: .row)
+		currentPiece = newPiece
+		addChild(newPiece.skNode)
 	}
 	
 	required init?(coder aDecoder: NSCoder) {
@@ -46,11 +57,11 @@ class GameScene: SKScene {
 	}
 	
 	func turnCurrentPieceRight() -> Void {
-		
+		currentPiece?.turnRight()
 	}
 	
 	func turnCurrentPieceLeft() -> Void {
-		
+		currentPiece?.turnLeft()
 	}
 	
 }

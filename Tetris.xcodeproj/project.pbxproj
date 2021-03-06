@@ -15,6 +15,10 @@
 		D9A5FFD525F390EF00582E21 /* PieceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A5FFD425F390EF00582E21 /* PieceType.swift */; };
 		D9A5FFE025F3C2A700582E21 /* Background.sks in Resources */ = {isa = PBXBuildFile; fileRef = D9A5FFDF25F3C2A700582E21 /* Background.sks */; };
 		D9AB888F25F3F62300896FDF /* Keycode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AB888E25F3F62300896FDF /* Keycode.swift */; };
+		D9AB889625F42E0100896FDF /* PieceEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AB889525F42E0100896FDF /* PieceEntity.swift */; };
+		D9AB889925F4302A00896FDF /* BlockEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AB889825F4302A00896FDF /* BlockEntity.swift */; };
+		D9AB889D25F4322200896FDF /* BlockTransformComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AB889C25F4322200896FDF /* BlockTransformComponent.swift */; };
+		D9AB88A125F4364D00896FDF /* PieceComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AB88A025F4364D00896FDF /* PieceComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +33,10 @@
 		D9A5FFD425F390EF00582E21 /* PieceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieceType.swift; sourceTree = "<group>"; };
 		D9A5FFDF25F3C2A700582E21 /* Background.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Background.sks; sourceTree = "<group>"; };
 		D9AB888E25F3F62300896FDF /* Keycode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keycode.swift; sourceTree = "<group>"; };
+		D9AB889525F42E0100896FDF /* PieceEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieceEntity.swift; sourceTree = "<group>"; };
+		D9AB889825F4302A00896FDF /* BlockEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockEntity.swift; sourceTree = "<group>"; };
+		D9AB889C25F4322200896FDF /* BlockTransformComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockTransformComponent.swift; sourceTree = "<group>"; };
+		D9AB88A025F4364D00896FDF /* PieceComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieceComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +81,8 @@
 		D9A5FFDA25F395D100582E21 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				D9AB889B25F4320200896FDF /* Components */,
+				D9AB889325F429CE00896FDF /* Entities */,
 				D945A21025F18B9500FAE62D /* AppDelegate.swift */,
 				D921651825F1F935007005E7 /* BlockTools.swift */,
 				D945A22C25F18DC600FAE62D /* GameScene.swift */,
@@ -81,6 +91,24 @@
 				D9A5FFD425F390EF00582E21 /* PieceType.swift */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		D9AB889325F429CE00896FDF /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				D9AB889525F42E0100896FDF /* PieceEntity.swift */,
+				D9AB889825F4302A00896FDF /* BlockEntity.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		D9AB889B25F4320200896FDF /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				D9AB889C25F4322200896FDF /* BlockTransformComponent.swift */,
+				D9AB88A025F4364D00896FDF /* PieceComponent.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,9 +180,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9AB88A125F4364D00896FDF /* PieceComponent.swift in Sources */,
 				D945A22D25F18DC600FAE62D /* GameScene.swift in Sources */,
 				D945A22825F18C4900FAE62D /* GameView.swift in Sources */,
+				D9AB889625F42E0100896FDF /* PieceEntity.swift in Sources */,
 				D9AB888F25F3F62300896FDF /* Keycode.swift in Sources */,
+				D9AB889D25F4322200896FDF /* BlockTransformComponent.swift in Sources */,
+				D9AB889925F4302A00896FDF /* BlockEntity.swift in Sources */,
 				D9A5FFD525F390EF00582E21 /* PieceType.swift in Sources */,
 				D945A21125F18B9500FAE62D /* AppDelegate.swift in Sources */,
 				D921651925F1F935007005E7 /* BlockTools.swift in Sources */,

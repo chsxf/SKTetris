@@ -20,12 +20,6 @@ class GameView: SKView {
 		
 		presentScene(gameScene)
 		
-		let set = SKReferenceNode(fileNamed: "Background")
-		gameScene.addChild(set!)
-		
-		let tallPiece = BlockTools.generatePiece(.row)
-		gameScene.addChild(tallPiece)
-		
 		showsFPS = true
 	}
 	
