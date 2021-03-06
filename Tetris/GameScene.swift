@@ -20,8 +20,32 @@ class GameScene: SKScene {
 		
 		backgroundColor = NSColor.gray
 		
-		let piece = BlockTools.generateTallPiece()
-		addChild(piece)
+		let tallPiece = BlockTools.generateTallPiece()
+		addChild(tallPiece)
+		
+		let tShapedPiece = BlockTools.generateTShapedPiece()
+		tShapedPiece.position = CGPoint(x: 64, y: 0)
+		addChild(tShapedPiece)
+		
+		let squaredPiece = BlockTools.generateSquaredPiece()
+		squaredPiece.position = CGPoint(x: -64, y: 0)
+		addChild(squaredPiece)
+		
+		let sShapedPiece = BlockTools.generateSShapedPiece()
+		sShapedPiece.position = CGPoint(x: 0, y: -64)
+		addChild(sShapedPiece)
+		
+		let zShapedPiece = BlockTools.generateZShapedPiece()
+		zShapedPiece.position = CGPoint(x: 64, y: -64)
+		addChild(zShapedPiece)
+		
+		let lShapedPiece = BlockTools.generateLShapedPiece()
+		lShapedPiece.position = CGPoint(x: -64, y: -64)
+		addChild(lShapedPiece)
+		
+		let jShapedPiece = BlockTools.generateJShapedPiece()
+		jShapedPiece.position = CGPoint(x: -96, y: -64)
+		addChild(jShapedPiece)
 	}
 	
 	required init?(coder aDecoder: NSCoder) {
