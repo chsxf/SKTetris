@@ -13,7 +13,7 @@ class GameView: SKView {
 	override init(frame frameRect: NSRect) {
 		super.init(frame: frameRect)
 		
-		let gameScene = GameScene(size: CGSize(width: 640, height: 360))
+		let gameScene = GameScene(size: frameRect.size)
 		presentScene(gameScene)
 		
 		showsFPS = true

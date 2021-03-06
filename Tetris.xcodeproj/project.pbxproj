@@ -13,6 +13,7 @@
 		D945A22825F18C4900FAE62D /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D945A22725F18C4900FAE62D /* GameView.swift */; };
 		D945A22D25F18DC600FAE62D /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D945A22C25F18DC600FAE62D /* GameScene.swift */; };
 		D9A5FFD525F390EF00582E21 /* PieceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A5FFD425F390EF00582E21 /* PieceType.swift */; };
+		D9A5FFDD25F397C900582E21 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A5FFDC25F397C900582E21 /* GameViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		D945A22725F18C4900FAE62D /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		D945A22C25F18DC600FAE62D /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		D9A5FFD425F390EF00582E21 /* PieceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieceType.swift; sourceTree = "<group>"; };
+		D9A5FFDC25F397C900582E21 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 				D945A22C25F18DC600FAE62D /* GameScene.swift */,
 				D945A22725F18C4900FAE62D /* GameView.swift */,
 				D9A5FFD425F390EF00582E21 /* PieceType.swift */,
+				D9A5FFDC25F397C900582E21 /* GameViewController.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -149,6 +152,7 @@
 				D945A22825F18C4900FAE62D /* GameView.swift in Sources */,
 				D9A5FFD525F390EF00582E21 /* PieceType.swift in Sources */,
 				D945A21125F18B9500FAE62D /* AppDelegate.swift in Sources */,
+				D9A5FFDD25F397C900582E21 /* GameViewController.swift in Sources */,
 				D921651925F1F935007005E7 /* BlockTools.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
