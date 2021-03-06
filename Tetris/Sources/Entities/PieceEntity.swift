@@ -9,11 +9,15 @@ import GameplayKit
 
 class PieceEntity: GKEntity {
 
+	private let canRotate: Bool
+	
 	private var subEntities = [BlockEntity]()
 	
 	var skNode: SKNode { component(ofType: PieceComponent.self)!.skNode }
 	
 	init(ofType type: PieceType) {
+		canRotate = (type != .square)
+		
 		super.init()
 		
 		let pieceComponent = PieceComponent(ofType: type)
@@ -29,16 +33,20 @@ class PieceEntity: GKEntity {
 	}
 	
 	func turnLeft() -> Void {
-		for entity in subEntities {
-			let transformComponent = entity.component(ofType: BlockTransformComponent.self)
-			transformComponent?.turnLeft()
+		if canRotate {
+			for entity in subEntities {
+				let transformComponent = entity.component(ofType: BlockTransformComponent.self)
+				transformComponent?.turnLeft()
+			}
 		}
 	}
 	
 	func turnRight() -> Void {
-		for entity in subEntities {
-			let transformComponent = entity.component(ofType: BlockTransformComponent.self)
-			transformComponent?.turnRight()
+		if canRotate {
+			for entity in subEntities {
+				let transformComponent = entity.component(ofType: BlockTransformComponent.self)
+				transformComponent?.turnRight()
+			}
 		}
 	}
 	
