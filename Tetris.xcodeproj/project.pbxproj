@@ -57,16 +57,24 @@
 		D945A20F25F18B9500FAE62D /* Tetris */ = {
 			isa = PBXGroup;
 			children = (
-				D945A21025F18B9500FAE62D /* AppDelegate.swift */,
+				D9A5FFDA25F395D100582E21 /* Sources */,
 				D945A21425F18B9700FAE62D /* Assets.xcassets */,
-				D921651825F1F935007005E7 /* BlockTools.swift */,
-				D945A22C25F18DC600FAE62D /* GameScene.swift */,
-				D945A22725F18C4900FAE62D /* GameView.swift */,
 				D945A21C25F18B9700FAE62D /* Info.plist */,
-				D9A5FFD425F390EF00582E21 /* PieceType.swift */,
 				D945A21D25F18B9700FAE62D /* Tetris.entitlements */,
 			);
 			path = Tetris;
+			sourceTree = "<group>";
+		};
+		D9A5FFDA25F395D100582E21 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				D945A21025F18B9500FAE62D /* AppDelegate.swift */,
+				D921651825F1F935007005E7 /* BlockTools.swift */,
+				D945A22C25F18DC600FAE62D /* GameScene.swift */,
+				D945A22725F18C4900FAE62D /* GameView.swift */,
+				D9A5FFD425F390EF00582E21 /* PieceType.swift */,
+			);
+			path = Sources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
