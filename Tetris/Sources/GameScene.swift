@@ -5,12 +5,14 @@
 //  Created by Christophe SAUVEUR on 04/03/2021.
 //
 
-import Cocoa
 import SpriteKit
+import GameplayKit
 
 class GameScene: SKScene {
 
-	private var currentPiece: PieceEntity?
+	static fileprivate(set) var grid: GKEntity = GKEntity()
+	
+	private(set) var currentPiece: GKEntity?
 	
 	override init(size: CGSize) {
 		super.init(size: size)
@@ -23,45 +25,31 @@ class GameScene: SKScene {
 		camera = cameraNode
 		
 		backgroundColor = NSColor.gray
+        
+		let set = SKReferenceNode(fileNamed: "Background")!
+		addChild(set)
 		
-		let set = SKReferenceNode(fileNamed: "Background")
-		addChild(set!)
+		let gridRoot = set.childNode(withName: "//Grid Root")!
+		initGrid(withRootNode: gridRoot)
 		
-		let newPiece = PieceEntity(ofType: .row)
+		let newPiece = PieceComponent.createPieceEntity(ofType: .randomType())
 		currentPiece = newPiece
-		addChild(newPiece.skNode)
+		gridRoot.addChild(newPiece.component(ofType: GeometryComponent.self)!.skNode)
+		
+		let adjustedCoordinates = GameScene.grid.component(ofType: GridTransformComponent.self)!.getAdjustedCoordinates(forPiece: newPiece, at: GridCoordinates(x: 10, y: 18))
+		newPiece.component(ofType: PieceComponent.self)!.setGridCoordinates(adjustedCoordinates)
 	}
 	
 	required init?(coder aDecoder: NSCoder) {
-		super.init(coder: aDecoder)
+		fatalError("init(coder:) has not been implemented")
 	}
 	
-	func startMovingCurrentPieceLeft() -> Void {
+	fileprivate func initGrid(withRootNode gridRoot: SKNode) -> Void {
+		let geometryComponent = GeometryComponent(withNode: gridRoot)
+		GameScene.grid.addComponent(geometryComponent)
 		
-	}
-	
-	func startMovingCurrentPieceRight() -> Void {
-		
-	}
-	
-	func stopMovingPiece() -> Void {
-		
-	}
-	
-	func speedUpCurrentPiece() -> Void {
-		
-	}
-	
-	func resetSpeedForCurrentPiece() -> Void {
-		
-	}
-	
-	func turnCurrentPieceRight() -> Void {
-		currentPiece?.turnRight()
-	}
-	
-	func turnCurrentPieceLeft() -> Void {
-		currentPiece?.turnLeft()
+		let gridTransformComponent = GridTransformComponent(size: CGSize(width: 10, height: 18))
+		GameScene.grid.addComponent(gridTransformComponent)
 	}
 	
 }

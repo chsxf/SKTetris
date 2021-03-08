@@ -9,27 +9,29 @@ import GameplayKit
 
 class BlockTransformComponent: GKComponent {
 
-	private let skNode: SKNode
-	
-	init(withBlockSKNode skNode: SKNode) {
-		self.skNode = skNode
+	var coordinates: GridCoordinates {
+		didSet {
+			updateNodePosition()
+		}
+	}
+		
+	init(atCoordinates coordinates: GridCoordinates) {
+		self.coordinates = coordinates
 		super.init()
 	}
 	
 	required init?(coder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
 	}
-	
-	func turnLeft() -> Void {
-		let oldPosition = skNode.position
-		let newPosition = CGPoint(x: -oldPosition.y, y: oldPosition.x)
-		skNode.position = newPosition
+
+	override func didAddToEntity() {
+		super.didAddToEntity()
+		
+		updateNodePosition()
 	}
 	
-	func turnRight() -> Void {
-		let oldPosition = skNode.position
-		let newPosition = CGPoint(x: oldPosition.y, y: -oldPosition.x)
-		skNode.position = newPosition
+	fileprivate func updateNodePosition() -> Void {
+		entity!.component(ofType: GeometryComponent.self)!.skNode.position = BlockTools.transformCoordinatesFromGridToScene(coordinates)
 	}
 	
 }

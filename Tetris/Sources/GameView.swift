@@ -30,23 +30,20 @@ class GameView: SKView {
 	override func keyDown(with event: NSEvent) {
 		switch Keycode(rawValue: event.keyCode) {
 		case .f:
-			gameScene.turnCurrentPieceLeft()
+			gameScene.currentPiece?.component(ofType: PieceComponent.self)!.turnLeft()
 			break
 			
 		case .g:
-			gameScene.turnCurrentPieceRight()
+			gameScene.currentPiece?.component(ofType: PieceComponent.self)!.turnRight()
 			break
 			
 		case .leftArrow:
-			gameScene.startMovingCurrentPieceLeft()
 			break
 		
 		case .rightArrow:
-			gameScene.startMovingCurrentPieceRight()
 			break
 			
 		case .downArrow:
-			gameScene.speedUpCurrentPiece()
 			break
 			
 		default:
@@ -57,11 +54,9 @@ class GameView: SKView {
 	override func keyUp(with event: NSEvent) {
 		switch Keycode(rawValue: event.keyCode) {
 		case .leftArrow, .rightArrow:
-			gameScene.stopMovingPiece()
 			break
 		
 		case .downArrow:
-			gameScene.resetSpeedForCurrentPiece()
 			break
 		
 		default:

@@ -8,7 +8,9 @@
 import SpriteKit
 
 class BlockTools {
+	
 	public static let BLOCK_SIZE = 16
+	public static let HALF_BLOCK_SIZE = BLOCK_SIZE >> 1
 	
 	fileprivate static var _blockAtlas: SKTextureAtlas? = nil
 	public static var blockAtlas: SKTextureAtlas {
@@ -24,100 +26,10 @@ class BlockTools {
 		}
 	}
 	
-	public static func generatePiece(_ piece: PieceType) -> SKNode {
-		switch piece {
-		case .row:
-			return generateRowPiece()
-		case .square:
-			return generateSquaredPiece()
-		case .jShaped:
-			return generateJShapedPiece()
-		case .lShaped:
-			return generateLShapedPiece()
-		case .sShaped:
-			return generateSShapedPiece()
-		case .tShaped:
-			return generateTShapedPiece()
-		default:
-			return generateZShapedPiece()
-		}
-	}
-
-	fileprivate static func generateRowPiece() -> SKNode {
-		let blockRoot = SKNode()
-		
-		let texture = blockAtlas.textureNamed("blocks1")
-		let coordinates = [CGPoint(), CGPoint(x: 0, y: 1), CGPoint(x: 0, y: -1), CGPoint(x: 0, y: -2)]
-		generateBlocks(atCoordinates: coordinates, withTexture: texture, inParent: blockRoot)
-		
-		return blockRoot
-	}
-	
-	fileprivate static func generateTShapedPiece() -> SKNode {
-		let blockRoot = SKNode()
-		
-		let texture = blockAtlas.textureNamed("blocks2")
-		let coordinates = [ CGPoint(), CGPoint(x: -1, y: 0), CGPoint(x: 1, y: 0), CGPoint(x: 0, y: 1) ]
-		generateBlocks(atCoordinates: coordinates, withTexture: texture, inParent: blockRoot)
-		
-		return blockRoot
-	}
-	
-	fileprivate static func generateSquaredPiece() -> SKNode {
-		let blockRoot = SKNode()
-		
-		let texture = blockAtlas.textureNamed("blocks3")
-		let coordinates = [ CGPoint(), CGPoint(x: 0, y: 1), CGPoint(x: 1, y: 0), CGPoint(x: 1, y: 1) ]
-		generateBlocks(atCoordinates: coordinates, withTexture: texture, inParent: blockRoot)
-		
-		return blockRoot
-	}
-	
-	fileprivate static func generateSShapedPiece() -> SKNode {
-		let blockRoot = SKNode()
-		
-		let texture = blockAtlas.textureNamed("blocks4")
-		let coordinates = [ CGPoint(), CGPoint(x: -1, y: 0), CGPoint(x: 0, y: 1), CGPoint(x: 1, y: 1) ]
-		generateBlocks(atCoordinates: coordinates, withTexture: texture, inParent: blockRoot)
-		
-		return blockRoot
-	}
-	
-	fileprivate static func generateZShapedPiece() -> SKNode {
-		let blockRoot = SKNode()
-		
-		let texture = blockAtlas.textureNamed("blocks5")
-		let coordinates = [ CGPoint(), CGPoint(x: -1, y: 1), CGPoint(x: 0, y: 1), CGPoint(x: 1, y: 0) ]
-		generateBlocks(atCoordinates: coordinates, withTexture: texture, inParent: blockRoot)
-		
-		return blockRoot
-	}
-	
-	fileprivate static func generateLShapedPiece() -> SKNode {
-		let blockRoot = SKNode()
-		
-		let texture = blockAtlas.textureNamed("blocks6")
-		let coordinates = [ CGPoint(), CGPoint(x: 1, y: 0), CGPoint(x: 0, y: 1), CGPoint(x: 0, y: 2) ]
-		generateBlocks(atCoordinates: coordinates, withTexture: texture, inParent: blockRoot)
-		
-		return blockRoot
-	}
-	
-	fileprivate static func generateJShapedPiece() -> SKNode {
-		let blockRoot = SKNode()
-		
-		let texture = blockAtlas.textureNamed("blocks7")
-		let coordinates = [ CGPoint(), CGPoint(x: -1, y: 0), CGPoint(x: 0, y: 1), CGPoint(x: 0, y: 2) ]
-		generateBlocks(atCoordinates: coordinates, withTexture: texture, inParent: blockRoot)
-		
-		return blockRoot
-	}
-	
-	fileprivate static func generateBlocks(atCoordinates blockCoordinates: [CGPoint], withTexture texture: SKTexture, inParent parent: SKNode) {
-		for point: CGPoint in blockCoordinates {
-			let sprite = SKSpriteNode(texture: texture)
-			sprite.position = point.applying(CGAffineTransform.init(scaleX: CGFloat(BLOCK_SIZE), y: CGFloat(BLOCK_SIZE)))
-			parent.addChild(sprite)
-		}
+	public static func transformCoordinatesFromGridToScene(_ coordinates: GridCoordinates) -> CGPoint {
+		var point = coordinates.toCGPoint()
+		point = point.applying(CGAffineTransform.init(scaleX: CGFloat(BLOCK_SIZE), y: CGFloat(BLOCK_SIZE)))
+		point = point.applying(CGAffineTransform.init(translationX: CGFloat(HALF_BLOCK_SIZE), y: CGFloat(HALF_BLOCK_SIZE)))
+		return point
 	}
 }
