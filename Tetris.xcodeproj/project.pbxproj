@@ -20,6 +20,7 @@
 		D9474F3225F4C6E70088CAD6 /* GameOverState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9474F3125F4C6E70088CAD6 /* GameOverState.swift */; };
 		D9474F3825F4E0300088CAD6 /* GridTransformComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9474F3725F4E0300088CAD6 /* GridTransformComponent.swift */; };
 		D94E81E125FDFCD700F54169 /* GridCoordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94E81E025FDFCD700F54169 /* GridCoordinates.swift */; };
+		D985252E26085FF100370D85 /* GameStateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D985252D26085FF100370D85 /* GameStateMachine.swift */; };
 		D9A5FFD525F390EF00582E21 /* PieceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A5FFD425F390EF00582E21 /* PieceType.swift */; };
 		D9A5FFE025F3C2A700582E21 /* Background.sks in Resources */ = {isa = PBXBuildFile; fileRef = D9A5FFDF25F3C2A700582E21 /* Background.sks */; };
 		D9AB888F25F3F62300896FDF /* Keycode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AB888E25F3F62300896FDF /* Keycode.swift */; };
@@ -45,6 +46,7 @@
 		D9474F3125F4C6E70088CAD6 /* GameOverState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverState.swift; sourceTree = "<group>"; };
 		D9474F3725F4E0300088CAD6 /* GridTransformComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridTransformComponent.swift; sourceTree = "<group>"; };
 		D94E81E025FDFCD700F54169 /* GridCoordinates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCoordinates.swift; sourceTree = "<group>"; };
+		D985252D26085FF100370D85 /* GameStateMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStateMachine.swift; sourceTree = "<group>"; };
 		D9A5FFD425F390EF00582E21 /* PieceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieceType.swift; sourceTree = "<group>"; };
 		D9A5FFDF25F3C2A700582E21 /* Background.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Background.sks; sourceTree = "<group>"; };
 		D9AB888E25F3F62300896FDF /* Keycode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keycode.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				D9474F2725F4C66B0088CAD6 /* GameIdleState.swift */,
 				D9474F3125F4C6E70088CAD6 /* GameOverState.swift */,
 				D9474F2E25F4C6CF0088CAD6 /* GameResolutionState.swift */,
+				D985252D26085FF100370D85 /* GameStateMachine.swift */,
 			);
 			path = States;
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 				D9061F6A25FF2DC000540CD8 /* GeometryComponent.swift in Sources */,
 				D9474F2F25F4C6CF0088CAD6 /* GameResolutionState.swift in Sources */,
 				D9474F2C25F4C6B60088CAD6 /* GameFallingPieceState.swift in Sources */,
+				D985252E26085FF100370D85 /* GameStateMachine.swift in Sources */,
 				D9CF6DFF25FCCB5F0068F712 /* PieceModel.swift in Sources */,
 				D9AB888F25F3F62300896FDF /* Keycode.swift in Sources */,
 				D9AB889D25F4322200896FDF /* BlockTransformComponent.swift in Sources */,

@@ -14,6 +14,8 @@ class PieceComponent: GKComponent {
 	
 	var canRotate: Bool { model.type != .square }
 	
+	fileprivate(set) var falling = true
+	
 	var gridBounds: GridBounds {
 		get {
 			var bounds = GridBounds(x: 0, y: 0, width: 0, height: 0)

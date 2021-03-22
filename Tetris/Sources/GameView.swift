@@ -21,6 +21,8 @@ class GameView: SKView {
 		presentScene(gameScene)
 		
 		showsFPS = true
+		
+		gameScene.stateMachine!.enter(GameIdleState.self)
 	}
 	
 	required init?(coder: NSCoder) {
