@@ -28,6 +28,8 @@ class PieceComponent: GKComponent {
     fileprivate var lastMoveTimeBuffer = 0.0
     fileprivate var lastFallTimeBuffer = 0.0
     
+    let pieceHasLanded = SimpleEventEmitter()
+    
     var coordinatesBuffer = [GridCoordinates](repeating: GridCoordinates(), count: 4)
     
 	var gridBounds: GridBounds {
@@ -214,6 +216,9 @@ class PieceComponent: GKComponent {
                 let transform = subEntities[i].component(ofType: BlockTransformComponent.self)!
                 transform.coordinates = coordinatesBuffer[i]
             }
+        }
+        else {
+            pieceHasLanded.notify()
         }
     }
     

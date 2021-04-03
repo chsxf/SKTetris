@@ -80,7 +80,11 @@ class GameScene: SKScene {
 		gridRoot!.addChild(pieceNode)
 		
 		let adjustedCoordinates = GameScene.grid.component(ofType: GridTransformComponent.self)!.getAdjustedCoordinates(forPiece: piece, at: GridCoordinates(x: 5, y: 18))
-		piece.component(ofType: PieceComponent.self)!.setGridCoordinates(adjustedCoordinates)
+        let pieceComponent = piece.component(ofType: PieceComponent.self)!
+		pieceComponent.setGridCoordinates(adjustedCoordinates)
+        let _ = pieceComponent.pieceHasLanded.once {
+            print("Piece has landed!")
+        }
 		
 		currentPiece = piece
 	}
