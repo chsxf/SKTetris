@@ -10,12 +10,26 @@ import SpriteKit
 
 class PieceComponent: GKComponent {
 
-	let model: PieceModel
+    fileprivate let MOVE_TIME_INTERVAL = 0.15
+    fileprivate let NORMAL_FALL_TIME_INTERVAL = 1.0
+    fileprivate let SPEDUP_FALL_TIME_INTERVAL = 0.1
+
+    let model: PieceModel
 	
 	var canRotate: Bool { model.type != .square }
 	
 	fileprivate(set) var falling = true
-	
+    
+    fileprivate var isSpedUp = false
+    
+    fileprivate var movingLeft = false
+    fileprivate var movingRight = false
+    
+    fileprivate var lastMoveTimeBuffer = 0.0
+    fileprivate var lastFallTimeBuffer = 0.0
+    
+    var coordinatesBuffer = [GridCoordinates](repeating: GridCoordinates(), count: 4)
+    
 	var gridBounds: GridBounds {
 		get {
 			var bounds = GridBounds(x: 0, y: 0, width: 0, height: 0)
@@ -27,6 +41,10 @@ class PieceComponent: GKComponent {
 		}
 	}
 	
+    fileprivate var fallTimeInterval: Double {
+        get { return isSpedUp ? SPEDUP_FALL_TIME_INTERVAL : NORMAL_FALL_TIME_INTERVAL }
+    }
+    
 	fileprivate var subEntities = [GKEntity]()
 	
 	init(ofType type: PieceType) {
@@ -82,6 +100,34 @@ class PieceComponent: GKComponent {
 		}
 	}
 	
+    func startMovingLeft() -> Void {
+        movingLeft = true
+        lastMoveTimeBuffer = MOVE_TIME_INTERVAL
+    }
+    
+    func stopMovingLeft() -> Void {
+        movingLeft = false
+        lastMoveTimeBuffer = 0
+    }
+    
+    func startMovingRight() -> Void {
+        movingRight = true
+        lastMoveTimeBuffer = MOVE_TIME_INTERVAL
+    }
+    
+    func stopMovingRight() -> Void {
+        movingRight = false
+        lastMoveTimeBuffer = 0
+    }
+    
+    func speedUp() -> Void {
+        isSpedUp = true
+    }
+    
+    func resetSpeed() -> Void {
+        isSpedUp = false
+    }
+    
 	override func didAddToEntity() {
 		super.didAddToEntity()
 		generateBlockEntities()
@@ -114,6 +160,63 @@ class PieceComponent: GKComponent {
 		}
 	}
 	
+    override func update(deltaTime seconds: TimeInterval) {
+        let grid = GameScene.grid.component(ofType: GridTransformComponent.self)!
+        var validUpdate = false
+        
+        for i in 0..<subEntities.count {
+            let transform = subEntities[i].component(ofType: BlockTransformComponent.self)!
+            coordinatesBuffer[i] = transform.coordinates
+        }
+        
+        if movingLeft != movingRight {
+            lastMoveTimeBuffer += seconds
+            if lastMoveTimeBuffer > MOVE_TIME_INTERVAL {
+                lastMoveTimeBuffer = 0
+                var moveOffset: GridCoordinates
+                if movingLeft {
+                    moveOffset = GridCoordinates(x: -1, y: 0)
+                }
+                else {
+                    moveOffset = GridCoordinates(x: 1, y: 0)
+                }
+                
+                for i in 0..<coordinatesBuffer.count {
+                    coordinatesBuffer[i] += moveOffset
+                }
+                
+                if !grid.validateCoordinates(coordinatesList: coordinatesBuffer) {
+                    for i in 0..<subEntities.count {
+                        let transform = subEntities[i].component(ofType: BlockTransformComponent.self)!
+                        coordinatesBuffer[i] = transform.coordinates
+                    }
+                }
+                else {
+                    validUpdate = true
+                }
+            }
+        }
+        
+        lastFallTimeBuffer += seconds
+        if lastFallTimeBuffer > fallTimeInterval {
+            lastFallTimeBuffer = 0
+            
+            let fallOffset = GridCoordinates(x: 0, y: -1)
+            for i in 0..<coordinatesBuffer.count {
+                coordinatesBuffer[i] += fallOffset
+            }
+            
+            validUpdate = grid.validateCoordinates(coordinatesList: coordinatesBuffer)
+        }
+        
+        if validUpdate {
+            for i in 0..<coordinatesBuffer.count {
+                let transform = subEntities[i].component(ofType: BlockTransformComponent.self)!
+                transform.coordinates = coordinatesBuffer[i]
+            }
+        }
+    }
+    
 	class func createPieceEntity(ofType type: PieceType) -> GKEntity {
 		let entity = GKEntity()
 		

@@ -27,4 +27,12 @@ struct GridCoordinates {
 	static func - (left: GridCoordinates, right: GridCoordinates) -> GridCoordinates {
 		return GridCoordinates(x: left.x - right.x, y: left.y - right.y)
 	}
+    
+    static func += (left: inout GridCoordinates, right: GridCoordinates) -> Void {
+        left = left + right
+    }
+    
+    static func -= (left: inout GridCoordinates, right: GridCoordinates) -> Void {
+        left = left - right
+    }
 }
