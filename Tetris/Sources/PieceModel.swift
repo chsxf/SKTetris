@@ -17,7 +17,7 @@ class PieceModel {
         self.gridOffsets = PieceModel.getGridOffsets(forType: type)
     }
     
-    fileprivate class func getGridOffsets(forType type: PieceType) -> [GridCoordinates] {
+    private class func getGridOffsets(forType type: PieceType) -> [GridCoordinates] {
         switch type {
         case .jShaped:
             return [ GridCoordinates(), GridCoordinates(x: -1, y: 0), GridCoordinates(x: 0, y: 1), GridCoordinates(x: 0, y: 2) ]

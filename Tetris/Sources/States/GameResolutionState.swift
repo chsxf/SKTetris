@@ -13,4 +13,11 @@ class GameResolutionState: GKState {
 		return stateClass == GameIdleState.self || stateClass == GameOverState.self
 	}
 	
+	override func didEnter(from previousState: GKState?) {
+		let gameStateMachine = stateMachine! as! GameStateMachine
+		gameStateMachine.scene.landCurrentPiece()
+		
+		gameStateMachine.enter(GameIdleState.self)
+	}
+	
 }

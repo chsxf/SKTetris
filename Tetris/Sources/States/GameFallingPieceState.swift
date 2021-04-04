@@ -13,17 +13,23 @@ class GameFallingPieceState: GKState {
 		return stateClass == GameResolutionState.self
 	}
 	
+	override func didEnter(from previousState: GKState?) {
+		let gameStateMachine = stateMachine! as! GameStateMachine
+		if let piece = gameStateMachine.scene.currentPiece {
+			let pieceComponent = piece.component(ofType: PieceComponent.self)!
+			pieceComponent.pieceHasLanded.once {
+				print("Landed")
+				gameStateMachine.enter(GameResolutionState.self)
+			}
+		}
+	}
+	
 	override func update(deltaTime seconds: TimeInterval) {
 		super.update(deltaTime: seconds)
 		
 		let gameStateMachine = stateMachine! as! GameStateMachine
 		if let piece = gameStateMachine.scene.currentPiece {
 			piece.update(deltaTime: seconds)
-			
-			let pieceComponent = piece.component(ofType: PieceComponent.self)!
-			if !pieceComponent.falling {
-				gameStateMachine.enter(GameResolutionState.self)
-			}
 		}
 	}
 	

@@ -12,7 +12,7 @@ class BlockTools {
 	public static let BLOCK_SIZE = 16
 	public static let HALF_BLOCK_SIZE = BLOCK_SIZE >> 1
 	
-	fileprivate static var _blockAtlas: SKTextureAtlas? = nil
+	private static var _blockAtlas: SKTextureAtlas? = nil
 	public static var blockAtlas: SKTextureAtlas {
 		get {
 			if (_blockAtlas == nil) {

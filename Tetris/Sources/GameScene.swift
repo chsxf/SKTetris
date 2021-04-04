@@ -10,18 +10,18 @@ import GameplayKit
 
 class GameScene: SKScene {
 
-	static fileprivate(set) var grid: GKEntity = GKEntity()
+	static private(set) var grid: GKEntity = GKEntity()
 	
-	fileprivate(set) var stateMachine: GameStateMachine?
+	private(set) var stateMachine: GameStateMachine?
 	
-	fileprivate(set) var currentPiece: GKEntity?
-	fileprivate(set) var nextPiece: GKEntity?
+	private(set) var currentPiece: GKEntity?
+	private(set) var nextPiece: GKEntity?
 	
-	fileprivate var gridRoot: SKNode?
-	fileprivate var nextPieceRoot: SKNode?
+	private var gridRoot: SKNode?
+	private var nextPieceRoot: SKNode?
 	
-	fileprivate var currentTime: TimeInterval = 0
-	fileprivate var deltaTime: TimeInterval = 0
+	private var currentTime: TimeInterval = 0
+	private var deltaTime: TimeInterval = 0
 	
 	override init(size: CGSize) {
 		super.init(size: size)
@@ -50,12 +50,15 @@ class GameScene: SKScene {
 		fatalError("init(coder:) has not been implemented")
 	}
 	
-	fileprivate func initGrid(withRootNode gridRoot: SKNode) -> Void {
+	private func initGrid(withRootNode gridRoot: SKNode) -> Void {
 		let geometryComponent = GeometryComponent(withNode: gridRoot)
 		GameScene.grid.addComponent(geometryComponent)
 		
 		let gridTransformComponent = GridTransformComponent(size: CGSize(width: 10, height: 18))
 		GameScene.grid.addComponent(gridTransformComponent)
+		
+		let gridBlockContainerComponent = GridBlockContainerComponent()
+		GameScene.grid.addComponent(gridBlockContainerComponent)
 	}
 	
 	func spawnNextPiece() -> Void {
@@ -73,20 +76,22 @@ class GameScene: SKScene {
 	
 	func dropCurrentPiece() -> Void {
 		let piece = nextPiece!
+
 		let pieceNode = piece.component(ofType: GeometryComponent.self)!.skNode
-		pieceNode.position = CGPoint()
-		
 		pieceNode.removeFromParent()
-		gridRoot!.addChild(pieceNode)
-		
+
 		let adjustedCoordinates = GameScene.grid.component(ofType: GridTransformComponent.self)!.getAdjustedCoordinates(forPiece: piece, at: GridCoordinates(x: 5, y: 18))
         let pieceComponent = piece.component(ofType: PieceComponent.self)!
 		pieceComponent.setGridCoordinates(adjustedCoordinates)
-        let _ = pieceComponent.pieceHasLanded.once {
-            print("Piece has landed!")
-        }
+		
+		let gridBlockContainerComponent = GameScene.grid.component(ofType: GridBlockContainerComponent.self)!
+		gridBlockContainerComponent.addBlocks(pieceComponent.blocks)
 		
 		currentPiece = piece
+	}
+	
+	func landCurrentPiece() -> Void {
+		currentPiece = nil
 	}
 	
 	override func update(_ currentTime: TimeInterval) {

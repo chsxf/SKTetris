@@ -30,7 +30,7 @@ class BlockTransformComponent: GKComponent {
 		updateNodePosition()
 	}
 	
-	fileprivate func updateNodePosition() -> Void {
+	private func updateNodePosition() -> Void {
 		entity!.component(ofType: GeometryComponent.self)!.skNode.position = BlockTools.transformCoordinatesFromGridToScene(coordinates)
 	}
 	

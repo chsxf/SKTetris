@@ -9,7 +9,7 @@ import GameplayKit
 
 class GridTransformComponent: GKComponent {
 
-	fileprivate let size: CGSize
+	private let size: CGSize
 	
 	init(size: CGSize) {
 		self.size = size
