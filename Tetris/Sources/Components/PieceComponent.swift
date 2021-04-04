@@ -69,7 +69,7 @@ class PieceComponent: GKComponent {
                 newCoordinateList.append(newCoordinates + pivotCoordinates)
 			}
             
-            let gridComponent = GameScene.grid.component(ofType: GridTransformComponent.self)!
+            let gridComponent = GameScene.grid.component(ofType: GridBlockContainerComponent.self)!
             if gridComponent.validateCoordinates(coordinatesList: newCoordinateList) {
                 for i in 0..<newCoordinateList.count {
                     blocks[i].component(ofType: BlockTransformComponent.self)!.coordinates = newCoordinateList[i]
@@ -91,7 +91,7 @@ class PieceComponent: GKComponent {
                 newCoordinateList.append(newCoordinates + pivotCoordinates)
 			}
             
-            let gridComponent = GameScene.grid.component(ofType: GridTransformComponent.self)!
+            let gridComponent = GameScene.grid.component(ofType: GridBlockContainerComponent.self)!
             if gridComponent.validateCoordinates(coordinatesList: newCoordinateList) {
                 for i in 0..<newCoordinateList.count {
                     blocks[i].component(ofType: BlockTransformComponent.self)!.coordinates = newCoordinateList[i]
@@ -161,7 +161,7 @@ class PieceComponent: GKComponent {
 	}
 	
     override func update(deltaTime seconds: TimeInterval) {
-        let grid = GameScene.grid.component(ofType: GridTransformComponent.self)!
+        let grid = GameScene.grid.component(ofType: GridBlockContainerComponent.self)!
         var validUpdate = true
         
         for i in 0..<blocks.count {

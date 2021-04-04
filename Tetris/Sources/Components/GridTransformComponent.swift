@@ -9,7 +9,7 @@ import GameplayKit
 
 class GridTransformComponent: GKComponent {
 
-	private let size: CGSize
+	let size: CGSize
 	
 	init(size: CGSize) {
 		self.size = size
@@ -42,13 +42,4 @@ class GridTransformComponent: GKComponent {
 		return GridCoordinates(x: newX, y: newY)
 	}
     
-    func validateCoordinates(coordinatesList: [GridCoordinates]) -> Bool {
-        for coordinate in coordinatesList {
-            if coordinate.x < 0 || coordinate.x >= Int(size.width) || coordinate.y < 0 || coordinate.y >= Int(size.height) {
-                return false
-            }
-        }
-        return true
-    }
-	
 }

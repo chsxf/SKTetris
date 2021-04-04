@@ -20,6 +20,7 @@
 		D9474F3225F4C6E70088CAD6 /* GameOverState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9474F3125F4C6E70088CAD6 /* GameOverState.swift */; };
 		D9474F3825F4E0300088CAD6 /* GridTransformComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9474F3725F4E0300088CAD6 /* GridTransformComponent.swift */; };
 		D94B6198261973EA0044BD34 /* GridBlockContainerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94B6197261973EA0044BD34 /* GridBlockContainerComponent.swift */; };
+		D94B61A226199CFC0044BD34 /* GridRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94B61A126199CFC0044BD34 /* GridRow.swift */; };
 		D94E81E125FDFCD700F54169 /* GridCoordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94E81E025FDFCD700F54169 /* GridCoordinates.swift */; };
 		D985252E26085FF100370D85 /* GameStateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D985252D26085FF100370D85 /* GameStateMachine.swift */; };
 		D9A5FFD525F390EF00582E21 /* PieceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A5FFD425F390EF00582E21 /* PieceType.swift */; };
@@ -48,6 +49,7 @@
 		D9474F3125F4C6E70088CAD6 /* GameOverState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverState.swift; sourceTree = "<group>"; };
 		D9474F3725F4E0300088CAD6 /* GridTransformComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridTransformComponent.swift; sourceTree = "<group>"; };
 		D94B6197261973EA0044BD34 /* GridBlockContainerComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridBlockContainerComponent.swift; sourceTree = "<group>"; };
+		D94B61A126199CFC0044BD34 /* GridRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridRow.swift; sourceTree = "<group>"; };
 		D94E81E025FDFCD700F54169 /* GridCoordinates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCoordinates.swift; sourceTree = "<group>"; };
 		D985252D26085FF100370D85 /* GameStateMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStateMachine.swift; sourceTree = "<group>"; };
 		D9A5FFD425F390EF00582E21 /* PieceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieceType.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				D945A22725F18C4900FAE62D /* GameView.swift */,
 				D912E2B62605CEF400A6AD88 /* GridBounds.swift */,
 				D94E81E025FDFCD700F54169 /* GridCoordinates.swift */,
+				D94B61A126199CFC0044BD34 /* GridRow.swift */,
 				D9AB888E25F3F62300896FDF /* Keycode.swift */,
 				D9CF6DFE25FCCB5F0068F712 /* PieceModel.swift */,
 				D9A5FFD425F390EF00582E21 /* PieceType.swift */,
@@ -133,10 +136,10 @@
 			isa = PBXGroup;
 			children = (
 				D9AB889C25F4322200896FDF /* BlockTransformComponent.swift */,
-				D9474F3725F4E0300088CAD6 /* GridTransformComponent.swift */,
-				D9AB88A025F4364D00896FDF /* PieceComponent.swift */,
 				D9061F6925FF2DC000540CD8 /* GeometryComponent.swift */,
 				D94B6197261973EA0044BD34 /* GridBlockContainerComponent.swift */,
+				D9474F3725F4E0300088CAD6 /* GridTransformComponent.swift */,
+				D9AB88A025F4364D00896FDF /* PieceComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 				D912E2B72605CEF400A6AD88 /* GridBounds.swift in Sources */,
 				D9AB88A125F4364D00896FDF /* PieceComponent.swift in Sources */,
 				D945A22D25F18DC600FAE62D /* GameScene.swift in Sources */,
+				D94B61A226199CFC0044BD34 /* GridRow.swift in Sources */,
 				D945A22825F18C4900FAE62D /* GameView.swift in Sources */,
 				D9061F6A25FF2DC000540CD8 /* GeometryComponent.swift in Sources */,
 				D94B6198261973EA0044BD34 /* GridBlockContainerComponent.swift in Sources */,

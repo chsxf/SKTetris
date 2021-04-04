@@ -7,7 +7,7 @@
 
 import CoreGraphics
 
-struct GridCoordinates {
+struct GridCoordinates : Equatable {
 	var x: Int
 	var y: Int
 	

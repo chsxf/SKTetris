@@ -12,6 +12,8 @@ class GameScene: SKScene {
 
 	static private(set) var grid: GKEntity = GKEntity()
 	
+	private(set) var blockGeometryComponentSystem = GKComponentSystem(componentClass: GeometryComponent.self)
+	
 	private(set) var stateMachine: GameStateMachine?
 	
 	private(set) var currentPiece: GKEntity?
@@ -51,6 +53,8 @@ class GameScene: SKScene {
 	}
 	
 	private func initGrid(withRootNode gridRoot: SKNode) -> Void {
+		GameScene.grid = GKEntity()
+		
 		let geometryComponent = GeometryComponent(withNode: gridRoot)
 		GameScene.grid.addComponent(geometryComponent)
 		
@@ -78,29 +82,52 @@ class GameScene: SKScene {
 		let piece = nextPiece!
 
 		let pieceNode = piece.component(ofType: GeometryComponent.self)!.skNode
+		pieceNode.position = CGPoint()
+		
 		pieceNode.removeFromParent()
+		gridRoot!.addChild(pieceNode)
 
 		let adjustedCoordinates = GameScene.grid.component(ofType: GridTransformComponent.self)!.getAdjustedCoordinates(forPiece: piece, at: GridCoordinates(x: 5, y: 18))
         let pieceComponent = piece.component(ofType: PieceComponent.self)!
 		pieceComponent.setGridCoordinates(adjustedCoordinates)
 		
-		let gridBlockContainerComponent = GameScene.grid.component(ofType: GridBlockContainerComponent.self)!
-		gridBlockContainerComponent.addBlocks(pieceComponent.blocks)
-		
 		currentPiece = piece
 	}
 	
 	func landCurrentPiece() -> Void {
+		let piece = currentPiece!
 		currentPiece = nil
+		
+		let pieceComponent = piece.component(ofType: PieceComponent.self)!
+		
+		let gridBlockContainerComponent = GameScene.grid.component(ofType: GridBlockContainerComponent.self)!
+		gridBlockContainerComponent.addBlocks(pieceComponent.blocks)
+		
+		for block in pieceComponent.blocks {
+			blockGeometryComponentSystem.addComponent(foundIn: block)
+		}
+	}
+	
+	func removeBlock(_ block: GKEntity) -> Void {
+		let gridBlockContainerComponent = GameScene.grid.component(ofType: GridBlockContainerComponent.self)!
+		gridBlockContainerComponent.removeBlock(block)
+		
+		blockGeometryComponentSystem.removeComponent(foundIn: block)
+		
+		let geometry = block.component(ofType: GeometryComponent.self)!
+		geometry.skNode.removeFromParent()
 	}
 	
 	override func update(_ currentTime: TimeInterval) {
-		deltaTime = currentTime - self.currentTime
+		if (self.currentTime > 0) {
+			deltaTime = currentTime - self.currentTime
+		}
 		self.currentTime = currentTime
 	}
 	
 	override func didFinishUpdate() {
 		stateMachine!.update(deltaTime: deltaTime)
+		blockGeometryComponentSystem.update(deltaTime: deltaTime)
 	}
 	
 }
