@@ -21,6 +21,7 @@ class GameScene: SKScene {
 	
 	private var gridRoot: SKNode?
 	private var nextPieceRoot: SKNode?
+	private var gameOverContainer: SKNode?
 	
 	private var currentTime: TimeInterval = 0
 	private var deltaTime: TimeInterval = 0
@@ -46,6 +47,16 @@ class GameScene: SKScene {
 		initGrid(withRootNode: gridRoot!)
 		
 		nextPieceRoot = set.childNode(withName: "//Next Piece Root")
+		
+		gameOverContainer = set.childNode(withName: "//Game Over Container")
+		gameOverContainer!.isHidden = true
+		
+		let replayButton = gameOverContainer!.childNode(withName: "Replay Button") as! ButtonNode
+		replayButton.onClicked.on {
+			self.replay()
+		}
+		
+		isUserInteractionEnabled = true
 	}
 	
 	required init?(coder aDecoder: NSCoder) {
@@ -116,6 +127,14 @@ class GameScene: SKScene {
 		
 		let geometry = block.component(ofType: GeometryComponent.self)!
 		geometry.skNode.removeFromParent()
+	}
+	
+	func gameOver() -> Void {
+		gameOverContainer!.isHidden = false
+	}
+	
+	func replay() -> Void {
+		print("replay")
 	}
 	
 	override func update(_ currentTime: TimeInterval) {

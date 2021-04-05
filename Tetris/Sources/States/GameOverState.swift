@@ -9,4 +9,9 @@ import GameplayKit
 
 class GameOverState: GKState {
 
+	override func didEnter(from previousState: GKState?) {
+		let gameStateMachine = stateMachine as! GameStateMachine
+		gameStateMachine.scene.gameOver()
+	}
+	
 }

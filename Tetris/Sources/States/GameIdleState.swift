@@ -10,7 +10,7 @@ import GameplayKit
 class GameIdleState: GKState {
 
 	override func isValidNextState(_ stateClass: AnyClass) -> Bool {
-		return stateClass == GameFallingPieceState.self
+		return stateClass == GameFallingPieceState.self || stateClass == GameOverState.self
 	}
 	
 	override func didEnter(from previousState: GKState?) {
@@ -23,7 +23,22 @@ class GameIdleState: GKState {
 		gameStateMachine.scene.dropCurrentPiece()
 		gameStateMachine.scene.spawnNextPiece()
 		
-		gameStateMachine.enter(GameFallingPieceState.self)
+		let piece = gameStateMachine.scene.currentPiece!
+		let pieceComponent = piece.component(ofType: PieceComponent.self)!
+		
+		var blockCoordinates = [GridCoordinates]()
+		for block in pieceComponent.blocks {
+			let transform = block.component(ofType: BlockTransformComponent.self)!
+			blockCoordinates.append(transform.coordinates)
+		}
+		
+		let gridBlockContainerComponent = GameScene.grid.component(ofType: GridBlockContainerComponent.self)!
+		if (gridBlockContainerComponent.validateCoordinates(coordinatesList: blockCoordinates)) {
+			gameStateMachine.enter(GameFallingPieceState.self)
+		}
+		else {
+			gameStateMachine.enter(GameOverState.self)
+		}
 	}
 	
 }

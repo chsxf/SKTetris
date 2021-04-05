@@ -30,7 +30,22 @@
 		D9AB88A125F4364D00896FDF /* PieceComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AB88A025F4364D00896FDF /* PieceComponent.swift */; };
 		D9CF6DFF25FCCB5F0068F712 /* PieceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CF6DFE25FCCB5F0068F712 /* PieceModel.swift */; };
 		D9F344EB261898DF0096183C /* EventEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F344EA261898DF0096183C /* EventEmitter.swift */; };
+		D9FFD2D7261AE8A90054CEF5 /* LondrinaSolid-Regular.ttf in CopyFiles */ = {isa = PBXBuildFile; fileRef = D9FFD2D5261AE8470054CEF5 /* LondrinaSolid-Regular.ttf */; };
+		D9FFD2DB261AEDD10054CEF5 /* ButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FFD2DA261AEDD10054CEF5 /* ButtonNode.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D9FFD2D6261AE89E0054CEF5 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Fonts;
+			dstSubfolderSpec = 7;
+			files = (
+				D9FFD2D7261AE8A90054CEF5 /* LondrinaSolid-Regular.ttf in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		D9061F6925FF2DC000540CD8 /* GeometryComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryComponent.swift; sourceTree = "<group>"; };
@@ -59,6 +74,8 @@
 		D9AB88A025F4364D00896FDF /* PieceComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieceComponent.swift; sourceTree = "<group>"; };
 		D9CF6DFE25FCCB5F0068F712 /* PieceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieceModel.swift; sourceTree = "<group>"; };
 		D9F344EA261898DF0096183C /* EventEmitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventEmitter.swift; sourceTree = "<group>"; };
+		D9FFD2D5261AE8470054CEF5 /* LondrinaSolid-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LondrinaSolid-Regular.ttf"; sourceTree = "<group>"; };
+		D9FFD2DA261AEDD10054CEF5 /* ButtonNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +112,7 @@
 				D945A21C25F18B9700FAE62D /* Info.plist */,
 				D9A5FFDF25F3C2A700582E21 /* Background.sks */,
 				D945A21425F18B9700FAE62D /* Assets.xcassets */,
+				D9FFD2D4261AE82B0054CEF5 /* Fonts */,
 				D9A5FFDA25F395D100582E21 /* Sources */,
 			);
 			path = Tetris;
@@ -117,6 +135,7 @@
 			children = (
 				D945A21025F18B9500FAE62D /* AppDelegate.swift */,
 				D921651825F1F935007005E7 /* BlockTools.swift */,
+				D9FFD2DA261AEDD10054CEF5 /* ButtonNode.swift */,
 				D9F344EA261898DF0096183C /* EventEmitter.swift */,
 				D945A22C25F18DC600FAE62D /* GameScene.swift */,
 				D945A22725F18C4900FAE62D /* GameView.swift */,
@@ -144,6 +163,14 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		D9FFD2D4261AE82B0054CEF5 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				D9FFD2D5261AE8470054CEF5 /* LondrinaSolid-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -154,6 +181,7 @@
 				D945A20925F18B9500FAE62D /* Sources */,
 				D945A20A25F18B9500FAE62D /* Frameworks */,
 				D945A20B25F18B9500FAE62D /* Resources */,
+				D9FFD2D6261AE89E0054CEF5 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -226,6 +254,7 @@
 				D985252E26085FF100370D85 /* GameStateMachine.swift in Sources */,
 				D9CF6DFF25FCCB5F0068F712 /* PieceModel.swift in Sources */,
 				D9AB888F25F3F62300896FDF /* Keycode.swift in Sources */,
+				D9FFD2DB261AEDD10054CEF5 /* ButtonNode.swift in Sources */,
 				D9AB889D25F4322200896FDF /* BlockTransformComponent.swift in Sources */,
 				D9474F3225F4C6E70088CAD6 /* GameOverState.swift in Sources */,
 				D9A5FFD525F390EF00582E21 /* PieceType.swift in Sources */,

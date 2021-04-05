@@ -16,7 +16,7 @@ class GameResolutionState: GKState {
 	private var blinkingTimeBuffer: TimeInterval = 0
 	
 	override func isValidNextState(_ stateClass: AnyClass) -> Bool {
-		return stateClass == GameIdleState.self || stateClass == GameOverState.self
+		return stateClass == GameIdleState.self
 	}
 	
 	override func didEnter(from previousState: GKState?) {

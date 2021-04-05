@@ -18,7 +18,6 @@ class GameFallingPieceState: GKState {
 		if let piece = gameStateMachine.scene.currentPiece {
 			let pieceComponent = piece.component(ofType: PieceComponent.self)!
 			pieceComponent.pieceHasLanded.once {
-				print("Landed")
 				gameStateMachine.enter(GameResolutionState.self)
 			}
 		}
