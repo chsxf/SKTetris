@@ -27,6 +27,14 @@ class GridBlockContainerComponent: GKComponent {
 		blocks.removeAll(where: { $0 === block })
 	}
 	
+	func removeAllBlocks() -> Void {
+		for block in blocks {
+			let geometry = block.component(ofType: GeometryComponent.self)!
+			geometry.skNode.removeFromParent()
+		}
+		blocks.removeAll()
+	}
+	
 	func validateCoordinates(coordinatesList: [GridCoordinates]) -> Bool {
 		let gridTransformComponent = entity!.component(ofType: GridTransformComponent.self)!
 		let size = gridTransformComponent.size

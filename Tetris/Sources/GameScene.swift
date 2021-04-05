@@ -130,11 +130,27 @@ class GameScene: SKScene {
 	}
 	
 	func gameOver() -> Void {
+		if nextPiece != nil {
+			let geometry = nextPiece!.component(ofType: GeometryComponent.self)!
+			geometry.skNode.removeFromParent()
+			nextPiece = nil
+		}
+		
+		if currentPiece != nil {
+			let geometry = currentPiece!.component(ofType: GeometryComponent.self)!
+			geometry.skNode.removeFromParent()
+			currentPiece = nil
+		}
+		
+		let gridBlockContainerComponent = GameScene.grid.component(ofType: GridBlockContainerComponent.self)!
+		gridBlockContainerComponent.removeAllBlocks()
+		
 		gameOverContainer!.isHidden = false
 	}
 	
 	func replay() -> Void {
-		print("replay")
+		gameOverContainer!.isHidden = true
+		stateMachine!.enter(GameIdleState.self)
 	}
 	
 	override func update(_ currentTime: TimeInterval) {
