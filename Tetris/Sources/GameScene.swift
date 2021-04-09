@@ -22,6 +22,9 @@ class GameScene: SKScene {
 	private var gridRoot: SKNode?
 	private var nextPieceRoot: SKNode?
 	private var gameOverContainer: SKNode?
+    private var replayButton: ButtonNode?
+    
+    private var replayButtonTrackingArea: NSTrackingArea?
 	
 	private var currentTime: TimeInterval = 0
 	private var deltaTime: TimeInterval = 0
@@ -51,8 +54,8 @@ class GameScene: SKScene {
 		gameOverContainer = set.childNode(withName: "//Game Over Container")
 		gameOverContainer!.isHidden = true
 		
-		let replayButton = gameOverContainer!.childNode(withName: "Replay Button") as! ButtonNode
-		replayButton.onClicked.on {
+        replayButton = gameOverContainer!.childNode(withName: "Replay Button") as? ButtonNode
+		replayButton!.onClicked.on {
 			self.replay()
 		}
 		
@@ -146,10 +149,14 @@ class GameScene: SKScene {
 		gridBlockContainerComponent.removeAllBlocks()
 		
 		gameOverContainer!.isHidden = false
+        replayButtonTrackingArea = (view as! GameView).addTrackingArea(fromNode: replayButton!)
 	}
 	
 	func replay() -> Void {
 		gameOverContainer!.isHidden = true
+        (view as! GameView).removeTrackingArea(replayButtonTrackingArea!)
+        replayButtonTrackingArea = nil
+        
 		stateMachine!.enter(GameIdleState.self)
 	}
 	

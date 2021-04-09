@@ -82,5 +82,19 @@ class GameView: SKView {
 			break
 		}
 	}
+    
+    func addTrackingArea(fromNode node: SKNode) -> NSTrackingArea {
+        let nodeFrame = node.calculateAccumulatedFrame()
+        
+        let bottomLeftInView = convert(CGPoint(x: nodeFrame.minX, y: nodeFrame.minY), from: gameScene)
+        let topRightInView = convert(CGPoint(x: nodeFrame.maxX, y: nodeFrame.maxY), from: gameScene)
+        
+        let width = abs(topRightInView.x - bottomLeftInView.x)
+        let height = abs(topRightInView.y - bottomLeftInView.y)
+        let viewRect = NSRect(x: bottomLeftInView.x, y: bottomLeftInView.y, width: width, height: height)
+        let trackingArea = NSTrackingArea(rect: viewRect, options: [ .mouseEnteredAndExited, .activeWhenFirstResponder ], owner: node, userInfo: nil)
+        addTrackingArea(trackingArea)
+        return trackingArea
+    }
 	
 }
