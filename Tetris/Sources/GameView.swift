@@ -92,7 +92,7 @@ class GameView: SKView {
         let width = abs(topRightInView.x - bottomLeftInView.x)
         let height = abs(topRightInView.y - bottomLeftInView.y)
         let viewRect = NSRect(x: bottomLeftInView.x, y: bottomLeftInView.y, width: width, height: height)
-        let trackingArea = NSTrackingArea(rect: viewRect, options: [ .mouseEnteredAndExited, .activeWhenFirstResponder ], owner: node, userInfo: nil)
+		let trackingArea = NSTrackingArea(rect: viewRect, options: [ .mouseEnteredAndExited, .activeWhenFirstResponder, .enabledDuringMouseDrag ], owner: node, userInfo: nil)
         addTrackingArea(trackingArea)
         return trackingArea
     }
