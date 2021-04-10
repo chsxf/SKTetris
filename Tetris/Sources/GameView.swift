@@ -21,6 +21,8 @@ class GameView: SKView {
 		presentScene(gameScene)
 		
 		showsFPS = true
+		showsDrawCount = true
+		showsNodeCount = true
 		
 		gameScene.stateMachine!.enter(GameIdleState.self)
 	}
