@@ -29,6 +29,8 @@ class GameScene: SKScene {
 	private var currentTime: TimeInterval = 0
 	private var deltaTime: TimeInterval = 0
 	
+	private var scoreManager: ScoreManager?
+	
 	override init(size: CGSize) {
 		super.init(size: size)
 		
@@ -58,6 +60,12 @@ class GameScene: SKScene {
 		replayButton!.onClicked.on {
 			self.replay()
 		}
+		
+		let scoreLabel = set.childNode(withName: "//Score Label")! as! SKLabelNode
+		scoreManager = ScoreManager(withScoreLabel: scoreLabel)
+		
+		let resolutionState = stateMachine!.state(forClass: GameResolutionState.self)
+		resolutionState?.onLinesCompleted.on(scoreManager!.pushLines)
 		
 		isUserInteractionEnabled = true
 	}

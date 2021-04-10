@@ -7,7 +7,7 @@
 
 import Foundation
 
-class EventEmitter<T: AnyObject> {
+class EventEmitter<T> {
     
     typealias Callback = (_ parameters: T) -> Void
     
@@ -39,7 +39,7 @@ class EventEmitter<T: AnyObject> {
     
 	@discardableResult func on(_ callback: @escaping Callback, usageLimit: UInt = 0) -> EventEmitterEntry {
         let entry = EventEmitterEntry(callback, usageLimit: usageLimit)
-        SimpleEventEmitter.synchronized {
+        ParameterlessEventEmitter.synchronized {
             listeners.append(entry)
         }
         return entry
@@ -52,7 +52,7 @@ class EventEmitter<T: AnyObject> {
     func notify(_ parameters: T) -> Void {
         var toCall: [Callback] = []
         
-        SimpleEventEmitter.synchronized {
+        ParameterlessEventEmitter.synchronized {
             for listener in listeners {
                 toCall.append(listener.use())
             }
@@ -65,7 +65,7 @@ class EventEmitter<T: AnyObject> {
     
 }
 
-class SimpleEventEmitter {
+class ParameterlessEventEmitter {
     
     typealias Callback = () -> Void
     
@@ -99,7 +99,7 @@ class SimpleEventEmitter {
     
     @discardableResult func on(_ callback: @escaping Callback, usageLimit: UInt = 0) -> EventEmitterEntry {
         let entry = EventEmitterEntry(callback, usageLimit: usageLimit)
-        SimpleEventEmitter.synchronized {
+        ParameterlessEventEmitter.synchronized {
             listeners.append(entry)
         }
         return entry
@@ -112,7 +112,7 @@ class SimpleEventEmitter {
     func notify() -> Void {
         var toCall: [Callback] = []
         
-        SimpleEventEmitter.synchronized {
+        ParameterlessEventEmitter.synchronized {
             for listener in listeners {
                 toCall.append(listener.use())
             }
@@ -125,7 +125,7 @@ class SimpleEventEmitter {
     }
 
     fileprivate static func synchronized(_ block: () -> Void) -> Void {
-        SimpleEventEmitter.queue.sync(execute: block)
+        ParameterlessEventEmitter.queue.sync(execute: block)
     }
     
 }

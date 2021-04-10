@@ -26,7 +26,7 @@ class PieceComponent: GKComponent {
     private var lastMoveTimeBuffer = 0.0
     private var lastFallTimeBuffer = 0.0
     
-    let pieceHasLanded = SimpleEventEmitter()
+    let pieceHasLanded = ParameterlessEventEmitter()
     
     var coordinatesBuffer = [GridCoordinates](repeating: GridCoordinates(), count: 4)
     

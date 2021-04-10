@@ -15,6 +15,8 @@ class GameResolutionState: GKState {
 	
 	private var blinkingTimeBuffer: TimeInterval = 0
 	
+	private(set) var onLinesCompleted = EventEmitter<Int>()
+	
 	override func isValidNextState(_ stateClass: AnyClass) -> Bool {
 		return stateClass == GameIdleState.self
 	}
@@ -58,6 +60,8 @@ class GameResolutionState: GKState {
 			
 			let gridBlockContainerComponent = GameScene.grid.component(ofType: GridBlockContainerComponent.self)!
 			gridBlockContainerComponent.fallBlocks(aboveIndex: topIndex, ofRows: fullRows!.count)
+			
+			onLinesCompleted.notify(fullRows!.count)
 			
 			gameStateMachine.enter(GameIdleState.self)
 		}

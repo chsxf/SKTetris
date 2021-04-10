@@ -9,7 +9,7 @@ import SpriteKit
 
 class ButtonNode: SKSpriteNode {
 
-	private(set) var onClicked = SimpleEventEmitter()
+	private(set) var onClicked = ParameterlessEventEmitter()
 	
 	override var isUserInteractionEnabled: Bool {
 		get { true }
