@@ -62,7 +62,8 @@ class GameScene: SKScene {
 		}
 		
 		let scoreLabel = set.childNode(withName: "//Score Label")! as! SKLabelNode
-		scoreManager = ScoreManager(withScoreLabel: scoreLabel)
+		let levelLabel = set.childNode(withName: "//Level Label")! as! SKLabelNode
+		scoreManager = ScoreManager(withScoreLabel: scoreLabel, andLevelLevel: levelLabel)
 		
 		let resolutionState = stateMachine!.state(forClass: GameResolutionState.self)
 		resolutionState?.onLinesCompleted.on(scoreManager!.pushLines)
@@ -165,6 +166,8 @@ class GameScene: SKScene {
         (view as! GameView).removeTrackingArea(replayButtonTrackingArea!)
         replayButtonTrackingArea = nil
         
+		scoreManager!.reset()
+		
 		stateMachine!.enter(GameIdleState.self)
 	}
 	
