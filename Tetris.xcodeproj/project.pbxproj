@@ -67,6 +67,7 @@
 		D94B6197261973EA0044BD34 /* GridBlockContainerComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridBlockContainerComponent.swift; sourceTree = "<group>"; };
 		D94B61A126199CFC0044BD34 /* GridRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridRow.swift; sourceTree = "<group>"; };
 		D94E81E025FDFCD700F54169 /* GridCoordinates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCoordinates.swift; sourceTree = "<group>"; };
+		D953F018262C68B100BBDF58 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D95AFB652621EEA100A82677 /* ScoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreManager.swift; sourceTree = "<group>"; };
 		D985252D26085FF100370D85 /* GameStateMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStateMachine.swift; sourceTree = "<group>"; };
 		D9A5FFD425F390EF00582E21 /* PieceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieceType.swift; sourceTree = "<group>"; };
@@ -94,8 +95,9 @@
 		D945A20425F18B9500FAE62D = {
 			isa = PBXGroup;
 			children = (
-				D945A20F25F18B9500FAE62D /* Tetris */,
+				D953F018262C68B100BBDF58 /* README.md */,
 				D945A20E25F18B9500FAE62D /* Products */,
+				D945A20F25F18B9500FAE62D /* Tetris */,
 			);
 			sourceTree = "<group>";
 		};
