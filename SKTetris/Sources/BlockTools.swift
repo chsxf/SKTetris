@@ -12,17 +12,17 @@ class BlockTools {
 	public static let BLOCK_SIZE = 16
 	public static let HALF_BLOCK_SIZE = BLOCK_SIZE >> 1
 	
-	private static var _blockAtlas: SKTextureAtlas? = nil
-	public static var blockAtlas: SKTextureAtlas {
+	private static var _mainAtlas: SKTextureAtlas? = nil
+	public static var mainAtlas: SKTextureAtlas {
 		get {
-			if (_blockAtlas == nil) {
-				_blockAtlas = SKTextureAtlas(named: "Main Atlas")
+			if (_mainAtlas == nil) {
+				_mainAtlas = SKTextureAtlas(named: "Main Atlas")
 				
-				for name in _blockAtlas!.textureNames {
-					_blockAtlas!.textureNamed(name).filteringMode = .nearest
+				for name in _mainAtlas!.textureNames {
+					_mainAtlas!.textureNamed(name).filteringMode = .nearest
 				}
 			}
-			return _blockAtlas!
+			return _mainAtlas!
 		}
 	}
 	

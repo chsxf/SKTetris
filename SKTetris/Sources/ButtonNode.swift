@@ -16,11 +16,11 @@ class ButtonNode: SKSpriteNode {
 		set { }
 	}
 
-	var originalColor: NSColor? = nil
-	var focusColor: NSColor? = nil
-	var downColor: NSColor? = nil
+	private var originalColor: NSColor? = nil
+	private var hoverColor: NSColor? = nil
+	private var downColor: NSColor? = nil
 	
-	var focused: Bool = false {
+	var hovered: Bool = false {
 		didSet {
 			ensureInitColors()
 			applyColor()
@@ -34,35 +34,40 @@ class ButtonNode: SKSpriteNode {
 		}
 	}
 	
-	override func mouseDown(with event: NSEvent) {
+    func reset() {
+        hovered = false
+        down = false
+    }
+    
+    override func mouseDown(with event: NSEvent) {
 		down = true
 	}
 	
 	override func mouseUp(with event: NSEvent) {
 		down = false
-		if focused {
+		if hovered {
 			onClicked.notify()
 		}
 	}
 	
 	override func mouseEntered(with event: NSEvent) {
-		focused = true
+		hovered = true
 	}
 	
 	override func mouseExited(with event: NSEvent) {
-		focused = false
+		hovered = false
 	}
 	
 	private func ensureInitColors() {
 		if originalColor == nil {
 			originalColor = color
-			focusColor = color.highlight(withLevel: 0.5)
+			hoverColor = color.highlight(withLevel: 0.5)
 			downColor = color.shadow(withLevel: 0.5)
 		}
 	}
 	
 	private func applyColor() {
-		color = focused ? (down ? downColor! : focusColor!) : originalColor!
+		color = hovered ? (down ? downColor! : hoverColor!) : originalColor!
 	}
 	
 }

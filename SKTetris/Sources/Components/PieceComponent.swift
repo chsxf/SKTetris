@@ -145,7 +145,7 @@ class PieceComponent: GKComponent {
 	private func generateBlockEntities() -> Void {
 		let rootNode = entity!.component(ofType: GeometryComponent.self)!.skNode
 		
-		let texture = BlockTools.blockAtlas.textureNamed(model.type.textureName)
+		let texture = BlockTools.mainAtlas.textureNamed(model.type.textureName)
 		for offset in model.gridOffsets {
 			let sprite = SKSpriteNode(texture: texture)
 

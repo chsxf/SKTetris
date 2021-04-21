@@ -22,6 +22,9 @@
 		D94B6198261973EA0044BD34 /* GridBlockContainerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94B6197261973EA0044BD34 /* GridBlockContainerComponent.swift */; };
 		D94B61A226199CFC0044BD34 /* GridRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94B61A126199CFC0044BD34 /* GridRow.swift */; };
 		D94E81E125FDFCD700F54169 /* GridCoordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94E81E025FDFCD700F54169 /* GridCoordinates.swift */; };
+		D94FFE472637530800EA6A09 /* ButtonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94FFE462637530800EA6A09 /* ButtonManager.swift */; };
+		D94FFE4A263757BD00EA6A09 /* SKNodeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94FFE49263757BD00EA6A09 /* SKNodeExtension.swift */; };
+		D953F01C262C8A1500BBDF58 /* PauseButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D953F01B262C8A1500BBDF58 /* PauseButtonNode.swift */; };
 		D95AFB662621EEA100A82677 /* ScoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95AFB652621EEA100A82677 /* ScoreManager.swift */; };
 		D985252E26085FF100370D85 /* GameStateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D985252D26085FF100370D85 /* GameStateMachine.swift */; };
 		D9A5FFD525F390EF00582E21 /* PieceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A5FFD425F390EF00582E21 /* PieceType.swift */; };
@@ -52,11 +55,11 @@
 		D9061F6925FF2DC000540CD8 /* GeometryComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryComponent.swift; sourceTree = "<group>"; };
 		D912E2B62605CEF400A6AD88 /* GridBounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridBounds.swift; sourceTree = "<group>"; };
 		D921651825F1F935007005E7 /* BlockTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockTools.swift; sourceTree = "<group>"; };
-		D945A20D25F18B9500FAE62D /* Tetris.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tetris.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D945A20D25F18B9500FAE62D /* SKTetris.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SKTetris.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D945A21025F18B9500FAE62D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D945A21425F18B9700FAE62D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D945A21C25F18B9700FAE62D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D945A21D25F18B9700FAE62D /* Tetris.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Tetris.entitlements; sourceTree = "<group>"; };
+		D945A21D25F18B9700FAE62D /* SKTetris.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SKTetris.entitlements; sourceTree = "<group>"; };
 		D945A22725F18C4900FAE62D /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		D945A22C25F18DC600FAE62D /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		D9474F2725F4C66B0088CAD6 /* GameIdleState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameIdleState.swift; sourceTree = "<group>"; };
@@ -67,7 +70,10 @@
 		D94B6197261973EA0044BD34 /* GridBlockContainerComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridBlockContainerComponent.swift; sourceTree = "<group>"; };
 		D94B61A126199CFC0044BD34 /* GridRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridRow.swift; sourceTree = "<group>"; };
 		D94E81E025FDFCD700F54169 /* GridCoordinates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCoordinates.swift; sourceTree = "<group>"; };
+		D94FFE462637530800EA6A09 /* ButtonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonManager.swift; sourceTree = "<group>"; };
+		D94FFE49263757BD00EA6A09 /* SKNodeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKNodeExtension.swift; sourceTree = "<group>"; };
 		D953F018262C68B100BBDF58 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		D953F01B262C8A1500BBDF58 /* PauseButtonNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseButtonNode.swift; sourceTree = "<group>"; };
 		D95AFB652621EEA100A82677 /* ScoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreManager.swift; sourceTree = "<group>"; };
 		D985252D26085FF100370D85 /* GameStateMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStateMachine.swift; sourceTree = "<group>"; };
 		D9A5FFD425F390EF00582E21 /* PieceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieceType.swift; sourceTree = "<group>"; };
@@ -97,29 +103,29 @@
 			children = (
 				D953F018262C68B100BBDF58 /* README.md */,
 				D945A20E25F18B9500FAE62D /* Products */,
-				D945A20F25F18B9500FAE62D /* Tetris */,
+				D945A20F25F18B9500FAE62D /* SKTetris */,
 			);
 			sourceTree = "<group>";
 		};
 		D945A20E25F18B9500FAE62D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D945A20D25F18B9500FAE62D /* Tetris.app */,
+				D945A20D25F18B9500FAE62D /* SKTetris.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D945A20F25F18B9500FAE62D /* Tetris */ = {
+		D945A20F25F18B9500FAE62D /* SKTetris */ = {
 			isa = PBXGroup;
 			children = (
-				D945A21D25F18B9700FAE62D /* Tetris.entitlements */,
+				D945A21D25F18B9700FAE62D /* SKTetris.entitlements */,
 				D945A21C25F18B9700FAE62D /* Info.plist */,
 				D9A5FFDF25F3C2A700582E21 /* Background.sks */,
 				D945A21425F18B9700FAE62D /* Assets.xcassets */,
 				D9FFD2D4261AE82B0054CEF5 /* Fonts */,
 				D9A5FFDA25F395D100582E21 /* Sources */,
 			);
-			path = Tetris;
+			path = SKTetris;
 			sourceTree = "<group>";
 		};
 		D9474F2625F4C6460088CAD6 /* States */ = {
@@ -139,6 +145,7 @@
 			children = (
 				D945A21025F18B9500FAE62D /* AppDelegate.swift */,
 				D921651825F1F935007005E7 /* BlockTools.swift */,
+				D94FFE462637530800EA6A09 /* ButtonManager.swift */,
 				D9FFD2DA261AEDD10054CEF5 /* ButtonNode.swift */,
 				D9F344EA261898DF0096183C /* EventEmitter.swift */,
 				D945A22C25F18DC600FAE62D /* GameScene.swift */,
@@ -147,11 +154,13 @@
 				D94E81E025FDFCD700F54169 /* GridCoordinates.swift */,
 				D94B61A126199CFC0044BD34 /* GridRow.swift */,
 				D9AB888E25F3F62300896FDF /* Keycode.swift */,
+				D953F01B262C8A1500BBDF58 /* PauseButtonNode.swift */,
 				D9CF6DFE25FCCB5F0068F712 /* PieceModel.swift */,
 				D9A5FFD425F390EF00582E21 /* PieceType.swift */,
+				D95AFB652621EEA100A82677 /* ScoreManager.swift */,
+				D94FFE49263757BD00EA6A09 /* SKNodeExtension.swift */,
 				D9AB889B25F4320200896FDF /* Components */,
 				D9474F2625F4C6460088CAD6 /* States */,
-				D95AFB652621EEA100A82677 /* ScoreManager.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -179,9 +188,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D945A20C25F18B9500FAE62D /* Tetris */ = {
+		D945A20C25F18B9500FAE62D /* SKTetris */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D945A22025F18B9700FAE62D /* Build configuration list for PBXNativeTarget "Tetris" */;
+			buildConfigurationList = D945A22025F18B9700FAE62D /* Build configuration list for PBXNativeTarget "SKTetris" */;
 			buildPhases = (
 				D945A20925F18B9500FAE62D /* Sources */,
 				D945A20A25F18B9500FAE62D /* Frameworks */,
@@ -192,9 +201,9 @@
 			);
 			dependencies = (
 			);
-			name = Tetris;
+			name = SKTetris;
 			productName = Tetris;
-			productReference = D945A20D25F18B9500FAE62D /* Tetris.app */;
+			productReference = D945A20D25F18B9500FAE62D /* SKTetris.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -204,14 +213,14 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1240;
-				LastUpgradeCheck = 1240;
+				LastUpgradeCheck = 1250;
 				TargetAttributes = {
 					D945A20C25F18B9500FAE62D = {
 						CreatedOnToolsVersion = 12.4;
 					};
 				};
 			};
-			buildConfigurationList = D945A20825F18B9500FAE62D /* Build configuration list for PBXProject "Tetris" */;
+			buildConfigurationList = D945A20825F18B9500FAE62D /* Build configuration list for PBXProject "SKTetris" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -224,7 +233,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D945A20C25F18B9500FAE62D /* Tetris */,
+				D945A20C25F18B9500FAE62D /* SKTetris */,
 			);
 		};
 /* End PBXProject section */
@@ -255,13 +264,16 @@
 				D94B6198261973EA0044BD34 /* GridBlockContainerComponent.swift in Sources */,
 				D9474F2F25F4C6CF0088CAD6 /* GameResolutionState.swift in Sources */,
 				D9F344EB261898DF0096183C /* EventEmitter.swift in Sources */,
+				D94FFE4A263757BD00EA6A09 /* SKNodeExtension.swift in Sources */,
 				D9474F2C25F4C6B60088CAD6 /* GameFallingPieceState.swift in Sources */,
 				D985252E26085FF100370D85 /* GameStateMachine.swift in Sources */,
+				D94FFE472637530800EA6A09 /* ButtonManager.swift in Sources */,
 				D95AFB662621EEA100A82677 /* ScoreManager.swift in Sources */,
 				D9CF6DFF25FCCB5F0068F712 /* PieceModel.swift in Sources */,
 				D9AB888F25F3F62300896FDF /* Keycode.swift in Sources */,
 				D9FFD2DB261AEDD10054CEF5 /* ButtonNode.swift in Sources */,
 				D9AB889D25F4322200896FDF /* BlockTransformComponent.swift in Sources */,
+				D953F01C262C8A1500BBDF58 /* PauseButtonNode.swift in Sources */,
 				D9474F3225F4C6E70088CAD6 /* GameOverState.swift in Sources */,
 				D9A5FFD525F390EF00582E21 /* PieceType.swift in Sources */,
 				D9474F3825F4E0300088CAD6 /* GridTransformComponent.swift in Sources */,
@@ -395,20 +407,21 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Tetris/Tetris.entitlements;
+				CODE_SIGN_ENTITLEMENTS = SKTetris/SKTetris.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 5L9YG7YEUA;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = Tetris/Info.plist;
+				INFOPLIST_FILE = SKTetris/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				PRODUCT_BUNDLE_IDENTIFIER = com.xhaleera.Tetris;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xhaleera.SKTetris;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -419,20 +432,21 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Tetris/Tetris.entitlements;
+				CODE_SIGN_ENTITLEMENTS = SKTetris/SKTetris.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 5L9YG7YEUA;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = Tetris/Info.plist;
+				INFOPLIST_FILE = SKTetris/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				PRODUCT_BUNDLE_IDENTIFIER = com.xhaleera.Tetris;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xhaleera.SKTetris;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -441,7 +455,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D945A20825F18B9500FAE62D /* Build configuration list for PBXProject "Tetris" */ = {
+		D945A20825F18B9500FAE62D /* Build configuration list for PBXProject "SKTetris" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D945A21E25F18B9700FAE62D /* Debug */,
@@ -450,7 +464,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D945A22025F18B9700FAE62D /* Build configuration list for PBXNativeTarget "Tetris" */ = {
+		D945A22025F18B9700FAE62D /* Build configuration list for PBXNativeTarget "SKTetris" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D945A22125F18B9700FAE62D /* Debug */,

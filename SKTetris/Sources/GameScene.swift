@@ -21,20 +21,24 @@ class GameScene: SKScene {
 	
 	private var gridRoot: SKNode?
 	private var nextPieceRoot: SKNode?
-	private var gameOverContainer: SKNode?
-    private var replayButton: ButtonNode?
     
-    private var replayButtonTrackingArea: NSTrackingArea?
-	
-	private var currentTime: TimeInterval = 0
+	private var gameOverContainer: SKNode?
+    private var pauseContainer: SKNode?
+    private var pauseButton: PauseButtonNode?
+    
+    private var currentTime: TimeInterval = 0
 	private var deltaTime: TimeInterval = 0
 	
 	private var scoreManager: ScoreManager?
-	
-	override init(size: CGSize) {
+    
+    private var buttonManager: ButtonManager?
+    private var previousViewSize: CGSize?
+    
+    override init(size: CGSize) {
 		super.init(size: size)
 		
 		stateMachine = GameStateMachine(withScene: self)
+        buttonManager = ButtonManager(scene: self)
 		
 		scaleMode = .aspectFit
 		
@@ -56,11 +60,22 @@ class GameScene: SKScene {
 		gameOverContainer = set.childNode(withName: "//Game Over Container")
 		gameOverContainer!.isHidden = true
 		
-        replayButton = gameOverContainer!.childNode(withName: "Replay Button") as? ButtonNode
-		replayButton!.onClicked.on {
+        let replayButton = gameOverContainer!.childNode(withName: "Replay Button")! as! ButtonNode
+		replayButton.onClicked.on {
 			self.replay()
 		}
-		
+        buttonManager?.addButton(replayButton)
+	
+        pauseContainer = set.childNode(withName: "//Pause Container")
+        pauseContainer!.isHidden = true
+        
+        let uiContainer = set.childNode(withName: "//UI Container")!
+        pauseButton = uiContainer.childNode(withName: "Pause Button") as? PauseButtonNode
+        pauseButton!.onClicked.on {
+            self.togglePause()
+        }
+        buttonManager?.addButton(pauseButton!)
+        
 		let scoreLabel = set.childNode(withName: "//Score Label")! as! SKLabelNode
 		let levelLabel = set.childNode(withName: "//Level Label")! as! SKLabelNode
 		scoreManager = ScoreManager(withScoreLabel: scoreLabel, andLevelLevel: levelLabel)
@@ -75,7 +90,7 @@ class GameScene: SKScene {
 		fatalError("init(coder:) has not been implemented")
 	}
 	
-	private func initGrid(withRootNode gridRoot: SKNode) -> Void {
+    private func initGrid(withRootNode gridRoot: SKNode) -> Void {
 		GameScene.grid = GKEntity()
 		
 		let geometryComponent = GeometryComponent(withNode: gridRoot)
@@ -158,21 +173,43 @@ class GameScene: SKScene {
 		gridBlockContainerComponent.removeAllBlocks()
 		
 		gameOverContainer!.isHidden = false
-        replayButtonTrackingArea = (view as! GameView).addTrackingArea(fromNode: replayButton!)
+        
+        pauseButton!.isHidden = true
 	}
 	
 	func replay() -> Void {
 		gameOverContainer!.isHidden = true
-        (view as! GameView).removeTrackingArea(replayButtonTrackingArea!)
-        replayButtonTrackingArea = nil
         
 		scoreManager!.reset()
 		
 		stateMachine!.enter(GameIdleState.self)
+        
+        pauseButton!.isHidden = false
 	}
 	
+    func togglePause() -> Void {
+        isPaused = !isPaused
+        pauseContainer!.isHidden = !pauseContainer!.isHidden
+    }
+    
 	override func update(_ currentTime: TimeInterval) {
-		if (self.currentTime > 0) {
+        var invalidateTrackingAreas = false
+        if view != nil {
+            let viewSize = view!.frame.size
+            if previousViewSize != nil && viewSize != previousViewSize! {
+                let sameSize = viewSize == previousViewSize!
+                if !sameSize {
+                    invalidateTrackingAreas = true
+                }
+            }
+            previousViewSize = viewSize
+        }
+        buttonManager?.updateButtons(invalidateTrackingAreas: invalidateTrackingAreas)
+        
+        if isPaused {
+            deltaTime = 0
+        }
+        else if self.currentTime > 0 {
 			deltaTime = currentTime - self.currentTime
 		}
 		self.currentTime = currentTime
