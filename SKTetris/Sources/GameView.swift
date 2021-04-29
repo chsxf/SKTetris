@@ -75,10 +75,14 @@ class GameView: SKView {
         case .rightArrow:
             pieceComponent?.stopMovingRight()
 			break
-		
-		case .downArrow:
+        
+        case .downArrow:
             pieceComponent?.resetSpeed()
-			break
+            break
+            
+        case .escape:
+            gameScene.togglePause(fromController: true)
+            break
 		
 		default:
 			break

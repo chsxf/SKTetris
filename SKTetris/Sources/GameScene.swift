@@ -187,7 +187,10 @@ class GameScene: SKScene {
         pauseButton!.isHidden = false
 	}
 	
-    func togglePause() -> Void {
+    func togglePause(fromController: Bool = false) -> Void {
+        if fromController {
+            pauseButton!.showsPause = !pauseButton!.showsPause
+        }
         isPaused = !isPaused
         pauseContainer!.isHidden = !pauseContainer!.isHidden
     }

@@ -21,18 +21,20 @@ class PauseButtonNode: ButtonNode {
         get { childNode(withName: "Icon") as? SKSpriteNode }
     }
     
-    private var showsPause = true
+    var showsPause = true {
+        didSet {
+            icon!.texture = showsPause ? pauseTexture : playTexture
+        }
+    }
     
     override func reset() {
         super.reset()
         
         showsPause = true
-        icon!.texture = pauseTexture
     }
     
     override func mouseUp(with event: NSEvent) {
         if hovered {
-            icon!.texture = showsPause ? playTexture : pauseTexture
             showsPause = !showsPause
         }
         
