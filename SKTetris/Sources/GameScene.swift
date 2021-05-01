@@ -47,6 +47,8 @@ class GameScene: SKScene {
     override init(size: CGSize) {
 		super.init(size: size)
 		
+        SoundManager.onSoundFinishedPlaying.on(onSoundFinishedPlaying(_:))
+        
 		stateMachine = GameStateMachine(withScene: self)
         ButtonManager.scene = self
 		
@@ -93,6 +95,9 @@ class GameScene: SKScene {
 		let scoreLabel = set.childNode(withName: "//Score Label")! as! SKLabelNode
 		let levelLabel = set.childNode(withName: "//Level Label")! as! SKLabelNode
 		scoreManager = ScoreManager(withScoreLabel: scoreLabel, andLevelLevel: levelLabel)
+        scoreManager?.onLevelChanged.on({ _newLevel in
+            SoundManager.play(.newLevel)
+        })
 		
 		let resolutionState = stateMachine!.state(forClass: GameResolutionState.self)
 		resolutionState?.onLinesCompleted.on(scoreManager!.pushLines)
@@ -191,6 +196,11 @@ class GameScene: SKScene {
 	}
 	
 	func gameOver() -> Void {
+        if SettingsManager.sfxEnabled {
+            SoundManager.stop(.backgroundMusic01)
+            SoundManager.play(.gameOver)
+        }
+        
 		if nextPiece != nil {
 			let geometry = nextPiece!.component(ofType: GeometryComponent.self)!
 			geometry.skNode.removeFromParent()
@@ -206,9 +216,8 @@ class GameScene: SKScene {
 		let gridBlockContainerComponent = GameScene.grid.component(ofType: GridBlockContainerComponent.self)!
 		gridBlockContainerComponent.removeAllBlocks()
 		
-		gameOverContainer!.isHidden = false
-        
-        pauseToggle!.isHidden = true
+		uiContainer!.isHidden = true
+        gameOverContainer!.isHidden = false
 	}
 	
 	func replay() -> Void {
@@ -218,7 +227,7 @@ class GameScene: SKScene {
 		
 		stateMachine!.enter(GameIdleState.self)
         
-        pauseToggle!.isHidden = false
+        uiContainer!.isHidden = false
 	}
 	
     func togglePause(fromController: Bool = false) -> Void {
@@ -270,5 +279,11 @@ class GameScene: SKScene {
 		stateMachine!.update(deltaTime: deltaTime)
 		blockGeometryComponentSystem.update(deltaTime: deltaTime)
 	}
+    
+    private func onSoundFinishedPlaying(_ soundKey: SoundKey) {
+        if soundKey == .gameOver {
+            SoundManager.play(.backgroundMusic01)
+        }
+    }
 	
 }

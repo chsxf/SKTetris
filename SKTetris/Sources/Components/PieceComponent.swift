@@ -74,6 +74,8 @@ class PieceComponent: GKComponent {
                 for i in 0..<newCoordinateList.count {
                     blocks[i].component(ofType: BlockTransformComponent.self)!.coordinates = newCoordinateList[i]
                 }
+                
+                SoundManager.play(.brickRotate)
             }
 		}
 	}
@@ -96,6 +98,8 @@ class PieceComponent: GKComponent {
                 for i in 0..<newCoordinateList.count {
                     blocks[i].component(ofType: BlockTransformComponent.self)!.coordinates = newCoordinateList[i]
                 }
+                
+                SoundManager.play(.brickRotate)
             }
 		}
 	}

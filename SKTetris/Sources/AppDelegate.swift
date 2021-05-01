@@ -16,12 +16,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	
 	static func setup() -> Void {
         SettingsManager.initialize()
-        print(SettingsManager.sfxEnabled)
+        SoundManager.preloadSounds()
         
 		let rect = NSRect(x: 100, y: 100, width: 640, height: 360)
 		
 		let window = NSWindow(contentRect: rect, styleMask: [.titled, .closable, .resizable], backing: .buffered, defer: false)
-		window.title = "Tetris"
+		window.title = "SKTetris"
 		window.contentView = GameView(frame: rect)
 		window.makeKeyAndOrderFront(nil)
 		window.toggleFullScreen(nil)

@@ -30,6 +30,7 @@ class GameResolutionState: GKState {
 		let gridBlockContainerComponent = GameScene.grid.component(ofType: GridBlockContainerComponent.self)!
 		fullRows = gridBlockContainerComponent.getFullRows()
 		if fullRows != nil {
+            SoundManager.play(.linesRemoved)
 			blinkDisappearingRows()
 		}
 		else {

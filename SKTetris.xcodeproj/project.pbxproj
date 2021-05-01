@@ -33,6 +33,8 @@
 		D9AB888F25F3F62300896FDF /* Keycode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AB888E25F3F62300896FDF /* Keycode.swift */; };
 		D9AB889D25F4322200896FDF /* BlockTransformComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AB889C25F4322200896FDF /* BlockTransformComponent.swift */; };
 		D9AB88A125F4364D00896FDF /* PieceComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AB88A025F4364D00896FDF /* PieceComponent.swift */; };
+		D9BB3B35263D8A7800FA2707 /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = D9BB3B34263D8A7800FA2707 /* Sounds */; };
+		D9BB3B37263D8D5800FA2707 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BB3B36263D8D5800FA2707 /* SoundManager.swift */; };
 		D9CF6DFF25FCCB5F0068F712 /* PieceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CF6DFE25FCCB5F0068F712 /* PieceModel.swift */; };
 		D9F344EB261898DF0096183C /* EventEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F344EA261898DF0096183C /* EventEmitter.swift */; };
 		D9FFD2D7261AE8A90054CEF5 /* LondrinaSolid-Regular.ttf in CopyFiles */ = {isa = PBXBuildFile; fileRef = D9FFD2D5261AE8470054CEF5 /* LondrinaSolid-Regular.ttf */; };
@@ -83,6 +85,8 @@
 		D9AB888E25F3F62300896FDF /* Keycode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keycode.swift; sourceTree = "<group>"; };
 		D9AB889C25F4322200896FDF /* BlockTransformComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockTransformComponent.swift; sourceTree = "<group>"; };
 		D9AB88A025F4364D00896FDF /* PieceComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieceComponent.swift; sourceTree = "<group>"; };
+		D9BB3B34263D8A7800FA2707 /* Sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sounds; sourceTree = "<group>"; };
+		D9BB3B36263D8D5800FA2707 /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 		D9CF6DFE25FCCB5F0068F712 /* PieceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieceModel.swift; sourceTree = "<group>"; };
 		D9F344EA261898DF0096183C /* EventEmitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventEmitter.swift; sourceTree = "<group>"; };
 		D9FFD2D5261AE8470054CEF5 /* LondrinaSolid-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LondrinaSolid-Regular.ttf"; sourceTree = "<group>"; };
@@ -120,6 +124,7 @@
 		D945A20F25F18B9500FAE62D /* SKTetris */ = {
 			isa = PBXGroup;
 			children = (
+				D9BB3B34263D8A7800FA2707 /* Sounds */,
 				D945A21D25F18B9700FAE62D /* SKTetris.entitlements */,
 				D945A21C25F18B9700FAE62D /* Info.plist */,
 				D9A5FFDF25F3C2A700582E21 /* Background.sks */,
@@ -159,11 +164,12 @@
 				D9CF6DFE25FCCB5F0068F712 /* PieceModel.swift */,
 				D9A5FFD425F390EF00582E21 /* PieceType.swift */,
 				D95AFB652621EEA100A82677 /* ScoreManager.swift */,
+				D983367E263D5B220064F53F /* SettingsManager.swift */,
 				D94FFE49263757BD00EA6A09 /* SKNodeExtension.swift */,
+				D9BB3B36263D8D5800FA2707 /* SoundManager.swift */,
 				D93D7515263CB73600800E8E /* ToggleButtonNode.swift */,
 				D9AB889B25F4320200896FDF /* Components */,
 				D9474F2625F4C6460088CAD6 /* States */,
-				D983367E263D5B220064F53F /* SettingsManager.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -246,6 +252,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9BB3B35263D8A7800FA2707 /* Sounds in Resources */,
 				D945A21525F18B9700FAE62D /* Assets.xcassets in Resources */,
 				D9A5FFE025F3C2A700582E21 /* Background.sks in Resources */,
 			);
@@ -263,6 +270,7 @@
 				D945A22D25F18DC600FAE62D /* GameScene.swift in Sources */,
 				D94B61A226199CFC0044BD34 /* GridRow.swift in Sources */,
 				D945A22825F18C4900FAE62D /* GameView.swift in Sources */,
+				D9BB3B37263D8D5800FA2707 /* SoundManager.swift in Sources */,
 				D9061F6A25FF2DC000540CD8 /* GeometryComponent.swift in Sources */,
 				D94B6198261973EA0044BD34 /* GridBlockContainerComponent.swift in Sources */,
 				D9474F2F25F4C6CF0088CAD6 /* GameResolutionState.swift in Sources */,

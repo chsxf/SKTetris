@@ -26,7 +26,15 @@ class SettingsManager {
     
     static var musicEnabled: Bool {
         get { UserDefaults.standard.bool(forKey: MUSIC_ENABLED_KEY) }
-        set { UserDefaults.standard.setValue(newValue, forKey: MUSIC_ENABLED_KEY) }
+        set {
+            UserDefaults.standard.setValue(newValue, forKey: MUSIC_ENABLED_KEY)
+            if newValue {
+                SoundManager.play(.backgroundMusic01)
+            }
+            else {
+                SoundManager.stop(.backgroundMusic01)
+            }
+        }
     }
     
 }

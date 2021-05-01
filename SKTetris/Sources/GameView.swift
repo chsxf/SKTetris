@@ -25,6 +25,8 @@ class GameView: SKView {
 		showsNodeCount = true
 		
 		gameScene.stateMachine!.enter(GameIdleState.self)
+        
+        SoundManager.play(.backgroundMusic01)
 	}
 	
 	required init?(coder: NSCoder) {
