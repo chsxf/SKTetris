@@ -34,6 +34,11 @@ class ButtonNode: SKSpriteNode {
 		}
 	}
 	
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        ButtonManager.addButton(self)
+    }
+    
     func reset() {
         hovered = false
         down = false

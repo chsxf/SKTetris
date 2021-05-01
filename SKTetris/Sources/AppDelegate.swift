@@ -15,6 +15,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	}
 	
 	static func setup() -> Void {
+        SettingsManager.initialize()
+        print(SettingsManager.sfxEnabled)
+        
 		let rect = NSRect(x: 100, y: 100, width: 640, height: 360)
 		
 		let window = NSWindow(contentRect: rect, styleMask: [.titled, .closable, .resizable], backing: .buffered, defer: false)

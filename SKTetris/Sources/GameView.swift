@@ -80,10 +80,14 @@ class GameView: SKView {
             pieceComponent?.resetSpeed()
             break
             
-        case .escape:
+        case .p:
             gameScene.togglePause(fromController: true)
             break
 		
+        case .escape:
+            gameScene.toggleOptions()
+            break
+            
 		default:
 			break
 		}

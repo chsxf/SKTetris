@@ -22,10 +22,11 @@ SpriteKit being a proprietary framework from Apple, the game will only be avaiab
 | ----------- | ------------------------------------------- |
 | F           | Rotates the current piece counter clockwise |
 | G           | Rotates the current piece clockwise         |
+| P           | Pauses / Unpauses the game                  |
 | Down arrow  | Speeds up the descent of the current piece  |
 | Left arrow  | Moves the current piece to the left         |
 | Right arrow | Moves the current piece to the right        |
-| Echap       | Pauses / Unpauses the game                  |
+| Escape      | Opens / Closes options                      |
 
 ### In the Menus
 

@@ -10,6 +10,7 @@
 		D9061F6A25FF2DC000540CD8 /* GeometryComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9061F6925FF2DC000540CD8 /* GeometryComponent.swift */; };
 		D912E2B72605CEF400A6AD88 /* GridBounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = D912E2B62605CEF400A6AD88 /* GridBounds.swift */; };
 		D921651925F1F935007005E7 /* BlockTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = D921651825F1F935007005E7 /* BlockTools.swift */; };
+		D93D7516263CB73700800E8E /* ToggleButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93D7515263CB73600800E8E /* ToggleButtonNode.swift */; };
 		D945A21125F18B9500FAE62D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D945A21025F18B9500FAE62D /* AppDelegate.swift */; };
 		D945A21525F18B9700FAE62D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D945A21425F18B9700FAE62D /* Assets.xcassets */; };
 		D945A22825F18C4900FAE62D /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D945A22725F18C4900FAE62D /* GameView.swift */; };
@@ -24,8 +25,8 @@
 		D94E81E125FDFCD700F54169 /* GridCoordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94E81E025FDFCD700F54169 /* GridCoordinates.swift */; };
 		D94FFE472637530800EA6A09 /* ButtonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94FFE462637530800EA6A09 /* ButtonManager.swift */; };
 		D94FFE4A263757BD00EA6A09 /* SKNodeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94FFE49263757BD00EA6A09 /* SKNodeExtension.swift */; };
-		D953F01C262C8A1500BBDF58 /* PauseButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D953F01B262C8A1500BBDF58 /* PauseButtonNode.swift */; };
 		D95AFB662621EEA100A82677 /* ScoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95AFB652621EEA100A82677 /* ScoreManager.swift */; };
+		D983367F263D5B220064F53F /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D983367E263D5B220064F53F /* SettingsManager.swift */; };
 		D985252E26085FF100370D85 /* GameStateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D985252D26085FF100370D85 /* GameStateMachine.swift */; };
 		D9A5FFD525F390EF00582E21 /* PieceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A5FFD425F390EF00582E21 /* PieceType.swift */; };
 		D9A5FFE025F3C2A700582E21 /* Background.sks in Resources */ = {isa = PBXBuildFile; fileRef = D9A5FFDF25F3C2A700582E21 /* Background.sks */; };
@@ -55,6 +56,7 @@
 		D9061F6925FF2DC000540CD8 /* GeometryComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryComponent.swift; sourceTree = "<group>"; };
 		D912E2B62605CEF400A6AD88 /* GridBounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridBounds.swift; sourceTree = "<group>"; };
 		D921651825F1F935007005E7 /* BlockTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockTools.swift; sourceTree = "<group>"; };
+		D93D7515263CB73600800E8E /* ToggleButtonNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleButtonNode.swift; sourceTree = "<group>"; };
 		D945A20D25F18B9500FAE62D /* SKTetris.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SKTetris.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D945A21025F18B9500FAE62D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D945A21425F18B9700FAE62D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -73,8 +75,8 @@
 		D94FFE462637530800EA6A09 /* ButtonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonManager.swift; sourceTree = "<group>"; };
 		D94FFE49263757BD00EA6A09 /* SKNodeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKNodeExtension.swift; sourceTree = "<group>"; };
 		D953F018262C68B100BBDF58 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		D953F01B262C8A1500BBDF58 /* PauseButtonNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseButtonNode.swift; sourceTree = "<group>"; };
 		D95AFB652621EEA100A82677 /* ScoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreManager.swift; sourceTree = "<group>"; };
+		D983367E263D5B220064F53F /* SettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
 		D985252D26085FF100370D85 /* GameStateMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStateMachine.swift; sourceTree = "<group>"; };
 		D9A5FFD425F390EF00582E21 /* PieceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieceType.swift; sourceTree = "<group>"; };
 		D9A5FFDF25F3C2A700582E21 /* Background.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Background.sks; sourceTree = "<group>"; };
@@ -154,13 +156,14 @@
 				D94E81E025FDFCD700F54169 /* GridCoordinates.swift */,
 				D94B61A126199CFC0044BD34 /* GridRow.swift */,
 				D9AB888E25F3F62300896FDF /* Keycode.swift */,
-				D953F01B262C8A1500BBDF58 /* PauseButtonNode.swift */,
 				D9CF6DFE25FCCB5F0068F712 /* PieceModel.swift */,
 				D9A5FFD425F390EF00582E21 /* PieceType.swift */,
 				D95AFB652621EEA100A82677 /* ScoreManager.swift */,
 				D94FFE49263757BD00EA6A09 /* SKNodeExtension.swift */,
+				D93D7515263CB73600800E8E /* ToggleButtonNode.swift */,
 				D9AB889B25F4320200896FDF /* Components */,
 				D9474F2625F4C6460088CAD6 /* States */,
+				D983367E263D5B220064F53F /* SettingsManager.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -266,14 +269,15 @@
 				D9F344EB261898DF0096183C /* EventEmitter.swift in Sources */,
 				D94FFE4A263757BD00EA6A09 /* SKNodeExtension.swift in Sources */,
 				D9474F2C25F4C6B60088CAD6 /* GameFallingPieceState.swift in Sources */,
+				D93D7516263CB73700800E8E /* ToggleButtonNode.swift in Sources */,
 				D985252E26085FF100370D85 /* GameStateMachine.swift in Sources */,
 				D94FFE472637530800EA6A09 /* ButtonManager.swift in Sources */,
 				D95AFB662621EEA100A82677 /* ScoreManager.swift in Sources */,
 				D9CF6DFF25FCCB5F0068F712 /* PieceModel.swift in Sources */,
 				D9AB888F25F3F62300896FDF /* Keycode.swift in Sources */,
+				D983367F263D5B220064F53F /* SettingsManager.swift in Sources */,
 				D9FFD2DB261AEDD10054CEF5 /* ButtonNode.swift in Sources */,
 				D9AB889D25F4322200896FDF /* BlockTransformComponent.swift in Sources */,
-				D953F01C262C8A1500BBDF58 /* PauseButtonNode.swift in Sources */,
 				D9474F3225F4C6E70088CAD6 /* GameOverState.swift in Sources */,
 				D9A5FFD525F390EF00582E21 /* PieceType.swift in Sources */,
 				D9474F3825F4E0300088CAD6 /* GridTransformComponent.swift in Sources */,

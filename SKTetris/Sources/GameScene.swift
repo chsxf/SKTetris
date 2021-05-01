@@ -24,21 +24,31 @@ class GameScene: SKScene {
     
 	private var gameOverContainer: SKNode?
     private var pauseContainer: SKNode?
-    private var pauseButton: PauseButtonNode?
+    private var uiContainer: SKNode?
+    private var optionsContainer: SKNode?
+    
+    private var pauseToggle: ToggleButtonNode?
+    private var sfxToggle: ToggleButtonNode?
+    private var musicToggle: ToggleButtonNode?
     
     private var currentTime: TimeInterval = 0
 	private var deltaTime: TimeInterval = 0
 	
 	private var scoreManager: ScoreManager?
     
-    private var buttonManager: ButtonManager?
     private var previousViewSize: CGSize?
+    
+    public override var isPaused: Bool {
+        didSet {
+            ButtonManager.updateButtons(invalidateTrackingAreas: false)
+        }
+    }
     
     override init(size: CGSize) {
 		super.init(size: size)
 		
 		stateMachine = GameStateMachine(withScene: self)
-        buttonManager = ButtonManager(scene: self)
+        ButtonManager.scene = self
 		
 		scaleMode = .aspectFit
 		
@@ -64,17 +74,21 @@ class GameScene: SKScene {
 		replayButton.onClicked.on {
 			self.replay()
 		}
-        buttonManager?.addButton(replayButton)
 	
         pauseContainer = set.childNode(withName: "//Pause Container")
         pauseContainer!.isHidden = true
         
-        let uiContainer = set.childNode(withName: "//UI Container")!
-        pauseButton = uiContainer.childNode(withName: "Pause Button") as? PauseButtonNode
-        pauseButton!.onClicked.on {
+        uiContainer = set.childNode(withName: "//UI Container")
+        pauseToggle = uiContainer!.childNode(withName: "Pause Button") as? ToggleButtonNode
+        pauseToggle!.onClicked.on {
             self.togglePause()
         }
-        buttonManager?.addButton(pauseButton!)
+        pauseToggle!.checked = false
+        
+        let settingsButton = uiContainer!.childNode(withName: "Settings Button")! as! ButtonNode
+        settingsButton.onClicked.on {
+            self.toggleOptions()
+        }
         
 		let scoreLabel = set.childNode(withName: "//Score Label")! as! SKLabelNode
 		let levelLabel = set.childNode(withName: "//Level Label")! as! SKLabelNode
@@ -82,6 +96,26 @@ class GameScene: SKScene {
 		
 		let resolutionState = stateMachine!.state(forClass: GameResolutionState.self)
 		resolutionState?.onLinesCompleted.on(scoreManager!.pushLines)
+        
+        optionsContainer = set.childNode(withName: "//Options UI Container")
+        optionsContainer!.isHidden = true
+        
+        sfxToggle = optionsContainer!.childNode(withName: "SFX Toggle")! as? ToggleButtonNode
+        sfxToggle!.checked = SettingsManager.sfxEnabled
+        sfxToggle!.onClicked.on {
+            SettingsManager.sfxEnabled = self.sfxToggle!.checked
+        }
+        
+        musicToggle = optionsContainer!.childNode(withName: "Music Toggle")! as? ToggleButtonNode
+        musicToggle!.checked = SettingsManager.musicEnabled
+        musicToggle!.onClicked.on {
+            SettingsManager.musicEnabled = self.musicToggle!.checked
+        }
+        
+        let playButton = optionsContainer!.childNode(withName: "Play Button")! as! ButtonNode
+        playButton.onClicked.on {
+            self.toggleOptions()
+        }
 		
 		isUserInteractionEnabled = true
 	}
@@ -174,7 +208,7 @@ class GameScene: SKScene {
 		
 		gameOverContainer!.isHidden = false
         
-        pauseButton!.isHidden = true
+        pauseToggle!.isHidden = true
 	}
 	
 	func replay() -> Void {
@@ -184,15 +218,29 @@ class GameScene: SKScene {
 		
 		stateMachine!.enter(GameIdleState.self)
         
-        pauseButton!.isHidden = false
+        pauseToggle!.isHidden = false
 	}
 	
     func togglePause(fromController: Bool = false) -> Void {
-        if fromController {
-            pauseButton!.showsPause = !pauseButton!.showsPause
+        if !uiContainer!.isHidden {
+            if fromController {
+                pauseToggle!.checked = !pauseToggle!.checked
+            }
+            pauseContainer!.isHidden = !pauseContainer!.isHidden
+            isPaused = !isPaused
         }
-        isPaused = !isPaused
-        pauseContainer!.isHidden = !pauseContainer!.isHidden
+    }
+    
+    func toggleOptions() -> Void {
+        uiContainer!.isHidden = !uiContainer!.isHidden
+        optionsContainer!.isHidden = !optionsContainer!.isHidden
+        if pauseContainer!.isHidden {
+            isPaused = !isPaused
+        }
+        else {
+            pauseContainer!.isHidden = true
+            isPaused = true
+        }
     }
     
 	override func update(_ currentTime: TimeInterval) {
@@ -207,7 +255,7 @@ class GameScene: SKScene {
             }
             previousViewSize = viewSize
         }
-        buttonManager?.updateButtons(invalidateTrackingAreas: invalidateTrackingAreas)
+        ButtonManager.updateButtons(invalidateTrackingAreas: invalidateTrackingAreas)
         
         if isPaused {
             deltaTime = 0
