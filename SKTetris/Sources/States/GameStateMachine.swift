@@ -15,6 +15,7 @@ class GameStateMachine: GKStateMachine {
 		self.scene = scene
 		
 		let states = [
+            GameMainTitleState(),
 			GameFallingPieceState(),
 			GameIdleState(),
 			GameOverState(),

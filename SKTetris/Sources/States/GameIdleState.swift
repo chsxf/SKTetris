@@ -16,7 +16,7 @@ class GameIdleState: GKState {
 	override func didEnter(from previousState: GKState?) {
 		let gameStateMachine = stateMachine! as! GameStateMachine
 		
-		if previousState == nil || previousState is GameOverState {
+		if previousState is GameMainTitleState || previousState is GameOverState {
 			gameStateMachine.scene.spawnNextPiece()
 		}
 		

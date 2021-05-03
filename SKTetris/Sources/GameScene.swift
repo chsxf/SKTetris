@@ -5,6 +5,7 @@
 //  Created by Christophe SAUVEUR on 04/03/2021.
 //
 
+import AppKit
 import SpriteKit
 import GameplayKit
 
@@ -26,6 +27,8 @@ class GameScene: SKScene {
     private var pauseContainer: SKNode?
     private var uiContainer: SKNode?
     private var optionsContainer: SKNode?
+    private var mainTitleContainer: SKNode?
+    private var mainTitleButtonContainer: SKNode?
     
     private var pauseToggle: ToggleButtonNode?
     private var sfxToggle: ToggleButtonNode?
@@ -122,6 +125,21 @@ class GameScene: SKScene {
             self.toggleOptions()
         }
 		
+        mainTitleContainer = set.childNode(withName: "//Main Title Container")
+        mainTitleButtonContainer = mainTitleContainer!.childNode(withName: "Button Container")
+        let mainMenuPlayButton = mainTitleButtonContainer!.childNode(withName: "Play Button")! as! ButtonNode
+        mainMenuPlayButton.onClicked.on {
+            self.hideMainTitle()
+            self.stateMachine?.enter(GameIdleState.self)
+        }
+        let creditsButton = mainTitleButtonContainer!.childNode(withName: "Credits Button")! as! ButtonNode
+        creditsButton.onClicked.on {
+            let url = URL(string: "https://github.com/chsxf/SKTetris#licence")
+            if url != nil {
+                NSWorkspace.shared.open(url!)
+            }
+        }
+        
 		isUserInteractionEnabled = true
 	}
 	
@@ -195,7 +213,21 @@ class GameScene: SKScene {
 		geometry.skNode.removeFromParent()
 	}
 	
-	func gameOver() -> Void {
+    func showMainTitle() -> Void {
+        mainTitleContainer?.isHidden = false
+        uiContainer?.isHidden = true
+        mainTitleButtonContainer?.isHidden = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.mainTitleButtonContainer?.isHidden = false
+        }
+    }
+    
+    func hideMainTitle() -> Void {
+        mainTitleContainer?.isHidden = true
+        uiContainer?.isHidden = false
+    }
+    
+    func gameOver() -> Void {
         if SettingsManager.sfxEnabled {
             SoundManager.stop(.backgroundMusic01)
             SoundManager.play(.gameOver)

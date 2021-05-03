@@ -24,7 +24,7 @@ class GameView: SKView {
 		showsDrawCount = true
 		showsNodeCount = true
 		
-		gameScene.stateMachine!.enter(GameIdleState.self)
+		gameScene.stateMachine!.enter(GameMainTitleState.self)
         
         SoundManager.play(.backgroundMusic01)
 	}
