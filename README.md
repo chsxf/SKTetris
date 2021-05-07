@@ -14,6 +14,8 @@
 
 # About This Project
 
+![App Icon](https://user-images.githubusercontent.com/3322862/117534104-50f24a80-aff0-11eb-836b-2a3fe03d6779.png)
+
 SKTetris is an educational project for developers learning how to use Apple's SpriteKit 2D framework.
 
 This is a partial recreation of the [Tetris](https://en.wikipedia.org/wiki/Tetris) game.
