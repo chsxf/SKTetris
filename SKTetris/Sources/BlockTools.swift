@@ -17,11 +17,10 @@ class BlockTools {
 		get {
 			if (_mainAtlas == nil) {
 				_mainAtlas = SKTextureAtlas(named: "Main Atlas")
-				
-				for name in _mainAtlas!.textureNames {
-					_mainAtlas!.textureNamed(name).filteringMode = .nearest
-				}
 			}
+            for name in _mainAtlas!.textureNames {
+                _mainAtlas!.textureNamed(name).filteringMode = .nearest
+            }
 			return _mainAtlas!
 		}
 	}

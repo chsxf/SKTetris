@@ -28,11 +28,8 @@ class GameScene: SKScene {
     private var uiContainer: SKNode?
     private var optionsContainer: SKNode?
     private var mainTitleContainer: SKNode?
-    private var mainTitleButtonContainer: SKNode?
     
     private var pauseToggle: ToggleButtonNode?
-    private var sfxToggle: ToggleButtonNode?
-    private var musicToggle: ToggleButtonNode?
     
     private var currentTime: TimeInterval = 0
 	private var deltaTime: TimeInterval = 0
@@ -106,39 +103,7 @@ class GameScene: SKScene {
 		resolutionState?.onLinesCompleted.on(scoreManager!.pushLines)
         
         optionsContainer = set.childNode(withName: "//Options UI Container")
-        optionsContainer!.isHidden = true
-        
-        sfxToggle = optionsContainer!.childNode(withName: "SFX Toggle")! as? ToggleButtonNode
-        sfxToggle!.checked = SettingsManager.sfxEnabled
-        sfxToggle!.onClicked.on {
-            SettingsManager.sfxEnabled = self.sfxToggle!.checked
-        }
-        
-        musicToggle = optionsContainer!.childNode(withName: "Music Toggle")! as? ToggleButtonNode
-        musicToggle!.checked = SettingsManager.musicEnabled
-        musicToggle!.onClicked.on {
-            SettingsManager.musicEnabled = self.musicToggle!.checked
-        }
-        
-        let playButton = optionsContainer!.childNode(withName: "Play Button")! as! ButtonNode
-        playButton.onClicked.on {
-            self.toggleOptions()
-        }
-		
-        mainTitleContainer = set.childNode(withName: "//Main Title Container")
-        mainTitleButtonContainer = mainTitleContainer!.childNode(withName: "Button Container")
-        let mainMenuPlayButton = mainTitleButtonContainer!.childNode(withName: "Play Button")! as! ButtonNode
-        mainMenuPlayButton.onClicked.on {
-            self.hideMainTitle()
-            self.stateMachine?.enter(GameIdleState.self)
-        }
-        let creditsButton = mainTitleButtonContainer!.childNode(withName: "Credits Button")! as! ButtonNode
-        creditsButton.onClicked.on {
-            let url = URL(string: "https://github.com/chsxf/SKTetris#licence")
-            if url != nil {
-                NSWorkspace.shared.open(url!)
-            }
-        }
+		mainTitleContainer = set.childNode(withName: "//Main Title Container")
         
 		isUserInteractionEnabled = true
 	}
@@ -216,10 +181,6 @@ class GameScene: SKScene {
     func showMainTitle() -> Void {
         mainTitleContainer?.isHidden = false
         uiContainer?.isHidden = true
-        mainTitleButtonContainer?.isHidden = true
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.mainTitleButtonContainer?.isHidden = false
-        }
     }
     
     func hideMainTitle() -> Void {

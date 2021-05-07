@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D9044C452645130F00DB5A13 /* MainTitleScreenNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9044C442645130F00DB5A13 /* MainTitleScreenNode.swift */; };
+		D9044C47264521DC00DB5A13 /* OptionsScreenNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9044C46264521DC00DB5A13 /* OptionsScreenNode.swift */; };
 		D9061F6A25FF2DC000540CD8 /* GeometryComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9061F6925FF2DC000540CD8 /* GeometryComponent.swift */; };
 		D912E2B72605CEF400A6AD88 /* GridBounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = D912E2B62605CEF400A6AD88 /* GridBounds.swift */; };
 		D921651925F1F935007005E7 /* BlockTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = D921651825F1F935007005E7 /* BlockTools.swift */; };
@@ -56,6 +58,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D9044C442645130F00DB5A13 /* MainTitleScreenNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTitleScreenNode.swift; sourceTree = "<group>"; };
+		D9044C46264521DC00DB5A13 /* OptionsScreenNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsScreenNode.swift; sourceTree = "<group>"; };
 		D9061F6925FF2DC000540CD8 /* GeometryComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryComponent.swift; sourceTree = "<group>"; };
 		D912E2B62605CEF400A6AD88 /* GridBounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridBounds.swift; sourceTree = "<group>"; };
 		D921651825F1F935007005E7 /* BlockTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockTools.swift; sourceTree = "<group>"; };
@@ -164,6 +168,8 @@
 				D94E81E025FDFCD700F54169 /* GridCoordinates.swift */,
 				D94B61A126199CFC0044BD34 /* GridRow.swift */,
 				D9AB888E25F3F62300896FDF /* Keycode.swift */,
+				D9044C442645130F00DB5A13 /* MainTitleScreenNode.swift */,
+				D9044C46264521DC00DB5A13 /* OptionsScreenNode.swift */,
 				D9CF6DFE25FCCB5F0068F712 /* PieceModel.swift */,
 				D9A5FFD425F390EF00582E21 /* PieceType.swift */,
 				D95AFB652621EEA100A82677 /* ScoreManager.swift */,
@@ -269,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D912E2B72605CEF400A6AD88 /* GridBounds.swift in Sources */,
+				D9044C452645130F00DB5A13 /* MainTitleScreenNode.swift in Sources */,
 				D9AB88A125F4364D00896FDF /* PieceComponent.swift in Sources */,
 				D945A22D25F18DC600FAE62D /* GameScene.swift in Sources */,
 				D94B61A226199CFC0044BD34 /* GridRow.swift in Sources */,
@@ -276,6 +283,7 @@
 				D9BB3B37263D8D5800FA2707 /* SoundManager.swift in Sources */,
 				D9061F6A25FF2DC000540CD8 /* GeometryComponent.swift in Sources */,
 				D94B6198261973EA0044BD34 /* GridBlockContainerComponent.swift in Sources */,
+				D9044C47264521DC00DB5A13 /* OptionsScreenNode.swift in Sources */,
 				D9474F2F25F4C6CF0088CAD6 /* GameResolutionState.swift in Sources */,
 				D9F344EB261898DF0096183C /* EventEmitter.swift in Sources */,
 				D94FFE4A263757BD00EA6A09 /* SKNodeExtension.swift in Sources */,
