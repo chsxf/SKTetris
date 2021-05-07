@@ -234,14 +234,16 @@ class GameScene: SKScene {
     }
     
     func toggleOptions() -> Void {
-        uiContainer!.isHidden = !uiContainer!.isHidden
-        optionsContainer!.isHidden = !optionsContainer!.isHidden
-        if pauseContainer!.isHidden {
-            isPaused = !isPaused
-        }
-        else {
-            pauseContainer!.isHidden = true
-            isPaused = true
+        if mainTitleContainer!.isHidden {
+            uiContainer!.isHidden = !uiContainer!.isHidden
+            optionsContainer!.isHidden = !optionsContainer!.isHidden
+            if pauseContainer!.isHidden {
+                isPaused = !isPaused
+            }
+            else {
+                pauseContainer!.isHidden = true
+                isPaused = true
+            }
         }
     }
     
