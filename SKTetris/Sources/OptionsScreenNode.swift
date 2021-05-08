@@ -29,6 +29,15 @@ class OptionsScreenNode: SKNode {
             (self.scene as! GameScene).toggleOptions()
         }
         
+        let quitButton = childNode(withName: "Quit Button")! as? ButtonNode
+        #if os(macOS)
+        quitButton?.onClicked.on {
+            NSApp.terminate(nil)
+        }
+        #else
+        quitButton?.isHidden = true
+        #endif
+        
         isHidden = true
     }
     

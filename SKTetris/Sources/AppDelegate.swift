@@ -14,7 +14,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		return true
 	}
 	
-	static func setup() -> Void {
+	static private func setup() -> Void {
         SettingsManager.initialize()
         SoundManager.preloadSounds()
         
@@ -27,6 +27,20 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		window.toggleFullScreen(nil)
 	}
 	
+    static private func setupMainMenu() -> Void {
+        let applicationName = ProcessInfo.processInfo.processName
+        let mainMenu = NSMenu()
+        
+        let menuItemOne = NSMenuItem()
+        menuItemOne.submenu = NSMenu(title: "menuItemOne")
+        menuItemOne.submenu?.items = [
+            NSMenuItem(title: "Quit \(applicationName)", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q")
+        ]
+        
+        mainMenu.items = [menuItemOne]
+        NSApp.mainMenu = mainMenu
+    }
+    
 	static func main() -> Void {
 		NSApp = NSApplication.shared
 		
@@ -34,6 +48,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		NSApp.delegate = delegate
 		
 		setup()
+        setupMainMenu()
 		
 		NSApp.run()
 	}
