@@ -13,16 +13,18 @@ class ButtonManager {
     
     static var scene: SKScene?
     
+    private static var previousViewSize: CGSize?
+    
     private static var buttons = [ButtonNode]()
     private static var trackingAreas: [ButtonNode:NSTrackingArea] = [:]
     
-    static func addButton(_ button: ButtonNode) -> Void {
+    static func add(button: ButtonNode) -> Void {
         if !buttons.contains(button) {
             buttons.append(button)
         }
     }
     
-    static func removeButton(_ button: ButtonNode) -> Void {
+    static func remove(button: ButtonNode) -> Void {
         if buttons.contains(button) {
             if let trackingArea = trackingAreas[button] {
                 scene?.view?.removeTrackingArea(trackingArea)
@@ -34,10 +36,17 @@ class ButtonManager {
         }
     }
     
-    static func updateButtons(invalidateTrackingAreas: Bool) -> Void {
-        if scene?.view == nil {
+    static func update() -> Void {
+        guard scene?.view != nil else {
             return
         }
+        
+        var invalidateTrackingAreas = false
+        let viewSize = scene?.view!.frame.size
+        if previousViewSize != nil && viewSize != previousViewSize! {
+            invalidateTrackingAreas = true
+        }
+        previousViewSize = viewSize
         
         let gameView = scene!.view! as! GameView
         

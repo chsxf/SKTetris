@@ -36,7 +36,7 @@ class ButtonNode: SKSpriteNode {
 	
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        ButtonManager.addButton(self)
+        ButtonManager.add(button: self)
     }
     
     func reset() {
