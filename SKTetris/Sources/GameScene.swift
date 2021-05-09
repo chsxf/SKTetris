@@ -35,7 +35,14 @@ class GameScene: SKScene {
 	private var scoreManager: ScoreManager?
     
     public override var isPaused: Bool {
-        didSet { ButtonManager.update() }
+        didSet {
+            ButtonManager.update()
+            FocusManager.update()
+        }
+    }
+    
+    public var isInMenu: Bool {
+        get { uiContainer!.isHidden }
     }
     
     override init(size: CGSize) {
@@ -225,6 +232,7 @@ class GameScene: SKScene {
     
 	override func update(_ currentTime: TimeInterval) {
         ButtonManager.update()
+        FocusManager.update()
         
         if isPaused {
             deltaTime = 0

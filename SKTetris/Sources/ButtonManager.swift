@@ -9,7 +9,7 @@ import SpriteKit
 
 typealias TrackingAreaData = (trackingArea: NSTrackingArea?, inUse: Bool)
 
-class ButtonManager {
+final class ButtonManager {
     
     static var scene: SKScene?
     

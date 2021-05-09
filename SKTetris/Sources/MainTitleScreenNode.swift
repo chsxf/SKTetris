@@ -7,8 +7,8 @@
 
 import SpriteKit
 
-class MainTitleScreenNode: SKNode {
-
+class MainTitleScreenNode: SKNode, FocusHandler {
+    
     private var buttonsContainer: SKNode?
     
     private var playButton: ButtonNode?
@@ -16,8 +16,12 @@ class MainTitleScreenNode: SKNode {
     
     private var firstDisplay = true
     
+    var firstFocusTarget: ButtonNode { playButton! }
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        
+        FocusManager.register(handler: self)
         
         buttonsContainer = childNode(withName: "Button Container")
         
@@ -58,6 +62,17 @@ class MainTitleScreenNode: SKNode {
         let url = URL(string: "https://github.com/chsxf/SKTetris#licence")
         if url != nil {
             NSWorkspace.shared.open(url!)
+        }
+    }
+    
+    func nextFocusTarget(forDirection direction: FocusDirection, fromFocusTarget: ButtonNode) -> ButtonNode? {
+        switch (direction, fromFocusTarget) {
+        case (.down, playButton):
+            return creditsButton
+        case (.up, creditsButton):
+            return playButton
+        default:
+            return nil
         }
     }
     

@@ -47,4 +47,9 @@ class ToggleButtonNode: ButtonNode {
         
         super.mouseUp(with: event)
     }
+    
+    override func doTrigger() {
+        checked = !checked
+        super.doTrigger()
+    }
 }

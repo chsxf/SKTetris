@@ -7,29 +7,38 @@
 
 import SpriteKit
 
-class OptionsScreenNode: SKNode {
+class OptionsScreenNode: SKNode, FocusHandler {
 
+    private var sfxToggle: ToggleButtonNode?
+    private var musicToggle: ToggleButtonNode?
+    private var playButton: ButtonNode?
+    private var quitButton: ButtonNode?
+    
+    var firstFocusTarget: ButtonNode { playButton! }
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        let sfxToggle = childNode(withName: "SFX Toggle")! as? ToggleButtonNode
-        sfxToggle!.checked = SettingsManager.sfxEnabled
-        sfxToggle!.onClicked.on {
-            SettingsManager.sfxEnabled = sfxToggle!.checked
+        FocusManager.register(handler: self)
+        
+        sfxToggle = childNode(withName: "SFX Toggle") as? ToggleButtonNode
+        sfxToggle?.checked = SettingsManager.sfxEnabled
+        sfxToggle?.onClicked.on {
+            SettingsManager.sfxEnabled = self.sfxToggle!.checked
         }
         
-        let musicToggle = childNode(withName: "Music Toggle")! as? ToggleButtonNode
-        musicToggle!.checked = SettingsManager.musicEnabled
-        musicToggle!.onClicked.on {
-            SettingsManager.musicEnabled = musicToggle!.checked
+        musicToggle = childNode(withName: "Music Toggle") as? ToggleButtonNode
+        musicToggle?.checked = SettingsManager.musicEnabled
+        musicToggle?.onClicked.on {
+            SettingsManager.musicEnabled = self.musicToggle!.checked
         }
         
-        let playButton = childNode(withName: "Play Button")! as? ButtonNode
+        playButton = childNode(withName: "Play Button") as? ButtonNode
         playButton?.onClicked.on {
             (self.scene as! GameScene).toggleOptions()
         }
         
-        let quitButton = childNode(withName: "Quit Button")! as? ButtonNode
+        quitButton = childNode(withName: "Quit Button") as? ButtonNode
         #if os(macOS)
         quitButton?.onClicked.on {
             NSApp.terminate(nil)
@@ -39,6 +48,43 @@ class OptionsScreenNode: SKNode {
         #endif
         
         isHidden = true
+    }
+    
+    func nextFocusTarget(forDirection direction: FocusDirection, fromFocusTarget: ButtonNode) -> ButtonNode? {
+        if direction == .down {
+            switch fromFocusTarget {
+            case sfxToggle:
+                return musicToggle
+            case musicToggle:
+                #if os(macOS)
+                return quitButton
+                #else
+                return playButton
+                #endif
+            case quitButton:
+                return playButton
+            default:
+                return nil
+            }
+        }
+        else if direction == .up {
+            switch fromFocusTarget {
+            case musicToggle:
+                return sfxToggle
+            case quitButton:
+                return musicToggle
+            case playButton:
+                #if os(macOS)
+                return quitButton
+                #else
+                return musicToggle
+                #endif
+            default:
+                return nil
+            }
+        }
+        
+        return nil
     }
     
 }

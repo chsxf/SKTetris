@@ -7,17 +7,27 @@
 
 import SpriteKit
 
-class GameOverContainerNode: SKNode {
-
+class GameOverContainerNode: SKNode, FocusHandler {
+    
+    private var replayButton: ButtonNode?
+    
+    var firstFocusTarget: ButtonNode { replayButton! }
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        let replayButton = childNode(withName: "Replay Button")! as! ButtonNode
-        replayButton.onClicked.on {
+        FocusManager.register(handler: self)
+        
+        replayButton = childNode(withName: "Replay Button") as? ButtonNode
+        replayButton?.onClicked.on {
             (self.scene as! GameScene).replay()
         }
         
         isHidden = true
+    }
+    
+    func nextFocusTarget(forDirection direction: FocusDirection, fromFocusTarget: ButtonNode) -> ButtonNode? {
+        return nil
     }
     
 }

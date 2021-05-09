@@ -12,6 +12,8 @@ import SpriteKit
 class GameView: SKView {
 
 	private let gameScene: GameScene
+    
+    private var trackingArea: NSTrackingArea?
 	
 	override init(frame frameRect: NSRect) {
 		gameScene = GameScene(size: frameRect.size)
@@ -27,72 +29,119 @@ class GameView: SKView {
 		gameScene.stateMachine!.enter(GameMainTitleState.self)
         
         SoundManager.play(.backgroundMusic01)
+        FocusManager.onInputModeChanged.on(onFocusManagerInputModeChanged)
 	}
 	
 	required init?(coder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
 	}
 	
+    private func onFocusManagerInputModeChanged(inputMode: InputMode) {
+        if inputMode != .pointer {
+            trackingArea = NSTrackingArea(rect: frame, options: [.activeWhenFirstResponder, .mouseMoved], owner: self, userInfo: nil)
+            addTrackingArea(trackingArea!)
+        }
+        else if trackingArea != nil {
+            removeTrackingArea(trackingArea!)
+        }
+    }
+    
+    override func mouseMoved(with event: NSEvent) {
+        FocusManager.inputMode = .pointer
+    }
+    
 	override func keyDown(with event: NSEvent) {
-        if event.isARepeat {
+        if event.isARepeat || gameScene.isInMenu {
             return;
         }
         
         let pieceComponent = gameScene.currentPiece?.component(ofType: PieceComponent.self)
         
-		switch Keycode(rawValue: event.keyCode) {
-		case .f:
-			pieceComponent?.turnLeft()
-			break
-			
-		case .g:
-			pieceComponent?.turnRight()
-			break
-			
-		case .leftArrow:
+        let keycode = Keycode(rawValue: event.keyCode)
+        switch keycode {
+        case .f:
+            pieceComponent?.turnLeft()
+            break
+            
+        case .g:
+            pieceComponent?.turnRight()
+            break
+            
+        case .leftArrow:
             pieceComponent?.startMovingLeft()
-			break
-		
-		case .rightArrow:
+            break
+        
+        case .rightArrow:
             pieceComponent?.startMovingRight()
-			break
-			
-		case .downArrow:
+            break
+            
+        case .downArrow:
             pieceComponent?.speedUp()
-			break
-			
-		default:
-			break
-		}
+            break
+            
+        default:
+            break
+        }
 	}
 	
 	override func keyUp(with event: NSEvent) {
-        let pieceComponent = gameScene.currentPiece?.component(ofType: PieceComponent.self)
+        let keycode = Keycode(rawValue: event.keyCode)!
         
-        switch Keycode(rawValue: event.keyCode) {
-        case .leftArrow:
-            pieceComponent?.stopMovingLeft()
-            break
+        if gameScene.isInMenu {
+            switch keycode {
+            case .leftArrow, .rightArrow, .downArrow, .upArrow:
+                if FocusManager.inputMode != .keyboard {
+                    FocusManager.inputMode = .keyboard
+                }
+                else {
+                    do {
+                        try FocusManager.moveTowards(direction: FocusDirection.from(key: keycode))
+                    }
+                    catch {
+                        print("\(keycode) is not a valid direction key")
+                    }
+                }
+                break
+            case .space:
+                FocusManager.doTrigger()
+                break
+            default:
+                break
+            }
+        }
+        else {
+            let pieceComponent = gameScene.currentPiece?.component(ofType: PieceComponent.self)
             
-        case .rightArrow:
-            pieceComponent?.stopMovingRight()
-			break
+            switch keycode {
+            case .leftArrow:
+                pieceComponent?.stopMovingLeft()
+                break
+                
+            case .rightArrow:
+                pieceComponent?.stopMovingRight()
+                break
+            
+            case .downArrow:
+                pieceComponent?.resetSpeed()
+                break
+
+            default:
+                break
+            }
+        }
         
-        case .downArrow:
-            pieceComponent?.resetSpeed()
-            break
-            
+        switch keycode {
         case .p:
             gameScene.togglePause(fromController: true)
             break
-		
+        
         case .escape:
             gameScene.toggleOptions()
             break
             
-		default:
-			break
-		}
+        default:
+            break
+        }
 	}
     
     func addTrackingArea(fromNode node: SKNode) -> NSTrackingArea {

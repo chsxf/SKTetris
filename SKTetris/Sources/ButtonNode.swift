@@ -34,14 +34,24 @@ class ButtonNode: SKSpriteNode {
 		}
 	}
 	
+    var focused: Bool = false {
+        didSet { focusNode?.isHidden = !focused }
+    }
+    
+    private var focusNode: SKNode?
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         ButtonManager.add(button: self)
+        
+        focusNode = childNode(withName: "Focus Node")
+        reset()
     }
     
     func reset() {
         hovered = false
         down = false
+        focused = false
     }
     
     override func mouseDown(with event: NSEvent) {
@@ -63,6 +73,10 @@ class ButtonNode: SKSpriteNode {
 		hovered = false
 	}
 	
+    func doTrigger() {
+        onClicked.notify()
+    }
+    
 	private func ensureInitColors() {
 		if originalColor == nil {
 			originalColor = color
