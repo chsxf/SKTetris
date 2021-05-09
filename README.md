@@ -1,6 +1,7 @@
-- [About This Project](#about-this-project)
-- [Supported Platforms](#supported-platforms)
-- [Controls](#controls)
+- [❓ About This Project](#-about-this-project)
+  - [Conventions](#conventions)
+- [🖥 Supported Platforms](#-supported-platforms)
+- [🎮 Controls](#-controls)
   - [Keyboard](#keyboard)
     - [During Gameplay](#during-gameplay)
     - [In the Menus](#in-the-menus)
@@ -8,11 +9,11 @@
     - [During Gameplay](#during-gameplay-1)
     - [In the Menus](#in-the-menus-1)
   - [Siri Remote](#siri-remote)
-- [Licence](#licence)
+- [⚖️ Licence](#️-licence)
   - [Sound Effects](#sound-effects)
   - [Background Music](#background-music)
 
-# About This Project
+# ❓ About This Project
 
 ![App Icon](https://user-images.githubusercontent.com/3322862/117534104-50f24a80-aff0-11eb-836b-2a3fe03d6779.png)
 
@@ -20,7 +21,11 @@ SKTetris is an educational project for developers learning how to use Apple's Sp
 
 This is a partial recreation of the [Tetris](https://en.wikipedia.org/wiki/Tetris) game.
 
-# Supported Platforms
+## Conventions
+
+This project uses [gitmoji](https://gitmoji.dev) for its commit messages.
+
+# 🖥 Supported Platforms
 
 SpriteKit being a proprietary framework from Apple, the game will only be avaiable on the following Apple platforms:
 
@@ -28,7 +33,7 @@ SpriteKit being a proprietary framework from Apple, the game will only be avaiab
 - iOS / iPadOS (coming soon)
 - tvOS (coming soon)
 
-# Controls
+# 🎮 Controls
 
 ## Keyboard
 
@@ -62,7 +67,7 @@ TBD
 
 TBD
 
-# Licence
+# ⚖️ Licence
 
 To the exception of those mentioned below, all source code and assets are distributed under the [MIT Licence](LICENSE).
 
