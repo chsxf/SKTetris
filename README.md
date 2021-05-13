@@ -39,7 +39,7 @@ SpriteKit being a proprietary framework from Apple, the game will only be avaiab
 
 ### During Gameplay
 
-| Command     | Key                                         |
+| Key         | Command                                     |
 | ----------- | ------------------------------------------- |
 | F           | Rotates the current piece counter clockwise |
 | G           | Rotates the current piece clockwise         |
@@ -51,7 +51,10 @@ SpriteKit being a proprietary framework from Apple, the game will only be avaiab
 
 ### In the Menus
 
-TBD
+| Key        | Command                                                  |
+| ---------- | -------------------------------------------------------- |
+| Arrow keys | Moves to the next control in the corresponding direction |
+| Space      | Triggers the selected control                            |
 
 ## Game Controller
 
@@ -70,6 +73,10 @@ TBD
 # ⚖️ Licence
 
 To the exception of those mentioned below, all source code and assets are distributed under the [MIT Licence](LICENSE).
+
+## Londrina Solid Font
+
+Designed by [Marcelo Magalhães](https://github.com/marcelommp/Londrina-Typeface/) and distributed under the [Open Font License](https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL) on [Google Fonts](https://fonts.google.com/specimen/Londrina+Solid).
 
 ## Sound Effects
 
