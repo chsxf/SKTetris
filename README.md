@@ -1,18 +1,3 @@
-- [❓ About This Project](#-about-this-project)
-  - [Conventions](#conventions)
-- [🖥 Supported Platforms](#-supported-platforms)
-- [🎮 Controls](#-controls)
-  - [Keyboard](#keyboard)
-    - [During Gameplay](#during-gameplay)
-    - [In the Menus](#in-the-menus)
-  - [Game Controller](#game-controller)
-    - [During Gameplay](#during-gameplay-1)
-    - [In the Menus](#in-the-menus-1)
-  - [Siri Remote](#siri-remote)
-- [⚖️ Licence](#️-licence)
-  - [Sound Effects](#sound-effects)
-  - [Background Music](#background-music)
-
 # ❓ About This Project
 
 ![App Icon](https://user-images.githubusercontent.com/3322862/117534104-50f24a80-aff0-11eb-836b-2a3fe03d6779.png)
