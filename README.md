@@ -14,7 +14,7 @@ This project uses [gitmoji](https://gitmoji.dev) for its commit messages.
 
 SpriteKit being a proprietary framework from Apple, the game will only be avaiable on the following Apple platforms:
 
-- macOS (In progress)
+- macOS 10.15+ (In progress)
 - iOS / iPadOS (coming soon)
 - tvOS (coming soon)
 
@@ -43,13 +43,25 @@ SpriteKit being a proprietary framework from Apple, the game will only be avaiab
 
 ## Game Controller
 
+The game uses the Game Controller framework, so only [natively supported controllers](https://support.apple.com/en-us/HT210414) will work.
+
 ### During Gameplay
 
-TBD
+| Control                                                                                                                | Command                                     |
+| ---------------------------------------------------------------------------------------------------------------------- | ------------------------------------------- |
+| X / ![ps-square](https://user-images.githubusercontent.com/3322862/118397226-50daf600-b653-11eb-8d4c-9c8d9834cedc.png) | Rotates the current piece counter clockwise |
+| A / ![ps-x](https://user-images.githubusercontent.com/3322862/118397164-fa6db780-b652-11eb-967c-9e6fd7a51703.png)      | Rotates the current piece clockwise         |
+| D-pad Down                                                                                                             | Speeds up the descent of the current piece  |
+| D-pad Left                                                                                                             | Moves the current piece to the left         |
+| D-pad Right                                                                                                            | Moves the current piece to the right        |
+| Menu / Options                                                                                                         | Toggles options + pause                     |
 
 ### In the Menus
 
-TBD
+| Control                                                                                                           | Command                                                  |
+| ----------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------- |
+| D-pad                                                                                                             | Moves to the next control in the corresponding direction |
+| A / ![ps-x](https://user-images.githubusercontent.com/3322862/118397164-fa6db780-b652-11eb-967c-9e6fd7a51703.png) | Triggers the selected control                            |
 
 ## Siri Remote
 

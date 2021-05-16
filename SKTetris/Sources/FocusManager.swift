@@ -10,6 +10,7 @@ import Foundation
 enum InputMode {
     case keyboard
     case pointer
+    case gameController
 }
 
 enum FocusDirection {

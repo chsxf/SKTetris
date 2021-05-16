@@ -10,6 +10,7 @@ import SpriteKit
 class GameUIContainerNode: SKNode {
 
     private var pauseToggle: ToggleButtonNode?
+    private var optionsButton: ButtonNode?
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -20,10 +21,19 @@ class GameUIContainerNode: SKNode {
         }
         pauseToggle?.checked = false
         
-        let optionsButton = childNode(withName: "Options Button")! as! ButtonNode
-        optionsButton.onClicked.on {
+        optionsButton = childNode(withName: "Options Button") as? ButtonNode
+        optionsButton?.onClicked.on {
             (self.scene as! GameScene).toggleOptions()
         }
+        
+        FocusManager.onInputModeChanged.on(onFocusManagerInputModeChanged(_:))
+        onFocusManagerInputModeChanged(FocusManager.inputMode)
+    }
+    
+    private func onFocusManagerInputModeChanged(_ inputMode: InputMode) {
+        let hide = (inputMode == .gameController)
+        pauseToggle?.isHidden = hide
+        optionsButton?.isHidden = hide
     }
     
     func switchPauseToggle() {
