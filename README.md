@@ -14,7 +14,7 @@ This project uses [gitmoji](https://gitmoji.dev) for its commit messages.
 
 SpriteKit being a proprietary framework from Apple, the game will only be avaiable on the following Apple platforms:
 
-- macOS 10.15+ (In progress)
+- macOS 10.15+
 - iOS / iPadOS (coming soon)
 - tvOS (coming soon)
 
