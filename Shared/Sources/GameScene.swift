@@ -5,7 +5,6 @@
 //  Created by Christophe SAUVEUR on 04/03/2021.
 //
 
-import AppKit
 import SpriteKit
 import GameplayKit
 
@@ -60,8 +59,6 @@ class GameScene: SKScene {
 		addChild(cameraNode)
 		camera = cameraNode
 		
-		backgroundColor = NSColor.gray
-        
 		let set = SKReferenceNode(fileNamed: "Background")!
 		addChild(set)
 		

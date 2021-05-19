@@ -5,7 +5,6 @@
 //  Created by Christophe on 18/04/2021.
 //
 
-import Cocoa
 import SpriteKit
 
 class ToggleButtonNode: ButtonNode {
@@ -40,6 +39,12 @@ class ToggleButtonNode: ButtonNode {
         }
     }
     
+    override func doTrigger() {
+        checked = !checked
+        super.doTrigger()
+    }
+    
+    #if os(macOS)
     override func mouseUp(with event: NSEvent) {
         if hovered {
             checked = !checked
@@ -47,9 +52,6 @@ class ToggleButtonNode: ButtonNode {
         
         super.mouseUp(with: event)
     }
+    #endif
     
-    override func doTrigger() {
-        checked = !checked
-        super.doTrigger()
-    }
 }

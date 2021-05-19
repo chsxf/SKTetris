@@ -5,7 +5,7 @@
 //  Created by Christophe SAUVEUR on 01/05/2021.
 //
 
-import AppKit
+import Foundation
 
 class SettingsManager {
     

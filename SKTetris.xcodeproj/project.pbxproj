@@ -12,6 +12,39 @@
 		D9061F6A25FF2DC000540CD8 /* GeometryComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9061F6925FF2DC000540CD8 /* GeometryComponent.swift */; };
 		D912E2B72605CEF400A6AD88 /* GridBounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = D912E2B62605CEF400A6AD88 /* GridBounds.swift */; };
 		D921651925F1F935007005E7 /* BlockTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = D921651825F1F935007005E7 /* BlockTools.swift */; };
+		D9241B6C265A3CF2009B4FBD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9241B6B265A3CF2009B4FBD /* ViewController.swift */; };
+		D9241B6D265A3E41009B4FBD /* BlockTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = D921651825F1F935007005E7 /* BlockTools.swift */; };
+		D9241B6F265A3E41009B4FBD /* ButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FFD2DA261AEDD10054CEF5 /* ButtonNode.swift */; };
+		D9241B70265A3E41009B4FBD /* EventEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F344EA261898DF0096183C /* EventEmitter.swift */; };
+		D9241B71265A3E41009B4FBD /* FocusManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D988428C26483F1A0023E8B9 /* FocusManager.swift */; };
+		D9241B72265A3E41009B4FBD /* GameOverContainerNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9884288264815EC0023E8B9 /* GameOverContainerNode.swift */; };
+		D9241B73265A3E41009B4FBD /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D945A22C25F18DC600FAE62D /* GameScene.swift */; };
+		D9241B74265A3E41009B4FBD /* GameUIContainerNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D988428A264817A60023E8B9 /* GameUIContainerNode.swift */; };
+		D9241B75265A3E41009B4FBD /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D945A22725F18C4900FAE62D /* GameView.swift */; };
+		D9241B76265A3E41009B4FBD /* GridBounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = D912E2B62605CEF400A6AD88 /* GridBounds.swift */; };
+		D9241B77265A3E41009B4FBD /* GridCoordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94E81E025FDFCD700F54169 /* GridCoordinates.swift */; };
+		D9241B78265A3E41009B4FBD /* GridRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94B61A126199CFC0044BD34 /* GridRow.swift */; };
+		D9241B79265A3E41009B4FBD /* Keycode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AB888E25F3F62300896FDF /* Keycode.swift */; };
+		D9241B7A265A3E41009B4FBD /* MainTitleScreenNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9044C442645130F00DB5A13 /* MainTitleScreenNode.swift */; };
+		D9241B7B265A3E41009B4FBD /* OptionsScreenNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9044C46264521DC00DB5A13 /* OptionsScreenNode.swift */; };
+		D9241B7C265A3E41009B4FBD /* PieceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CF6DFE25FCCB5F0068F712 /* PieceModel.swift */; };
+		D9241B7D265A3E41009B4FBD /* PieceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A5FFD425F390EF00582E21 /* PieceType.swift */; };
+		D9241B7E265A3E41009B4FBD /* ScoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95AFB652621EEA100A82677 /* ScoreManager.swift */; };
+		D9241B7F265A3E41009B4FBD /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D983367E263D5B220064F53F /* SettingsManager.swift */; };
+		D9241B80265A3E41009B4FBD /* SKNodeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94FFE49263757BD00EA6A09 /* SKNodeExtension.swift */; };
+		D9241B81265A3E41009B4FBD /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BB3B36263D8D5800FA2707 /* SoundManager.swift */; };
+		D9241B82265A3E41009B4FBD /* ToggleButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93D7515263CB73600800E8E /* ToggleButtonNode.swift */; };
+		D9241B83265A3E4F009B4FBD /* BlockTransformComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AB889C25F4322200896FDF /* BlockTransformComponent.swift */; };
+		D9241B84265A3E4F009B4FBD /* GeometryComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9061F6925FF2DC000540CD8 /* GeometryComponent.swift */; };
+		D9241B85265A3E4F009B4FBD /* GridBlockContainerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94B6197261973EA0044BD34 /* GridBlockContainerComponent.swift */; };
+		D9241B86265A3E4F009B4FBD /* GridTransformComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9474F3725F4E0300088CAD6 /* GridTransformComponent.swift */; };
+		D9241B87265A3E4F009B4FBD /* PieceComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AB88A025F4364D00896FDF /* PieceComponent.swift */; };
+		D9241B88265A3E4F009B4FBD /* GameFallingPieceState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9474F2B25F4C6B60088CAD6 /* GameFallingPieceState.swift */; };
+		D9241B89265A3E4F009B4FBD /* GameIdleState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9474F2725F4C66B0088CAD6 /* GameIdleState.swift */; };
+		D9241B8A265A3E4F009B4FBD /* GameOverState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9474F3125F4C6E70088CAD6 /* GameOverState.swift */; };
+		D9241B8B265A3E4F009B4FBD /* GameResolutionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9474F2E25F4C6CF0088CAD6 /* GameResolutionState.swift */; };
+		D9241B8C265A3E4F009B4FBD /* GameStateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D985252D26085FF100370D85 /* GameStateMachine.swift */; };
+		D9241B8D265A3E4F009B4FBD /* GameMainTitleState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AD3B37264090A20019075F /* GameMainTitleState.swift */; };
 		D93D7516263CB73700800E8E /* ToggleButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93D7515263CB73600800E8E /* ToggleButtonNode.swift */; };
 		D945A21125F18B9500FAE62D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D945A21025F18B9500FAE62D /* AppDelegate.swift */; };
 		D945A21525F18B9700FAE62D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D945A21425F18B9700FAE62D /* Assets.xcassets */; };
@@ -28,17 +61,25 @@
 		D94FFE472637530800EA6A09 /* ButtonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94FFE462637530800EA6A09 /* ButtonManager.swift */; };
 		D94FFE4A263757BD00EA6A09 /* SKNodeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94FFE49263757BD00EA6A09 /* SKNodeExtension.swift */; };
 		D95AFB662621EEA100A82677 /* ScoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95AFB652621EEA100A82677 /* ScoreManager.swift */; };
+		D9646666265A4D1000F9FA9D /* UIColor~Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9646665265A4D1000F9FA9D /* UIColor~Helpers.swift */; };
+		D964666A265A99A000F9FA9D /* ButtonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9646669265A99A000F9FA9D /* ButtonManager.swift */; };
 		D983367F263D5B220064F53F /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D983367E263D5B220064F53F /* SettingsManager.swift */; };
 		D985252E26085FF100370D85 /* GameStateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D985252D26085FF100370D85 /* GameStateMachine.swift */; };
 		D9884289264815EC0023E8B9 /* GameOverContainerNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9884288264815EC0023E8B9 /* GameOverContainerNode.swift */; };
 		D988428B264817A60023E8B9 /* GameUIContainerNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D988428A264817A60023E8B9 /* GameUIContainerNode.swift */; };
 		D988428D26483F1A0023E8B9 /* FocusManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D988428C26483F1A0023E8B9 /* FocusManager.swift */; };
+		D99888582654E086002A22EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99888572654E086002A22EA /* AppDelegate.swift */; };
+		D99888642654E087002A22EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D99888622654E087002A22EA /* LaunchScreen.storyboard */; };
+		D998886B2654E2CF002A22EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D945A21425F18B9700FAE62D /* Assets.xcassets */; };
 		D9A5FFD525F390EF00582E21 /* PieceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A5FFD425F390EF00582E21 /* PieceType.swift */; };
 		D9A5FFE025F3C2A700582E21 /* Background.sks in Resources */ = {isa = PBXBuildFile; fileRef = D9A5FFDF25F3C2A700582E21 /* Background.sks */; };
 		D9AB888F25F3F62300896FDF /* Keycode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AB888E25F3F62300896FDF /* Keycode.swift */; };
 		D9AB889D25F4322200896FDF /* BlockTransformComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AB889C25F4322200896FDF /* BlockTransformComponent.swift */; };
 		D9AB88A125F4364D00896FDF /* PieceComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AB88A025F4364D00896FDF /* PieceComponent.swift */; };
 		D9AD3B38264090A20019075F /* GameMainTitleState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AD3B37264090A20019075F /* GameMainTitleState.swift */; };
+		D9B8D960265AB9110008FCD1 /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = D9BB3B34263D8A7800FA2707 /* Sounds */; };
+		D9B8D961265AB9150008FCD1 /* Background.sks in Resources */ = {isa = PBXBuildFile; fileRef = D9A5FFDF25F3C2A700582E21 /* Background.sks */; };
+		D9B8D964265ABC950008FCD1 /* LondrinaSolid-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D9FFD2D5261AE8470054CEF5 /* LondrinaSolid-Regular.ttf */; };
 		D9BB3B35263D8A7800FA2707 /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = D9BB3B34263D8A7800FA2707 /* Sounds */; };
 		D9BB3B37263D8D5800FA2707 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BB3B36263D8D5800FA2707 /* SoundManager.swift */; };
 		D9CF6DFF25FCCB5F0068F712 /* PieceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CF6DFE25FCCB5F0068F712 /* PieceModel.swift */; };
@@ -66,8 +107,9 @@
 		D9061F6925FF2DC000540CD8 /* GeometryComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryComponent.swift; sourceTree = "<group>"; };
 		D912E2B62605CEF400A6AD88 /* GridBounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridBounds.swift; sourceTree = "<group>"; };
 		D921651825F1F935007005E7 /* BlockTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockTools.swift; sourceTree = "<group>"; };
+		D9241B6B265A3CF2009B4FBD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D93D7515263CB73600800E8E /* ToggleButtonNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleButtonNode.swift; sourceTree = "<group>"; };
-		D945A20D25F18B9500FAE62D /* SKTetris.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SKTetris.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D945A20D25F18B9500FAE62D /* SKTetris-macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SKTetris-macOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D945A21025F18B9500FAE62D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D945A21425F18B9700FAE62D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D945A21C25F18B9700FAE62D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -86,11 +128,18 @@
 		D94FFE49263757BD00EA6A09 /* SKNodeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKNodeExtension.swift; sourceTree = "<group>"; };
 		D953F018262C68B100BBDF58 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D95AFB652621EEA100A82677 /* ScoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreManager.swift; sourceTree = "<group>"; };
+		D9646665265A4D1000F9FA9D /* UIColor~Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor~Helpers.swift"; sourceTree = "<group>"; };
+		D9646669265A99A000F9FA9D /* ButtonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonManager.swift; sourceTree = "<group>"; };
 		D983367E263D5B220064F53F /* SettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
 		D985252D26085FF100370D85 /* GameStateMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStateMachine.swift; sourceTree = "<group>"; };
 		D9884288264815EC0023E8B9 /* GameOverContainerNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverContainerNode.swift; sourceTree = "<group>"; };
 		D988428A264817A60023E8B9 /* GameUIContainerNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameUIContainerNode.swift; sourceTree = "<group>"; };
 		D988428C26483F1A0023E8B9 /* FocusManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusManager.swift; sourceTree = "<group>"; };
+		D99888552654E086002A22EA /* SKTetris-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SKTetris-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D99888572654E086002A22EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D99888632654E087002A22EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D99888652654E087002A22EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D998886A2654E1C6002A22EA /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		D9A5FFD425F390EF00582E21 /* PieceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieceType.swift; sourceTree = "<group>"; };
 		D9A5FFDF25F3C2A700582E21 /* Background.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Background.sks; sourceTree = "<group>"; };
 		D9AB888E25F3F62300896FDF /* Keycode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keycode.swift; sourceTree = "<group>"; };
@@ -113,38 +162,46 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D99888522654E086002A22EA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		D945A20425F18B9500FAE62D = {
 			isa = PBXGroup;
 			children = (
+				D998886A2654E1C6002A22EA /* CHANGELOG.md */,
 				D953F018262C68B100BBDF58 /* README.md */,
 				D945A20E25F18B9500FAE62D /* Products */,
-				D945A20F25F18B9500FAE62D /* SKTetris */,
+				D99888692654E185002A22EA /* Shared */,
+				D99888562654E086002A22EA /* SKTetris-iOS */,
+				D945A20F25F18B9500FAE62D /* SKTetris-macOS */,
 			);
 			sourceTree = "<group>";
 		};
 		D945A20E25F18B9500FAE62D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D945A20D25F18B9500FAE62D /* SKTetris.app */,
+				D945A20D25F18B9500FAE62D /* SKTetris-macOS.app */,
+				D99888552654E086002A22EA /* SKTetris-iOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D945A20F25F18B9500FAE62D /* SKTetris */ = {
+		D945A20F25F18B9500FAE62D /* SKTetris-macOS */ = {
 			isa = PBXGroup;
 			children = (
-				D9BB3B34263D8A7800FA2707 /* Sounds */,
+				D94FFE462637530800EA6A09 /* ButtonManager.swift */,
+				D945A21025F18B9500FAE62D /* AppDelegate.swift */,
 				D945A21D25F18B9700FAE62D /* SKTetris.entitlements */,
 				D945A21C25F18B9700FAE62D /* Info.plist */,
-				D9A5FFDF25F3C2A700582E21 /* Background.sks */,
-				D945A21425F18B9700FAE62D /* Assets.xcassets */,
-				D9FFD2D4261AE82B0054CEF5 /* Fonts */,
-				D9A5FFDA25F395D100582E21 /* Sources */,
 			);
-			path = SKTetris;
+			path = "SKTetris-macOS";
 			sourceTree = "<group>";
 		};
 		D9474F2625F4C6460088CAD6 /* States */ = {
@@ -160,12 +217,35 @@
 			path = States;
 			sourceTree = "<group>";
 		};
+		D99888562654E086002A22EA /* SKTetris-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				D99888572654E086002A22EA /* AppDelegate.swift */,
+				D99888622654E087002A22EA /* LaunchScreen.storyboard */,
+				D99888652654E087002A22EA /* Info.plist */,
+				D9241B6B265A3CF2009B4FBD /* ViewController.swift */,
+				D9646665265A4D1000F9FA9D /* UIColor~Helpers.swift */,
+				D9646669265A99A000F9FA9D /* ButtonManager.swift */,
+			);
+			path = "SKTetris-iOS";
+			sourceTree = "<group>";
+		};
+		D99888692654E185002A22EA /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				D9BB3B34263D8A7800FA2707 /* Sounds */,
+				D9A5FFDF25F3C2A700582E21 /* Background.sks */,
+				D945A21425F18B9700FAE62D /* Assets.xcassets */,
+				D9FFD2D4261AE82B0054CEF5 /* Fonts */,
+				D9A5FFDA25F395D100582E21 /* Sources */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
 		D9A5FFDA25F395D100582E21 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				D945A21025F18B9500FAE62D /* AppDelegate.swift */,
 				D921651825F1F935007005E7 /* BlockTools.swift */,
-				D94FFE462637530800EA6A09 /* ButtonManager.swift */,
 				D9FFD2DA261AEDD10054CEF5 /* ButtonNode.swift */,
 				D9F344EA261898DF0096183C /* EventEmitter.swift */,
 				D988428C26483F1A0023E8B9 /* FocusManager.swift */,
@@ -215,9 +295,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D945A20C25F18B9500FAE62D /* SKTetris */ = {
+		D945A20C25F18B9500FAE62D /* SKTetris-macOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D945A22025F18B9700FAE62D /* Build configuration list for PBXNativeTarget "SKTetris" */;
+			buildConfigurationList = D945A22025F18B9700FAE62D /* Build configuration list for PBXNativeTarget "SKTetris-macOS" */;
 			buildPhases = (
 				D945A20925F18B9500FAE62D /* Sources */,
 				D945A20A25F18B9500FAE62D /* Frameworks */,
@@ -228,9 +308,26 @@
 			);
 			dependencies = (
 			);
-			name = SKTetris;
+			name = "SKTetris-macOS";
 			productName = Tetris;
-			productReference = D945A20D25F18B9500FAE62D /* SKTetris.app */;
+			productReference = D945A20D25F18B9500FAE62D /* SKTetris-macOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D99888542654E086002A22EA /* SKTetris-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D99888662654E087002A22EA /* Build configuration list for PBXNativeTarget "SKTetris-iOS" */;
+			buildPhases = (
+				D99888512654E086002A22EA /* Sources */,
+				D99888522654E086002A22EA /* Frameworks */,
+				D99888532654E086002A22EA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SKTetris-iOS";
+			productName = "SKTetris-iOS";
+			productReference = D99888552654E086002A22EA /* SKTetris-iOS.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -239,11 +336,14 @@
 		D945A20525F18B9500FAE62D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1240;
+				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
 					D945A20C25F18B9500FAE62D = {
 						CreatedOnToolsVersion = 12.4;
+					};
+					D99888542654E086002A22EA = {
+						CreatedOnToolsVersion = 12.5;
 					};
 				};
 			};
@@ -260,7 +360,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D945A20C25F18B9500FAE62D /* SKTetris */,
+				D945A20C25F18B9500FAE62D /* SKTetris-macOS */,
+				D99888542654E086002A22EA /* SKTetris-iOS */,
 			);
 		};
 /* End PBXProject section */
@@ -273,6 +374,18 @@
 				D9BB3B35263D8A7800FA2707 /* Sounds in Resources */,
 				D945A21525F18B9700FAE62D /* Assets.xcassets in Resources */,
 				D9A5FFE025F3C2A700582E21 /* Background.sks in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D99888532654E086002A22EA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9B8D964265ABC950008FCD1 /* LondrinaSolid-Regular.ttf in Resources */,
+				D9B8D960265AB9110008FCD1 /* Sounds in Resources */,
+				D99888642654E087002A22EA /* LaunchScreen.storyboard in Resources */,
+				D998886B2654E2CF002A22EA /* Assets.xcassets in Resources */,
+				D9B8D961265AB9150008FCD1 /* Background.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,7 +433,61 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D99888512654E086002A22EA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9241B83265A3E4F009B4FBD /* BlockTransformComponent.swift in Sources */,
+				D9241B84265A3E4F009B4FBD /* GeometryComponent.swift in Sources */,
+				D9241B85265A3E4F009B4FBD /* GridBlockContainerComponent.swift in Sources */,
+				D9241B86265A3E4F009B4FBD /* GridTransformComponent.swift in Sources */,
+				D9241B87265A3E4F009B4FBD /* PieceComponent.swift in Sources */,
+				D9241B88265A3E4F009B4FBD /* GameFallingPieceState.swift in Sources */,
+				D9241B89265A3E4F009B4FBD /* GameIdleState.swift in Sources */,
+				D9241B8A265A3E4F009B4FBD /* GameOverState.swift in Sources */,
+				D9241B8B265A3E4F009B4FBD /* GameResolutionState.swift in Sources */,
+				D9241B8C265A3E4F009B4FBD /* GameStateMachine.swift in Sources */,
+				D9241B8D265A3E4F009B4FBD /* GameMainTitleState.swift in Sources */,
+				D9241B6D265A3E41009B4FBD /* BlockTools.swift in Sources */,
+				D9241B6F265A3E41009B4FBD /* ButtonNode.swift in Sources */,
+				D9241B70265A3E41009B4FBD /* EventEmitter.swift in Sources */,
+				D9241B71265A3E41009B4FBD /* FocusManager.swift in Sources */,
+				D9241B72265A3E41009B4FBD /* GameOverContainerNode.swift in Sources */,
+				D9241B73265A3E41009B4FBD /* GameScene.swift in Sources */,
+				D964666A265A99A000F9FA9D /* ButtonManager.swift in Sources */,
+				D9241B74265A3E41009B4FBD /* GameUIContainerNode.swift in Sources */,
+				D9241B75265A3E41009B4FBD /* GameView.swift in Sources */,
+				D9241B76265A3E41009B4FBD /* GridBounds.swift in Sources */,
+				D9241B77265A3E41009B4FBD /* GridCoordinates.swift in Sources */,
+				D9646666265A4D1000F9FA9D /* UIColor~Helpers.swift in Sources */,
+				D9241B78265A3E41009B4FBD /* GridRow.swift in Sources */,
+				D9241B79265A3E41009B4FBD /* Keycode.swift in Sources */,
+				D9241B7A265A3E41009B4FBD /* MainTitleScreenNode.swift in Sources */,
+				D9241B7B265A3E41009B4FBD /* OptionsScreenNode.swift in Sources */,
+				D9241B7C265A3E41009B4FBD /* PieceModel.swift in Sources */,
+				D9241B7D265A3E41009B4FBD /* PieceType.swift in Sources */,
+				D9241B7E265A3E41009B4FBD /* ScoreManager.swift in Sources */,
+				D9241B7F265A3E41009B4FBD /* SettingsManager.swift in Sources */,
+				D9241B80265A3E41009B4FBD /* SKNodeExtension.swift in Sources */,
+				D9241B81265A3E41009B4FBD /* SoundManager.swift in Sources */,
+				D9241B82265A3E41009B4FBD /* ToggleButtonNode.swift in Sources */,
+				D9241B6C265A3CF2009B4FBD /* ViewController.swift in Sources */,
+				D99888582654E086002A22EA /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D99888622654E087002A22EA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D99888632654E087002A22EA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		D945A21E25F18B9700FAE62D /* Debug */ = {
@@ -451,7 +618,7 @@
 				DEVELOPMENT_TEAM = 5L9YG7YEUA;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = SKTetris/Info.plist;
+				INFOPLIST_FILE = "SKTetris-macOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -476,7 +643,7 @@
 				DEVELOPMENT_TEAM = 5L9YG7YEUA;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = SKTetris/Info.plist;
+				INFOPLIST_FILE = "SKTetris-macOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -485,6 +652,53 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.xhaleera.SKTetris;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		D99888672654E087002A22EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = 5L9YG7YEUA;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "SKTetris-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.xhaleera.SKTetris;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D99888682654E087002A22EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = 5L9YG7YEUA;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "SKTetris-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.xhaleera.SKTetris;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
@@ -500,11 +714,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D945A22025F18B9700FAE62D /* Build configuration list for PBXNativeTarget "SKTetris" */ = {
+		D945A22025F18B9700FAE62D /* Build configuration list for PBXNativeTarget "SKTetris-macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D945A22125F18B9700FAE62D /* Debug */,
 				D945A22225F18B9700FAE62D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D99888662654E087002A22EA /* Build configuration list for PBXNativeTarget "SKTetris-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D99888672654E087002A22EA /* Debug */,
+				D99888682654E087002A22EA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Cocoa
 import SpriteKit
 import GameController
 
@@ -14,11 +13,13 @@ class GameView: SKView {
 
 	private let gameScene: GameScene
     
-    private var trackingArea: NSTrackingArea?
-    
     private var currentController: GCController?
-	
-	override init(frame frameRect: NSRect) {
+
+    #if os(macOS)
+    private var trackingArea: NSTrackingArea?
+    #endif
+
+	override init(frame frameRect: CGRect) {
 		gameScene = GameScene(size: frameRect.size)
 		
 		super.init(frame: frameRect)
@@ -164,6 +165,7 @@ class GameView: SKView {
     }
     
     private func onFocusManagerInputModeChanged(inputMode: InputMode) {
+        #if os(macOS)
         if inputMode != .pointer {
             trackingArea = NSTrackingArea(rect: frame, options: [.activeWhenFirstResponder, .mouseMoved], owner: self, userInfo: nil)
             addTrackingArea(trackingArea!)
@@ -171,8 +173,10 @@ class GameView: SKView {
         else if trackingArea != nil {
             removeTrackingArea(trackingArea!)
         }
+        #endif
     }
     
+    #if os(macOS)
     override func mouseMoved(with event: NSEvent) {
         FocusManager.inputMode = .pointer
     }
@@ -280,9 +284,10 @@ class GameView: SKView {
         let width = abs(topRightInView.x - bottomLeftInView.x)
         let height = abs(topRightInView.y - bottomLeftInView.y)
         let viewRect = NSRect(x: bottomLeftInView.x, y: bottomLeftInView.y, width: width, height: height)
-		let trackingArea = NSTrackingArea(rect: viewRect, options: [ .mouseEnteredAndExited, .activeWhenFirstResponder, .enabledDuringMouseDrag ], owner: node, userInfo: nil)
+        let trackingArea = NSTrackingArea(rect: viewRect, options: [ .mouseEnteredAndExited, .activeWhenFirstResponder, .enabledDuringMouseDrag ], owner: node, userInfo: nil)
         addTrackingArea(trackingArea)
         return trackingArea
     }
-	
+    #endif
+    
 }

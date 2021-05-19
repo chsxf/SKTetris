@@ -72,7 +72,11 @@ class MainTitleScreenNode: SKNode, FocusHandler {
     func creditsButtonClicked() {
         let url = URL(string: "https://github.com/chsxf/SKTetris#licence")
         if url != nil {
+            #if os(macOS)
             NSWorkspace.shared.open(url!)
+            #else
+            UIApplication.shared.open(url!, options: [:], completionHandler: nil)
+            #endif
         }
     }
     
