@@ -48,6 +48,9 @@ class MainTitleScreenNode: SKNode, FocusHandler {
         didSet {
             if !isHidden {
                 if firstDisplay {
+                    // Init main atlas to apply nearest filtering
+                    let _ = BlockTools.mainAtlas
+                    
                     self.buttonsContainer?.isHidden = true
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                         self.buttonsContainer?.isHidden = false
