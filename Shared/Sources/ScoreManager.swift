@@ -16,12 +16,12 @@ class ScoreManager {
 	
 	private let scoreMap = [40, 100, 300, 1200]
 	
-	private let scoreLabel: SKLabelNode
-	private let levelLabel: SKLabelNode
+	private let scoreLabel: ValueDisplayNode
+	private let levelLabel: ValueDisplayNode
 	
 	let onLevelChanged = EventEmitter<Int>()
 	
-	init(withScoreLabel scoreLabel: SKLabelNode, andLevelLevel levelLabel: SKLabelNode) {
+	init(withScoreLabel scoreLabel: ValueDisplayNode, andLevelLevel levelLabel: ValueDisplayNode) {
 		self.scoreLabel = scoreLabel
 		self.levelLabel = levelLabel
 		

@@ -30,7 +30,7 @@ class MainTitleScreenNode: SKNode, FocusHandler {
         creditsButton = buttonsContainer!.childNode(withName: "Credits Button")! as? ButtonNode
         creditsButton?.onClicked.on(creditsButtonClicked)
         
-        let versionLabel = childNode(withName: "Version Label")! as! SKLabelNode
+        let versionLabel = childNode(withName: "Version Anchor/Version Label")! as! SKLabelNode
         #if os(macOS)
         let os = "macOS"
         #elseif os(iOS)

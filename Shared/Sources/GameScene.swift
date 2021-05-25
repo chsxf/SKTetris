@@ -75,8 +75,8 @@ class GameScene: SKScene {
         pauseContainer = set.childNode(withName: "//Pause Container")
         pauseContainer!.isHidden = true
        
-		let scoreLabel = set.childNode(withName: "//Score Label")! as! SKLabelNode
-		let levelLabel = set.childNode(withName: "//Level Label")! as! SKLabelNode
+		let scoreLabel = set.childNode(withName: "//Score Container")! as! ValueDisplayNode
+		let levelLabel = set.childNode(withName: "//Level Container")! as! ValueDisplayNode
 		scoreManager = ScoreManager(withScoreLabel: scoreLabel, andLevelLevel: levelLabel)
         scoreManager?.onLevelChanged.on({ _newLevel in
             SoundManager.play(.newLevel)

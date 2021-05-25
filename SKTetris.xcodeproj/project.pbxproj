@@ -71,6 +71,8 @@
 		D99888582654E086002A22EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99888572654E086002A22EA /* AppDelegate.swift */; };
 		D99888642654E087002A22EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D99888622654E087002A22EA /* LaunchScreen.storyboard */; };
 		D998886B2654E2CF002A22EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D945A21425F18B9700FAE62D /* Assets.xcassets */; };
+		D9A2CF74265CD9240068D89A /* ValueDisplayNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A2CF73265CD9240068D89A /* ValueDisplayNode.swift */; };
+		D9A2CF75265CD9240068D89A /* ValueDisplayNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A2CF73265CD9240068D89A /* ValueDisplayNode.swift */; };
 		D9A5FFD525F390EF00582E21 /* PieceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A5FFD425F390EF00582E21 /* PieceType.swift */; };
 		D9A5FFE025F3C2A700582E21 /* Background.sks in Resources */ = {isa = PBXBuildFile; fileRef = D9A5FFDF25F3C2A700582E21 /* Background.sks */; };
 		D9AB888F25F3F62300896FDF /* Keycode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AB888E25F3F62300896FDF /* Keycode.swift */; };
@@ -140,6 +142,7 @@
 		D99888632654E087002A22EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D99888652654E087002A22EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D998886A2654E1C6002A22EA /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
+		D9A2CF73265CD9240068D89A /* ValueDisplayNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueDisplayNode.swift; sourceTree = "<group>"; };
 		D9A5FFD425F390EF00582E21 /* PieceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieceType.swift; sourceTree = "<group>"; };
 		D9A5FFDF25F3C2A700582E21 /* Background.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Background.sks; sourceTree = "<group>"; };
 		D9AB888E25F3F62300896FDF /* Keycode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keycode.swift; sourceTree = "<group>"; };
@@ -196,10 +199,10 @@
 		D945A20F25F18B9500FAE62D /* SKTetris-macOS */ = {
 			isa = PBXGroup;
 			children = (
-				D94FFE462637530800EA6A09 /* ButtonManager.swift */,
-				D945A21025F18B9500FAE62D /* AppDelegate.swift */,
 				D945A21D25F18B9700FAE62D /* SKTetris.entitlements */,
 				D945A21C25F18B9700FAE62D /* Info.plist */,
+				D945A21025F18B9500FAE62D /* AppDelegate.swift */,
+				D94FFE462637530800EA6A09 /* ButtonManager.swift */,
 			);
 			path = "SKTetris-macOS";
 			sourceTree = "<group>";
@@ -220,12 +223,12 @@
 		D99888562654E086002A22EA /* SKTetris-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				D99888572654E086002A22EA /* AppDelegate.swift */,
-				D99888622654E087002A22EA /* LaunchScreen.storyboard */,
 				D99888652654E087002A22EA /* Info.plist */,
-				D9241B6B265A3CF2009B4FBD /* ViewController.swift */,
-				D9646665265A4D1000F9FA9D /* UIColor~Helpers.swift */,
+				D99888572654E086002A22EA /* AppDelegate.swift */,
 				D9646669265A99A000F9FA9D /* ButtonManager.swift */,
+				D9646665265A4D1000F9FA9D /* UIColor~Helpers.swift */,
+				D9241B6B265A3CF2009B4FBD /* ViewController.swift */,
+				D99888622654E087002A22EA /* LaunchScreen.storyboard */,
 			);
 			path = "SKTetris-iOS";
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 				D93D7515263CB73600800E8E /* ToggleButtonNode.swift */,
 				D9AB889B25F4320200896FDF /* Components */,
 				D9474F2625F4C6460088CAD6 /* States */,
+				D9A2CF73265CD9240068D89A /* ValueDisplayNode.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -411,6 +415,7 @@
 				D94FFE4A263757BD00EA6A09 /* SKNodeExtension.swift in Sources */,
 				D9474F2C25F4C6B60088CAD6 /* GameFallingPieceState.swift in Sources */,
 				D93D7516263CB73700800E8E /* ToggleButtonNode.swift in Sources */,
+				D9A2CF74265CD9240068D89A /* ValueDisplayNode.swift in Sources */,
 				D985252E26085FF100370D85 /* GameStateMachine.swift in Sources */,
 				D94FFE472637530800EA6A09 /* ButtonManager.swift in Sources */,
 				D95AFB662621EEA100A82677 /* ScoreManager.swift in Sources */,
@@ -464,6 +469,7 @@
 				D9241B79265A3E41009B4FBD /* Keycode.swift in Sources */,
 				D9241B7A265A3E41009B4FBD /* MainTitleScreenNode.swift in Sources */,
 				D9241B7B265A3E41009B4FBD /* OptionsScreenNode.swift in Sources */,
+				D9A2CF75265CD9240068D89A /* ValueDisplayNode.swift in Sources */,
 				D9241B7C265A3E41009B4FBD /* PieceModel.swift in Sources */,
 				D9241B7D265A3E41009B4FBD /* PieceType.swift in Sources */,
 				D9241B7E265A3E41009B4FBD /* ScoreManager.swift in Sources */,
