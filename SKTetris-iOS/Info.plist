@@ -23,6 +23,7 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>LondrinaSolid-Regular.ttf</string>
+		<string>SF-Mono-Light.otf</string>
 	</array>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>

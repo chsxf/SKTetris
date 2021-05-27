@@ -23,19 +23,11 @@ class GameView: SKView {
 
 	override init(frame frameRect: CGRect) {
         gkScene = GKScene(fileNamed: "Background")!
-        
-        for entity in gkScene.entities {
-            if entity.component(ofType: GridBlockContainerComponent.self) != nil {
-                GameScene.grid = entity
-                break
-            }
-        }
-        
         gameScene = gkScene.rootNode! as! GameScene
-        gameScene.size = frameRect.size
-		
+        
 		super.init(frame: frameRect)
-		
+        
+        initScene(withSize: frameRect.size)
 		presentScene(gameScene)
 		
 		showsFPS = true
@@ -61,6 +53,34 @@ class GameView: SKView {
 		fatalError("init(coder:) has not been implemented")
 	}
 	
+    private func initScene(withSize size: CGSize) {
+        for entity in gkScene.entities {
+            if entity.component(ofType: GridBlockContainerComponent.self) != nil {
+                GameScene.grid = entity
+                break
+            }
+        }
+        
+        let sceneReferenceSize = CGSize(width: 640, height: 360)
+        let sceneReferenceAspectRatio = sceneReferenceSize.width / sceneReferenceSize.height
+        var sceneSize = CGSize(width: sceneReferenceSize.width, height: sceneReferenceSize.height)
+        let frameAspectRatio = size.width / size.height
+        if frameAspectRatio < sceneReferenceAspectRatio {
+            sceneSize.height = sceneSize.width / frameAspectRatio
+        }
+        else if frameAspectRatio > sceneReferenceAspectRatio {
+            sceneSize.width = sceneSize.height * frameAspectRatio
+        }
+        gameScene.size = sceneSize
+        
+        for entity in gkScene.entities {
+            guard let sizeAdapterComponent = entity.component(ofType: SceneSizeAdapterComponent.self) else {
+                continue
+            }
+            sizeAdapterComponent.adaptTo(size: sceneSize)
+        }
+    }
+    
     private func gameControllerDidConnect() {
         if currentController == nil {
             for controller in GCController.controllers() {
