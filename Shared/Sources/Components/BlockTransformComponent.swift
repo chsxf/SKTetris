@@ -31,7 +31,11 @@ class BlockTransformComponent: GKComponent {
 	}
 	
 	private func updateNodePosition() -> Void {
-		entity!.component(ofType: GeometryComponent.self)!.skNode.position = BlockTools.transformCoordinatesFromGridToScene(coordinates)
+        guard let skNode = entity?.component(ofType: GKSKNodeComponent.self)?.node else {
+            return
+        }
+        
+		skNode.position = BlockTools.transformCoordinatesFromGridToScene(coordinates)
 	}
 	
 }

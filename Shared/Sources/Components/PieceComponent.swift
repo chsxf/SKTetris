@@ -69,7 +69,7 @@ class PieceComponent: GKComponent {
                 newCoordinateList.append(newCoordinates + pivotCoordinates)
 			}
             
-            let gridComponent = GameScene.grid.component(ofType: GridBlockContainerComponent.self)!
+            let gridComponent = GameScene.grid!.component(ofType: GridBlockContainerComponent.self)!
             if gridComponent.validateCoordinates(coordinatesList: newCoordinateList) {
                 for i in 0..<newCoordinateList.count {
                     blocks[i].component(ofType: BlockTransformComponent.self)!.coordinates = newCoordinateList[i]
@@ -93,7 +93,7 @@ class PieceComponent: GKComponent {
                 newCoordinateList.append(newCoordinates + pivotCoordinates)
 			}
             
-            let gridComponent = GameScene.grid.component(ofType: GridBlockContainerComponent.self)!
+            let gridComponent = GameScene.grid!.component(ofType: GridBlockContainerComponent.self)!
             if gridComponent.validateCoordinates(coordinatesList: newCoordinateList) {
                 for i in 0..<newCoordinateList.count {
                     blocks[i].component(ofType: BlockTransformComponent.self)!.coordinates = newCoordinateList[i]
@@ -147,15 +147,18 @@ class PieceComponent: GKComponent {
 	}
 	
 	private func generateBlockEntities() -> Void {
-		let rootNode = entity!.component(ofType: GeometryComponent.self)!.skNode
+        guard let rootNode = entity?.component(ofType: GKSKNodeComponent.self)?.node else {
+            return
+        }
 		
 		let texture = BlockTools.mainAtlas.textureNamed(model.type.textureName)
 		for offset in model.gridOffsets {
 			let sprite = SKSpriteNode(texture: texture)
 
 			let blockEntity = GKEntity()
-			let geometryComponent = GeometryComponent(withNode: sprite)
-			blockEntity.addComponent(geometryComponent)
+			let skNodeComponent = GKSKNodeComponent(node: sprite)
+			blockEntity.addComponent(skNodeComponent)
+            blockEntity.addComponent(BlinkComponent())
 			let blockComponent = BlockTransformComponent(atCoordinates: offset)
 			blockEntity.addComponent(blockComponent)
 
@@ -165,7 +168,7 @@ class PieceComponent: GKComponent {
 	}
 	
     override func update(deltaTime seconds: TimeInterval) {
-        let grid = GameScene.grid.component(ofType: GridBlockContainerComponent.self)!
+        let grid = GameScene.grid!.component(ofType: GridBlockContainerComponent.self)!
         var validUpdate = true
         
         for i in 0..<blocks.count {
@@ -225,8 +228,9 @@ class PieceComponent: GKComponent {
 		let entity = GKEntity()
 		
 		let rootNode = SKNode()
-		let geometryComponent = GeometryComponent(withNode: rootNode)
-		entity.addComponent(geometryComponent)
+        
+		let skNodeComponent = GKSKNodeComponent(node: rootNode)
+		entity.addComponent(skNodeComponent)
 		
 		let pieceComponent = PieceComponent(ofType: type)
 		entity.addComponent(pieceComponent)

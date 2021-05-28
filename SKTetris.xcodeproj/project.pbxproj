@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		D9044C452645130F00DB5A13 /* MainTitleScreenNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9044C442645130F00DB5A13 /* MainTitleScreenNode.swift */; };
 		D9044C47264521DC00DB5A13 /* OptionsScreenNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9044C46264521DC00DB5A13 /* OptionsScreenNode.swift */; };
-		D9061F6A25FF2DC000540CD8 /* GeometryComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9061F6925FF2DC000540CD8 /* GeometryComponent.swift */; };
 		D912E2B72605CEF400A6AD88 /* GridBounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = D912E2B62605CEF400A6AD88 /* GridBounds.swift */; };
 		D921651925F1F935007005E7 /* BlockTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = D921651825F1F935007005E7 /* BlockTools.swift */; };
 		D9241B6C265A3CF2009B4FBD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9241B6B265A3CF2009B4FBD /* ViewController.swift */; };
@@ -35,7 +34,6 @@
 		D9241B81265A3E41009B4FBD /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BB3B36263D8D5800FA2707 /* SoundManager.swift */; };
 		D9241B82265A3E41009B4FBD /* ToggleButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93D7515263CB73600800E8E /* ToggleButtonNode.swift */; };
 		D9241B83265A3E4F009B4FBD /* BlockTransformComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AB889C25F4322200896FDF /* BlockTransformComponent.swift */; };
-		D9241B84265A3E4F009B4FBD /* GeometryComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9061F6925FF2DC000540CD8 /* GeometryComponent.swift */; };
 		D9241B85265A3E4F009B4FBD /* GridBlockContainerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94B6197261973EA0044BD34 /* GridBlockContainerComponent.swift */; };
 		D9241B86265A3E4F009B4FBD /* GridTransformComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9474F3725F4E0300088CAD6 /* GridTransformComponent.swift */; };
 		D9241B87265A3E4F009B4FBD /* PieceComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AB88A025F4364D00896FDF /* PieceComponent.swift */; };
@@ -68,6 +66,8 @@
 		D9884289264815EC0023E8B9 /* GameOverContainerNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9884288264815EC0023E8B9 /* GameOverContainerNode.swift */; };
 		D988428B264817A60023E8B9 /* GameUIContainerNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D988428A264817A60023E8B9 /* GameUIContainerNode.swift */; };
 		D988428D26483F1A0023E8B9 /* FocusManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D988428C26483F1A0023E8B9 /* FocusManager.swift */; };
+		D990A41926617BD2002864B8 /* BlinkComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D990A41826617BD2002864B8 /* BlinkComponent.swift */; };
+		D990A41A26617BD2002864B8 /* BlinkComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D990A41826617BD2002864B8 /* BlinkComponent.swift */; };
 		D99888582654E086002A22EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99888572654E086002A22EA /* AppDelegate.swift */; };
 		D99888642654E087002A22EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D99888622654E087002A22EA /* LaunchScreen.storyboard */; };
 		D998886B2654E2CF002A22EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D945A21425F18B9700FAE62D /* Assets.xcassets */; };
@@ -106,7 +106,6 @@
 /* Begin PBXFileReference section */
 		D9044C442645130F00DB5A13 /* MainTitleScreenNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTitleScreenNode.swift; sourceTree = "<group>"; };
 		D9044C46264521DC00DB5A13 /* OptionsScreenNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsScreenNode.swift; sourceTree = "<group>"; };
-		D9061F6925FF2DC000540CD8 /* GeometryComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryComponent.swift; sourceTree = "<group>"; };
 		D912E2B62605CEF400A6AD88 /* GridBounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridBounds.swift; sourceTree = "<group>"; };
 		D921651825F1F935007005E7 /* BlockTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockTools.swift; sourceTree = "<group>"; };
 		D9241B6B265A3CF2009B4FBD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -137,6 +136,7 @@
 		D9884288264815EC0023E8B9 /* GameOverContainerNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverContainerNode.swift; sourceTree = "<group>"; };
 		D988428A264817A60023E8B9 /* GameUIContainerNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameUIContainerNode.swift; sourceTree = "<group>"; };
 		D988428C26483F1A0023E8B9 /* FocusManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusManager.swift; sourceTree = "<group>"; };
+		D990A41826617BD2002864B8 /* BlinkComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlinkComponent.swift; sourceTree = "<group>"; };
 		D99888552654E086002A22EA /* SKTetris-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SKTetris-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D99888572654E086002A22EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D99888632654E087002A22EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -280,10 +280,10 @@
 			isa = PBXGroup;
 			children = (
 				D9AB889C25F4322200896FDF /* BlockTransformComponent.swift */,
-				D9061F6925FF2DC000540CD8 /* GeometryComponent.swift */,
 				D94B6197261973EA0044BD34 /* GridBlockContainerComponent.swift */,
 				D9474F3725F4E0300088CAD6 /* GridTransformComponent.swift */,
 				D9AB88A025F4364D00896FDF /* PieceComponent.swift */,
+				D990A41826617BD2002864B8 /* BlinkComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -406,8 +406,8 @@
 				D945A22D25F18DC600FAE62D /* GameScene.swift in Sources */,
 				D94B61A226199CFC0044BD34 /* GridRow.swift in Sources */,
 				D945A22825F18C4900FAE62D /* GameView.swift in Sources */,
+				D990A41926617BD2002864B8 /* BlinkComponent.swift in Sources */,
 				D9BB3B37263D8D5800FA2707 /* SoundManager.swift in Sources */,
-				D9061F6A25FF2DC000540CD8 /* GeometryComponent.swift in Sources */,
 				D94B6198261973EA0044BD34 /* GridBlockContainerComponent.swift in Sources */,
 				D9044C47264521DC00DB5A13 /* OptionsScreenNode.swift in Sources */,
 				D9474F2F25F4C6CF0088CAD6 /* GameResolutionState.swift in Sources */,
@@ -443,13 +443,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9241B83265A3E4F009B4FBD /* BlockTransformComponent.swift in Sources */,
-				D9241B84265A3E4F009B4FBD /* GeometryComponent.swift in Sources */,
 				D9241B85265A3E4F009B4FBD /* GridBlockContainerComponent.swift in Sources */,
 				D9241B86265A3E4F009B4FBD /* GridTransformComponent.swift in Sources */,
 				D9241B87265A3E4F009B4FBD /* PieceComponent.swift in Sources */,
 				D9241B88265A3E4F009B4FBD /* GameFallingPieceState.swift in Sources */,
 				D9241B89265A3E4F009B4FBD /* GameIdleState.swift in Sources */,
 				D9241B8A265A3E4F009B4FBD /* GameOverState.swift in Sources */,
+				D990A41A26617BD2002864B8 /* BlinkComponent.swift in Sources */,
 				D9241B8B265A3E4F009B4FBD /* GameResolutionState.swift in Sources */,
 				D9241B8C265A3E4F009B4FBD /* GameStateMachine.swift in Sources */,
 				D9241B8D265A3E4F009B4FBD /* GameMainTitleState.swift in Sources */,

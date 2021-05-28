@@ -10,16 +10,15 @@ import GameplayKit
 
 class GameScene: SKScene {
 
-	static private(set) var grid: GKEntity = GKEntity()
+	static var grid: GKEntity?
 	
-	private(set) var blockGeometryComponentSystem = GKComponentSystem(componentClass: GeometryComponent.self)
+	private(set) var blockBlinkComponentSystem = GKComponentSystem(componentClass: BlinkComponent.self)
 	
 	private(set) var stateMachine: GameStateMachine?
 	
 	private(set) var currentPiece: GKEntity?
 	private(set) var nextPiece: GKEntity?
 	
-	private var gridRoot: SKNode?
 	private var nextPieceRoot: SKNode?
     
 	private var gameOverContainer: SKNode?
@@ -44,72 +43,49 @@ class GameScene: SKScene {
         get { uiContainer!.isHidden }
     }
     
-    override init(size: CGSize) {
-		super.init(size: size)
-		
+	required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
         SoundManager.onSoundFinishedPlaying.on(onSoundFinishedPlaying(_:))
         
-		stateMachine = GameStateMachine(withScene: self)
+        stateMachine = GameStateMachine(withScene: self)
         ButtonManager.scene = self
-		
-		scaleMode = .aspectFit
-		
-		let cameraNode = SKCameraNode()
-		cameraNode.position = CGPoint(x: 0, y: 0)
-		addChild(cameraNode)
-		camera = cameraNode
-		
-		let set = SKReferenceNode(fileNamed: "Background")!
-		addChild(set)
-		
-		gridRoot = set.childNode(withName: "//Grid Root")
-		initGrid(withRootNode: gridRoot!)
-		
-		nextPieceRoot = set.childNode(withName: "//Next Piece Root")
-		
-		gameOverContainer = set.childNode(withName: "//Game Over Container")
-        uiContainer = set.childNode(withName: "//Game UI Container") as? GameUIContainerNode
-        optionsContainer = set.childNode(withName: "//Options UI Container")
-        mainTitleContainer = set.childNode(withName: "//Main Title Container")
+        
+        scaleMode = .aspectFit
+        
+        let cameraNode = SKCameraNode()
+        cameraNode.position = CGPoint(x: 0, y: 0)
+        addChild(cameraNode)
+        camera = cameraNode
+        
+        nextPieceRoot = childNode(withName: "//Next Piece Root")
+        
+        gameOverContainer = childNode(withName: "//Game Over Container")
+        uiContainer = childNode(withName: "//Game UI Container") as? GameUIContainerNode
+        optionsContainer = childNode(withName: "//Options UI Container")
+        mainTitleContainer = childNode(withName: "//Main Title Container")
 
-        pauseContainer = set.childNode(withName: "//Pause Container")
+        pauseContainer = childNode(withName: "//Pause Container")
         pauseContainer!.isHidden = true
        
-		let scoreLabel = set.childNode(withName: "//Score Container")! as! ValueDisplayNode
-		let levelLabel = set.childNode(withName: "//Level Container")! as! ValueDisplayNode
-		scoreManager = ScoreManager(withScoreLabel: scoreLabel, andLevelLevel: levelLabel)
+        let scoreLabel = childNode(withName: "//Score Container")! as! ValueDisplayNode
+        let levelLabel = childNode(withName: "//Level Container")! as! ValueDisplayNode
+        scoreManager = ScoreManager(withScoreLabel: scoreLabel, andLevelLevel: levelLabel)
         scoreManager?.onLevelChanged.on({ _newLevel in
             SoundManager.play(.newLevel)
         })
-		
-		let resolutionState = stateMachine!.state(forClass: GameResolutionState.self)
-		resolutionState?.onLinesCompleted.on(scoreManager!.pushLines)
         
-		isUserInteractionEnabled = true
+        let resolutionState = stateMachine!.state(forClass: GameResolutionState.self)
+        resolutionState?.onLinesCompleted.on(scoreManager!.pushLines)
+        
+        isUserInteractionEnabled = true
 	}
 	
-	required init?(coder aDecoder: NSCoder) {
-		fatalError("init(coder:) has not been implemented")
-	}
-	
-    private func initGrid(withRootNode gridRoot: SKNode) -> Void {
-		GameScene.grid = GKEntity()
-		
-		let geometryComponent = GeometryComponent(withNode: gridRoot)
-		GameScene.grid.addComponent(geometryComponent)
-		
-		let gridTransformComponent = GridTransformComponent(size: CGSize(width: 10, height: 18))
-		GameScene.grid.addComponent(gridTransformComponent)
-		
-		let gridBlockContainerComponent = GridBlockContainerComponent()
-		GameScene.grid.addComponent(gridBlockContainerComponent)
-	}
-	
-	func spawnNextPiece() -> Void {
+    func spawnNextPiece() -> Void {
 		let newPiece = PieceComponent.createPieceEntity(ofType: .randomType())
 		nextPiece = newPiece
 		
-		let pieceNode = newPiece.component(ofType: GeometryComponent.self)!.skNode
+		let pieceNode = newPiece.component(ofType: GKSKNodeComponent.self)!.node
 		let pieceRect = pieceNode.calculateAccumulatedFrame()
 		pieceNode.position = CGPoint(
 			x: -(pieceRect.minX + pieceRect.width / 2.0),
@@ -121,13 +97,13 @@ class GameScene: SKScene {
 	func dropCurrentPiece() -> Void {
 		let piece = nextPiece!
 
-		let pieceNode = piece.component(ofType: GeometryComponent.self)!.skNode
+		let pieceNode = piece.component(ofType: GKSKNodeComponent.self)!.node
 		pieceNode.position = CGPoint()
 		
 		pieceNode.removeFromParent()
-		gridRoot!.addChild(pieceNode)
+        GameScene.grid!.component(ofType: GKSKNodeComponent.self)!.node.addChild(pieceNode)
 
-		let adjustedCoordinates = GameScene.grid.component(ofType: GridTransformComponent.self)!.getAdjustedCoordinates(forPiece: piece, at: GridCoordinates(x: 5, y: 18))
+		let adjustedCoordinates = GameScene.grid!.component(ofType: GridTransformComponent.self)!.getAdjustedCoordinates(forPiece: piece, at: GridCoordinates(x: 5, y: 18))
         let pieceComponent = piece.component(ofType: PieceComponent.self)!
 		pieceComponent.setGridCoordinates(adjustedCoordinates)
 		
@@ -140,22 +116,22 @@ class GameScene: SKScene {
 		
 		let pieceComponent = piece.component(ofType: PieceComponent.self)!
 		
-		let gridBlockContainerComponent = GameScene.grid.component(ofType: GridBlockContainerComponent.self)!
+		let gridBlockContainerComponent = GameScene.grid!.component(ofType: GridBlockContainerComponent.self)!
 		gridBlockContainerComponent.addBlocks(pieceComponent.blocks)
 		
 		for block in pieceComponent.blocks {
-			blockGeometryComponentSystem.addComponent(foundIn: block)
+			blockBlinkComponentSystem.addComponent(foundIn: block)
 		}
 	}
 	
 	func removeBlock(_ block: GKEntity) -> Void {
-		let gridBlockContainerComponent = GameScene.grid.component(ofType: GridBlockContainerComponent.self)!
+		let gridBlockContainerComponent = GameScene.grid!.component(ofType: GridBlockContainerComponent.self)!
 		gridBlockContainerComponent.removeBlock(block)
 		
-		blockGeometryComponentSystem.removeComponent(foundIn: block)
+		blockBlinkComponentSystem.removeComponent(foundIn: block)
 		
-		let geometry = block.component(ofType: GeometryComponent.self)!
-		geometry.skNode.removeFromParent()
+		let skNodeComponent = block.component(ofType: GKSKNodeComponent.self)!
+		skNodeComponent.node.removeFromParent()
 	}
 	
     func showMainTitle() -> Void {
@@ -175,18 +151,18 @@ class GameScene: SKScene {
         }
         
 		if nextPiece != nil {
-			let geometry = nextPiece!.component(ofType: GeometryComponent.self)!
-			geometry.skNode.removeFromParent()
+			let skNodeComponent = nextPiece!.component(ofType: GKSKNodeComponent.self)!
+			skNodeComponent.node.removeFromParent()
 			nextPiece = nil
 		}
 		
 		if currentPiece != nil {
-			let geometry = currentPiece!.component(ofType: GeometryComponent.self)!
-			geometry.skNode.removeFromParent()
+			let skNodeComponent = currentPiece!.component(ofType: GKSKNodeComponent.self)!
+            skNodeComponent.node.removeFromParent()
 			currentPiece = nil
 		}
 		
-		let gridBlockContainerComponent = GameScene.grid.component(ofType: GridBlockContainerComponent.self)!
+		let gridBlockContainerComponent = GameScene.grid!.component(ofType: GridBlockContainerComponent.self)!
 		gridBlockContainerComponent.removeAllBlocks()
 		
 		uiContainer!.isHidden = true
@@ -242,7 +218,7 @@ class GameScene: SKScene {
 	
 	override func didFinishUpdate() {
 		stateMachine!.update(deltaTime: deltaTime)
-		blockGeometryComponentSystem.update(deltaTime: deltaTime)
+		blockBlinkComponentSystem.update(deltaTime: deltaTime)
 	}
     
     private func onSoundFinishedPlaying(_ soundKey: SoundKey) {

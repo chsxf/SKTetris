@@ -7,10 +7,12 @@
 
 import Foundation
 import SpriteKit
+import GameplayKit
 import GameController
 
 class GameView: SKView {
 
+    private let gkScene: GKScene
 	private let gameScene: GameScene
     
     private var currentController: GCController?
@@ -20,7 +22,17 @@ class GameView: SKView {
     #endif
 
 	override init(frame frameRect: CGRect) {
-		gameScene = GameScene(size: frameRect.size)
+        gkScene = GKScene(fileNamed: "Background")!
+        
+        for entity in gkScene.entities {
+            if entity.component(ofType: GridBlockContainerComponent.self) != nil {
+                GameScene.grid = entity
+                break
+            }
+        }
+        
+        gameScene = gkScene.rootNode! as! GameScene
+        gameScene.size = frameRect.size
 		
 		super.init(frame: frameRect)
 		

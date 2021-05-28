@@ -7,18 +7,12 @@
 
 import GameplayKit
 
+@objc(GridTransformComponent)
 class GridTransformComponent: GKComponent {
 
-	let size: CGSize
+    @GKInspectable var size: CGSize = CGSize()
 	
-	init(size: CGSize) {
-		self.size = size
-		super.init()
-	}
-	
-	required init?(coder: NSCoder) {
-		fatalError("init(coder:) has not been implemented")
-	}
+    override class var supportsSecureCoding: Bool { true }
     
     func getAdjustedCoordinates(forPiece piece: GKEntity, at coordinates: GridCoordinates) -> GridCoordinates {
 		let pieceComponent = piece.component(ofType: PieceComponent.self)!

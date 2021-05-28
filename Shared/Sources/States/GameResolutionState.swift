@@ -27,7 +27,7 @@ class GameResolutionState: GKState {
 		let gameStateMachine = stateMachine as! GameStateMachine
 		gameStateMachine.scene.landCurrentPiece()
 		
-		let gridBlockContainerComponent = GameScene.grid.component(ofType: GridBlockContainerComponent.self)!
+        let gridBlockContainerComponent = GameScene.grid!.component(ofType: GridBlockContainerComponent.self)!
 		fullRows = gridBlockContainerComponent.getFullRows()
 		if fullRows != nil {
             SoundManager.play(.linesRemoved)
@@ -41,8 +41,8 @@ class GameResolutionState: GKState {
 	private func blinkDisappearingRows() -> Void {
 		for row in fullRows! {
 			for block in row.blocks {
-				let geometryComponent = block.component(ofType: GeometryComponent.self)!
-				geometryComponent.blinking = true
+				let blinkComponent = block.component(ofType: BlinkComponent.self)!
+				blinkComponent.blinking = true
 			}
 		}
 	}
@@ -59,7 +59,7 @@ class GameResolutionState: GKState {
 				topIndex = max(topIndex, row.index)
 			}
 			
-			let gridBlockContainerComponent = GameScene.grid.component(ofType: GridBlockContainerComponent.self)!
+            let gridBlockContainerComponent = GameScene.grid!.component(ofType: GridBlockContainerComponent.self)!
 			gridBlockContainerComponent.fallBlocks(aboveIndex: topIndex, ofRows: fullRows!.count)
 			
 			onLinesCompleted.notify(fullRows!.count)

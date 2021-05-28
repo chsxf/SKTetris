@@ -32,7 +32,7 @@ class GameIdleState: GKState {
 			blockCoordinates.append(transform.coordinates)
 		}
 		
-		let gridBlockContainerComponent = GameScene.grid.component(ofType: GridBlockContainerComponent.self)!
+        let gridBlockContainerComponent = GameScene.grid!.component(ofType: GridBlockContainerComponent.self)!
 		if (gridBlockContainerComponent.validateCoordinates(coordinatesList: blockCoordinates)) {
 			gameStateMachine.enter(GameFallingPieceState.self)
 		}

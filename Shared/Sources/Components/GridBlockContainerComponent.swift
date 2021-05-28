@@ -7,17 +7,20 @@
 
 import GameplayKit
 
+@objc(GridBlockContainerComponent)
 class GridBlockContainerComponent: GKComponent {
 
 	private var blocks: [GKEntity] = []
 	
+    override class var supportsSecureCoding: Bool { true }
+    
 	func addBlocks(_ newBlocks: [GKEntity]) -> Void {
-		let gridGeometryComponent = entity!.component(ofType: GeometryComponent.self)!
+		let gridSKNodeComponent = entity!.component(ofType: GKSKNodeComponent.self)!
 		
 		for block in newBlocks {
-			let blockGeometryComponent = block.component(ofType: GeometryComponent.self)!
-			blockGeometryComponent.skNode.removeFromParent()
-			gridGeometryComponent.skNode.addChild(blockGeometryComponent.skNode)
+			let blockSKNodeComponent = block.component(ofType: GKSKNodeComponent.self)!
+			blockSKNodeComponent.node.removeFromParent()
+			gridSKNodeComponent.node.addChild(blockSKNodeComponent.node)
 			
 			self.blocks.append(block)
 		}
@@ -29,8 +32,8 @@ class GridBlockContainerComponent: GKComponent {
 	
 	func removeAllBlocks() -> Void {
 		for block in blocks {
-			let geometry = block.component(ofType: GeometryComponent.self)!
-			geometry.skNode.removeFromParent()
+			let skNodeComponent = block.component(ofType: GKSKNodeComponent.self)!
+            skNodeComponent.node.removeFromParent()
 		}
 		blocks.removeAll()
 	}
