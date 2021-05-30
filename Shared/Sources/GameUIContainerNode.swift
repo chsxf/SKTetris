@@ -31,9 +31,11 @@ class GameUIContainerNode: SKNode {
     }
     
     private func onFocusManagerInputModeChanged(_ inputMode: InputMode) {
+        #if os(macOS)
         let hide = (inputMode == .gameController)
         pauseToggle?.isHidden = hide
         optionsButton?.isHidden = hide
+        #endif
     }
     
     func switchPauseToggle() {

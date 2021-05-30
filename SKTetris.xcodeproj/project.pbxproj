@@ -274,9 +274,9 @@
 				D94FFE49263757BD00EA6A09 /* SKNodeExtension.swift */,
 				D9BB3B36263D8D5800FA2707 /* SoundManager.swift */,
 				D93D7515263CB73600800E8E /* ToggleButtonNode.swift */,
+				D9A2CF73265CD9240068D89A /* ValueDisplayNode.swift */,
 				D9AB889B25F4320200896FDF /* Components */,
 				D9474F2625F4C6460088CAD6 /* States */,
-				D9A2CF73265CD9240068D89A /* ValueDisplayNode.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
