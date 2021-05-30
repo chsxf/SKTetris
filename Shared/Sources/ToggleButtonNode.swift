@@ -52,6 +52,20 @@ class ToggleButtonNode: ButtonNode {
         
         super.mouseUp(with: event)
     }
+    #else
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let touch = touches.first else {
+            return
+        }
+        
+        let location = touch.location(in: parent!)
+        let rect = calculateAccumulatedFrame()
+        if down && rect.contains(location) {
+            checked = !checked
+        }
+        
+        super.touchesEnded(touches, with: event)
+    }
     #endif
     
 }

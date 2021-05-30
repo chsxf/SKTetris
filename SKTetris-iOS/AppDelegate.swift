@@ -13,6 +13,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        SettingsManager.initialize()
+        SoundManager.preloadSounds()
         
         self.window = self.window ?? UIWindow()
         self.window!.backgroundColor = UIColor.gray
