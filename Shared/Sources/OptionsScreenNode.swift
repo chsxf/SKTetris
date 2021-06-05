@@ -23,24 +23,24 @@ class OptionsScreenNode: SKNode, FocusHandler {
         
         sfxToggle = childNode(withName: "SFX Toggle") as? ToggleButtonNode
         sfxToggle?.checked = SettingsManager.sfxEnabled
-        sfxToggle?.onClicked.on {
+        sfxToggle?.onClicked.on { _ in
             SettingsManager.sfxEnabled = self.sfxToggle!.checked
         }
         
         musicToggle = childNode(withName: "Music Toggle") as? ToggleButtonNode
         musicToggle?.checked = SettingsManager.musicEnabled
-        musicToggle?.onClicked.on {
+        musicToggle?.onClicked.on { _ in
             SettingsManager.musicEnabled = self.musicToggle!.checked
         }
         
         playButton = childNode(withName: "Play Button") as? ButtonNode
-        playButton?.onClicked.on {
+        playButton?.onClicked.on { _ in
             (self.scene as! GameScene).toggleOptions()
         }
         
         quitButton = childNode(withName: "Quit Button") as? ButtonNode
         #if os(macOS)
-        quitButton?.onClicked.on {
+        quitButton?.onClicked.on { _ in
             NSApp.terminate(nil)
         }
         #else

@@ -9,7 +9,7 @@ import Foundation
 
 class EventEmitter<T> {
     
-    typealias Callback = (_ parameters: T) -> Void
+    typealias Callback = (_: T, _: Any?) -> Void
     
     class EventEmitterEntry {
         private let callback: Callback
@@ -49,7 +49,7 @@ class EventEmitter<T> {
         return on(callback, usageLimit: 1)
     }
     
-    func notify(_ parameters: T) -> Void {
+    func notify(_ parameters: T, from sender: Any? = nil) -> Void {
         var toCall: [Callback] = []
         
         ParameterlessEventEmitter.synchronized {
@@ -59,7 +59,7 @@ class EventEmitter<T> {
         }
         
         for callback in toCall {
-            callback(parameters)
+            callback(parameters, sender)
         }
     }
     
@@ -67,7 +67,7 @@ class EventEmitter<T> {
 
 class ParameterlessEventEmitter {
     
-    typealias Callback = () -> Void
+    typealias Callback = (_: Any?) -> Void
     
     fileprivate static let queue = DispatchQueue(label: "com.xhaleera.eventEmitter")
 
@@ -109,7 +109,7 @@ class ParameterlessEventEmitter {
         return on(callback, usageLimit: 1)
     }
     
-    func notify() -> Void {
+    func notify(from sender: Any? = nil) -> Void {
         var toCall: [Callback] = []
         
         ParameterlessEventEmitter.synchronized {
@@ -120,7 +120,7 @@ class ParameterlessEventEmitter {
         }
         
         for callback in toCall {
-            callback()
+            callback(sender)
         }
     }
 

@@ -17,7 +17,7 @@ class GameFallingPieceState: GKState {
 		let gameStateMachine = stateMachine! as! GameStateMachine
 		if let piece = gameStateMachine.scene.currentPiece {
 			let pieceComponent = piece.component(ofType: PieceComponent.self)!
-			pieceComponent.pieceHasLanded.once {
+			pieceComponent.pieceHasLanded.once { _ in
                 SoundManager.play(.brickLand)
 				gameStateMachine.enter(GameResolutionState.self)
 			}

@@ -16,6 +16,8 @@ typealias ButtonColor = UIColor
 class ButtonNode: SKSpriteNode {
 
 	private(set) var onClicked = ParameterlessEventEmitter()
+    private(set) var onDown = ParameterlessEventEmitter()
+    private(set) var onUp = ParameterlessEventEmitter()
 	
 	override var isUserInteractionEnabled: Bool {
 		get { true }
@@ -34,9 +36,18 @@ class ButtonNode: SKSpriteNode {
 	}
 	
 	var down: Bool = false {
-		didSet {
-			ensureInitColors()
+        didSet {
+            ensureInitColors()
 			applyColor()
+            
+            if oldValue != down {
+                if down {
+                    onDown.notify(from: self)
+                }
+                else {
+                    onUp.notify(from: self)
+                }
+            }
 		}
 	}
 	
@@ -61,7 +72,7 @@ class ButtonNode: SKSpriteNode {
     }
 	
     func doTrigger() {
-        onClicked.notify()
+        onClicked.notify(from: self)
     }
     
 	private func ensureInitColors() {
@@ -121,7 +132,7 @@ class ButtonNode: SKSpriteNode {
         if down && rect.contains(location) {
             down = false
             hovered = false
-            onClicked.notify()
+            onClicked.notify(from: self)
         }
     }
     #endif

@@ -36,7 +36,7 @@ class ScoreManager {
 		updateLabels()
 	}
 	
-	func pushLines(_ countLines: Int) -> Void {
+    func pushLines(_ countLines: Int, sender: Any?) -> Void {
 		currentScore += scoreMap[countLines - 1] * currentLevel
 		
 		totalLinesCleared += countLines

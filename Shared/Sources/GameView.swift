@@ -37,7 +37,7 @@ class GameView: SKView {
 		gameScene.stateMachine!.enter(GameMainTitleState.self)
         
         SoundManager.play(.backgroundMusic01)
-        FocusManager.onInputModeChanged.on(onFocusManagerInputModeChanged)
+        FocusManager.onInputModeChanged.on(onFocusManagerInputModeChanged(inputMode:sender:))
         
         let notificationCenter = NotificationCenter.default
         let mainQueue = OperationQueue.main
@@ -78,6 +78,24 @@ class GameView: SKView {
                 continue
             }
             sizeAdapterComponent.adaptTo(size: sceneSize)
+        }
+        
+        for entity in gkScene.entities {
+            guard let virtualGamepad = entity.component(ofType: VirtualGamepadComponent.self) else {
+                continue
+            }
+            
+            #if os(iOS)
+            virtualGamepad.bindKeys()
+            virtualGamepad.onKeyDown.on(onVirtualGamepadKeyDown(key:sender:))
+            virtualGamepad.onKeyUp.on(onVirtualGamepadKeyUp(key:sender:))
+            #else
+            guard let virtualGamepadNode = entity.component(ofType: GKSKNodeComponent.self)?.node else {
+                break
+            }
+            virtualGamepadNode.isHidden = true
+            #endif
+            break
         }
     }
     
@@ -196,7 +214,7 @@ class GameView: SKView {
         }
     }
     
-    private func onFocusManagerInputModeChanged(inputMode: InputMode) {
+    private func onFocusManagerInputModeChanged(inputMode: InputMode, sender: Any?) {
         #if os(macOS)
         if inputMode != .pointer {
             trackingArea = NSTrackingArea(rect: frame, options: [.activeWhenFirstResponder, .mouseMoved], owner: self, userInfo: nil)
@@ -218,28 +236,30 @@ class GameView: SKView {
             return;
         }
         
-        let pieceComponent = gameScene.currentPiece?.component(ofType: PieceComponent.self)
+        guard let pieceComponent = gameScene.currentPiece?.component(ofType: PieceComponent.self) else {
+            return
+        }
         
         let keycode = Keycode(rawValue: event.keyCode)
         switch keycode {
         case .f:
-            pieceComponent?.turnLeft()
+            pieceComponent.turnLeft()
             break
             
         case .g:
-            pieceComponent?.turnRight()
+            pieceComponent.turnRight()
             break
             
         case .leftArrow:
-            pieceComponent?.startMovingLeft()
+            pieceComponent.startMovingLeft()
             break
         
         case .rightArrow:
-            pieceComponent?.startMovingRight()
+            pieceComponent.startMovingRight()
             break
             
         case .downArrow:
-            pieceComponent?.speedUp()
+            pieceComponent.speedUp()
             break
             
         default:
@@ -319,6 +339,52 @@ class GameView: SKView {
         let trackingArea = NSTrackingArea(rect: viewRect, options: [ .mouseEnteredAndExited, .activeWhenFirstResponder, .enabledDuringMouseDrag ], owner: node, userInfo: nil)
         addTrackingArea(trackingArea)
         return trackingArea
+    }
+    #else
+    func onVirtualGamepadKeyDown(key: VirtualGamepadKey, sender: Any?) {
+        guard let pieceComponent = gameScene.currentPiece?.component(ofType: PieceComponent.self) else {
+            return
+        }
+        
+        switch key {
+        case .dpadLeft:
+            pieceComponent.startMovingLeft()
+            break
+        case .dpadRight:
+            pieceComponent.startMovingRight()
+            break
+        case .dpadDown:
+            pieceComponent.speedUp()
+            break
+        case .buttonX:
+            pieceComponent.turnLeft()
+            break
+        case .buttonA:
+            pieceComponent.turnRight()
+            break
+        default:
+            break
+        }
+    }
+    
+    func onVirtualGamepadKeyUp(key: VirtualGamepadKey, sender: Any?) {
+        guard let pieceComponent = gameScene.currentPiece?.component(ofType: PieceComponent.self) else {
+            return
+        }
+        
+        switch key {
+        case .dpadLeft:
+            pieceComponent.stopMovingLeft()
+            break
+        case .dpadRight:
+            pieceComponent.stopMovingRight()
+            break
+        case .dpadDown:
+            pieceComponent.resetSpeed()
+            break
+        default:
+            break
+        }
     }
     #endif
     

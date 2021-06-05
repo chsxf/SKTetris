@@ -19,7 +19,7 @@ class GameOverContainerNode: SKNode, FocusHandler {
         FocusManager.register(handler: self)
         
         replayButton = childNode(withName: "Replay Button") as? ButtonNode
-        replayButton?.onClicked.on {
+        replayButton?.onClicked.on { _ in 
             (self.scene as! GameScene).replay()
         }
         

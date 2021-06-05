@@ -46,7 +46,7 @@ class GameScene: SKScene {
 	required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        SoundManager.onSoundFinishedPlaying.on(onSoundFinishedPlaying(_:))
+        SoundManager.onSoundFinishedPlaying.on(onSoundFinishedPlaying(_:sender:))
         
         stateMachine = GameStateMachine(withScene: self)
         ButtonManager.scene = self
@@ -71,7 +71,7 @@ class GameScene: SKScene {
         let scoreLabel = childNode(withName: "//Score Container")! as! ValueDisplayNode
         let levelLabel = childNode(withName: "//Level Container")! as! ValueDisplayNode
         scoreManager = ScoreManager(withScoreLabel: scoreLabel, andLevelLevel: levelLabel)
-        scoreManager?.onLevelChanged.on({ _newLevel in
+        scoreManager?.onLevelChanged.on({ _newLevel,_  in
             SoundManager.play(.newLevel)
         })
         
@@ -221,7 +221,7 @@ class GameScene: SKScene {
 		blockBlinkComponentSystem.update(deltaTime: deltaTime)
 	}
     
-    private func onSoundFinishedPlaying(_ soundKey: SoundKey) {
+    private func onSoundFinishedPlaying(_ soundKey: SoundKey, sender: Any?) {
         if soundKey == .gameOver {
             SoundManager.play(.backgroundMusic01)
         }

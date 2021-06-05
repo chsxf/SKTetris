@@ -63,7 +63,7 @@ class MainTitleScreenNode: SKNode, FocusHandler {
         }
     }
     
-    func playButtonClicked() {
+    func playButtonClicked(sender: Any?) {
         guard let gameScene = scene as? GameScene else {
             return
         }
@@ -72,7 +72,7 @@ class MainTitleScreenNode: SKNode, FocusHandler {
         gameScene.stateMachine?.enter(GameIdleState.self)
     }
     
-    func creditsButtonClicked() {
+    func creditsButtonClicked(sender: Any?) {
         let url = URL(string: "https://github.com/chsxf/SKTetris#licence")
         if url != nil {
             #if os(macOS)
