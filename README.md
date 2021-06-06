@@ -15,8 +15,13 @@ This project uses [gitmoji](https://gitmoji.dev) for its commit messages.
 SpriteKit being a proprietary framework from Apple, the game will only be avaiable on the following Apple platforms:
 
 - macOS 10.15+
-- iOS / iPadOS 13+ (coming soon)
+- iOS / iPadOS 13+
 - tvOS (coming soon)
+
+## iOS / iPadOS Availability
+
+Due to obvious potential copyright infringements, SKTetris is not available directly from the App Store.
+If you want to play on your iPhone or iPad, please clone this repository, open the project directly in Xcode and run the game directly on your device.
 
 # 🎮 Controls
 
@@ -54,7 +59,7 @@ The game uses the Game Controller framework, so only [natively supported control
 | D-pad Down                                                                                                             | Speeds up the descent of the current piece  |
 | D-pad Left                                                                                                             | Moves the current piece to the left         |
 | D-pad Right                                                                                                            | Moves the current piece to the right        |
-| Menu / Options                                                                                                         | Toggles options + pause                     |
+| Menu / Options                                                                                                         | Toggles options + pause (macOS only)        |
 
 ### In the Menus
 
