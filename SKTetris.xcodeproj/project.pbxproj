@@ -9,6 +9,53 @@
 /* Begin PBXBuildFile section */
 		D9044C452645130F00DB5A13 /* MainTitleScreenNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9044C442645130F00DB5A13 /* MainTitleScreenNode.swift */; };
 		D9044C47264521DC00DB5A13 /* OptionsScreenNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9044C46264521DC00DB5A13 /* OptionsScreenNode.swift */; };
+		D90F6278266D70FF00C52BC4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D90F6276266D70FF00C52BC4 /* LaunchScreen.storyboard */; };
+		D90F627D266D754300C52BC4 /* BlockTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = D921651825F1F935007005E7 /* BlockTools.swift */; };
+		D90F627E266D754300C52BC4 /* ButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FFD2DA261AEDD10054CEF5 /* ButtonNode.swift */; };
+		D90F627F266D754300C52BC4 /* EventEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F344EA261898DF0096183C /* EventEmitter.swift */; };
+		D90F6280266D754300C52BC4 /* FocusManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D988428C26483F1A0023E8B9 /* FocusManager.swift */; };
+		D90F6281266D754300C52BC4 /* GameOverContainerNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9884288264815EC0023E8B9 /* GameOverContainerNode.swift */; };
+		D90F6282266D754300C52BC4 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D945A22C25F18DC600FAE62D /* GameScene.swift */; };
+		D90F6283266D754300C52BC4 /* GameUIContainerNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D988428A264817A60023E8B9 /* GameUIContainerNode.swift */; };
+		D90F6284266D754300C52BC4 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D945A22725F18C4900FAE62D /* GameView.swift */; };
+		D90F6285266D754300C52BC4 /* GridBounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = D912E2B62605CEF400A6AD88 /* GridBounds.swift */; };
+		D90F6286266D754300C52BC4 /* GridCoordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94E81E025FDFCD700F54169 /* GridCoordinates.swift */; };
+		D90F6287266D754300C52BC4 /* GridRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94B61A126199CFC0044BD34 /* GridRow.swift */; };
+		D90F6288266D754300C52BC4 /* Keycode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AB888E25F3F62300896FDF /* Keycode.swift */; };
+		D90F6289266D754300C52BC4 /* MainTitleScreenNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9044C442645130F00DB5A13 /* MainTitleScreenNode.swift */; };
+		D90F628A266D754300C52BC4 /* OptionsScreenNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9044C46264521DC00DB5A13 /* OptionsScreenNode.swift */; };
+		D90F628B266D754300C52BC4 /* PieceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CF6DFE25FCCB5F0068F712 /* PieceModel.swift */; };
+		D90F628C266D754300C52BC4 /* PieceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A5FFD425F390EF00582E21 /* PieceType.swift */; };
+		D90F628D266D754300C52BC4 /* ScoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95AFB652621EEA100A82677 /* ScoreManager.swift */; };
+		D90F628E266D754300C52BC4 /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D983367E263D5B220064F53F /* SettingsManager.swift */; };
+		D90F628F266D754300C52BC4 /* SKNodeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94FFE49263757BD00EA6A09 /* SKNodeExtension.swift */; };
+		D90F6290266D754300C52BC4 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BB3B36263D8D5800FA2707 /* SoundManager.swift */; };
+		D90F6291266D754300C52BC4 /* ToggleButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93D7515263CB73600800E8E /* ToggleButtonNode.swift */; };
+		D90F6292266D754300C52BC4 /* ValueDisplayNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A2CF73265CD9240068D89A /* ValueDisplayNode.swift */; };
+		D90F6293266D754300C52BC4 /* VirtualGamepadKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D922A358266B736D00B839A8 /* VirtualGamepadKey.swift */; };
+		D90F6294266D754300C52BC4 /* BlockTransformComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AB889C25F4322200896FDF /* BlockTransformComponent.swift */; };
+		D90F6295266D754300C52BC4 /* GridBlockContainerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94B6197261973EA0044BD34 /* GridBlockContainerComponent.swift */; };
+		D90F6296266D754300C52BC4 /* GridTransformComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9474F3725F4E0300088CAD6 /* GridTransformComponent.swift */; };
+		D90F6297266D754300C52BC4 /* PieceComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AB88A025F4364D00896FDF /* PieceComponent.swift */; };
+		D90F6298266D754300C52BC4 /* BlinkComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D990A41826617BD2002864B8 /* BlinkComponent.swift */; };
+		D90F6299266D754300C52BC4 /* SceneSizeAdapterComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D951A0E82662706100AC99FC /* SceneSizeAdapterComponent.swift */; };
+		D90F629A266D754300C52BC4 /* VirtualGamepadComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D922A35E266B747200B839A8 /* VirtualGamepadComponent.swift */; };
+		D90F629B266D754300C52BC4 /* VirtualGamepadKeyComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D922A361266B766D00B839A8 /* VirtualGamepadKeyComponent.swift */; };
+		D90F629C266D754300C52BC4 /* GameFallingPieceState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9474F2B25F4C6B60088CAD6 /* GameFallingPieceState.swift */; };
+		D90F629D266D754300C52BC4 /* GameIdleState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9474F2725F4C66B0088CAD6 /* GameIdleState.swift */; };
+		D90F629E266D754300C52BC4 /* GameOverState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9474F3125F4C6E70088CAD6 /* GameOverState.swift */; };
+		D90F629F266D754300C52BC4 /* GameResolutionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9474F2E25F4C6CF0088CAD6 /* GameResolutionState.swift */; };
+		D90F62A0266D754300C52BC4 /* GameStateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D985252D26085FF100370D85 /* GameStateMachine.swift */; };
+		D90F62A1266D754300C52BC4 /* GameMainTitleState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AD3B37264090A20019075F /* GameMainTitleState.swift */; };
+		D90F62A2266D755300C52BC4 /* SF-Mono-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = D9AF394D26603C70003612D1 /* SF-Mono-Light.otf */; };
+		D90F62A3266D755300C52BC4 /* LondrinaSolid-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D9FFD2D5261AE8470054CEF5 /* LondrinaSolid-Regular.ttf */; };
+		D90F62A4266D755F00C52BC4 /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = D9BB3B34263D8A7800FA2707 /* Sounds */; };
+		D90F62A5266D755F00C52BC4 /* Background.sks in Resources */ = {isa = PBXBuildFile; fileRef = D9A5FFDF25F3C2A700582E21 /* Background.sks */; };
+		D90F62A6266D758200C52BC4 /* ButtonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9646669265A99A000F9FA9D /* ButtonManager.swift */; };
+		D90F62A7266D759200C52BC4 /* UIColor~Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9646665265A4D1000F9FA9D /* UIColor~Helpers.swift */; };
+		D90F62A8266D764200C52BC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D945A21425F18B9700FAE62D /* Assets.xcassets */; };
+		D90F62A9266D780800C52BC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99888572654E086002A22EA /* AppDelegate.swift */; };
+		D90F62AA266D780800C52BC4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9241B6B265A3CF2009B4FBD /* ViewController.swift */; };
 		D912E2B72605CEF400A6AD88 /* GridBounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = D912E2B62605CEF400A6AD88 /* GridBounds.swift */; };
 		D921651925F1F935007005E7 /* BlockTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = D921651825F1F935007005E7 /* BlockTools.swift */; };
 		D922A359266B736D00B839A8 /* VirtualGamepadKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D922A358266B736D00B839A8 /* VirtualGamepadKey.swift */; };
@@ -115,6 +162,9 @@
 /* Begin PBXFileReference section */
 		D9044C442645130F00DB5A13 /* MainTitleScreenNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTitleScreenNode.swift; sourceTree = "<group>"; };
 		D9044C46264521DC00DB5A13 /* OptionsScreenNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsScreenNode.swift; sourceTree = "<group>"; };
+		D90F626B266D70FE00C52BC4 /* SKTetris-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SKTetris-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D90F6277266D70FF00C52BC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D90F6279266D70FF00C52BC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D912E2B62605CEF400A6AD88 /* GridBounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridBounds.swift; sourceTree = "<group>"; };
 		D921651825F1F935007005E7 /* BlockTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockTools.swift; sourceTree = "<group>"; };
 		D922A358266B736D00B839A8 /* VirtualGamepadKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualGamepadKey.swift; sourceTree = "<group>"; };
@@ -172,6 +222,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		D90F6268266D70FE00C52BC4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D945A20A25F18B9500FAE62D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -189,6 +246,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D90F626C266D70FE00C52BC4 /* SKTetris-tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				D90F6279266D70FF00C52BC4 /* Info.plist */,
+				D90F6276266D70FF00C52BC4 /* LaunchScreen.storyboard */,
+			);
+			path = "SKTetris-tvOS";
+			sourceTree = "<group>";
+		};
 		D945A20425F18B9500FAE62D = {
 			isa = PBXGroup;
 			children = (
@@ -198,6 +264,7 @@
 				D99888692654E185002A22EA /* Shared */,
 				D99888562654E086002A22EA /* SKTetris-iOS */,
 				D945A20F25F18B9500FAE62D /* SKTetris-macOS */,
+				D90F626C266D70FE00C52BC4 /* SKTetris-tvOS */,
 			);
 			sourceTree = "<group>";
 		};
@@ -206,6 +273,7 @@
 			children = (
 				D945A20D25F18B9500FAE62D /* SKTetris-macOS.app */,
 				D99888552654E086002A22EA /* SKTetris-iOS.app */,
+				D90F626B266D70FE00C52BC4 /* SKTetris-tvOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -318,6 +386,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		D90F626A266D70FE00C52BC4 /* SKTetris-tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D90F627C266D70FF00C52BC4 /* Build configuration list for PBXNativeTarget "SKTetris-tvOS" */;
+			buildPhases = (
+				D90F6267266D70FE00C52BC4 /* Sources */,
+				D90F6268266D70FE00C52BC4 /* Frameworks */,
+				D90F6269266D70FE00C52BC4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SKTetris-tvOS";
+			productName = "SKTetris-tvOS";
+			productReference = D90F626B266D70FE00C52BC4 /* SKTetris-tvOS.app */;
+			productType = "com.apple.product-type.application";
+		};
 		D945A20C25F18B9500FAE62D /* SKTetris-macOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D945A22025F18B9700FAE62D /* Build configuration list for PBXNativeTarget "SKTetris-macOS" */;
@@ -362,6 +447,9 @@
 				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
+					D90F626A266D70FE00C52BC4 = {
+						CreatedOnToolsVersion = 12.5;
+					};
 					D945A20C25F18B9500FAE62D = {
 						CreatedOnToolsVersion = 12.4;
 					};
@@ -385,11 +473,25 @@
 			targets = (
 				D945A20C25F18B9500FAE62D /* SKTetris-macOS */,
 				D99888542654E086002A22EA /* SKTetris-iOS */,
+				D90F626A266D70FE00C52BC4 /* SKTetris-tvOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		D90F6269266D70FE00C52BC4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D90F62A8266D764200C52BC4 /* Assets.xcassets in Resources */,
+				D90F62A4266D755F00C52BC4 /* Sounds in Resources */,
+				D90F62A5266D755F00C52BC4 /* Background.sks in Resources */,
+				D90F62A2266D755300C52BC4 /* SF-Mono-Light.otf in Resources */,
+				D90F62A3266D755300C52BC4 /* LondrinaSolid-Regular.ttf in Resources */,
+				D90F6278266D70FF00C52BC4 /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D945A20B25F18B9500FAE62D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -416,6 +518,54 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		D90F6267266D70FE00C52BC4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D90F62A9266D780800C52BC4 /* AppDelegate.swift in Sources */,
+				D90F62AA266D780800C52BC4 /* ViewController.swift in Sources */,
+				D90F62A7266D759200C52BC4 /* UIColor~Helpers.swift in Sources */,
+				D90F62A6266D758200C52BC4 /* ButtonManager.swift in Sources */,
+				D90F627D266D754300C52BC4 /* BlockTools.swift in Sources */,
+				D90F627E266D754300C52BC4 /* ButtonNode.swift in Sources */,
+				D90F627F266D754300C52BC4 /* EventEmitter.swift in Sources */,
+				D90F6280266D754300C52BC4 /* FocusManager.swift in Sources */,
+				D90F6281266D754300C52BC4 /* GameOverContainerNode.swift in Sources */,
+				D90F6282266D754300C52BC4 /* GameScene.swift in Sources */,
+				D90F6283266D754300C52BC4 /* GameUIContainerNode.swift in Sources */,
+				D90F6284266D754300C52BC4 /* GameView.swift in Sources */,
+				D90F6285266D754300C52BC4 /* GridBounds.swift in Sources */,
+				D90F6286266D754300C52BC4 /* GridCoordinates.swift in Sources */,
+				D90F6287266D754300C52BC4 /* GridRow.swift in Sources */,
+				D90F6288266D754300C52BC4 /* Keycode.swift in Sources */,
+				D90F6289266D754300C52BC4 /* MainTitleScreenNode.swift in Sources */,
+				D90F628A266D754300C52BC4 /* OptionsScreenNode.swift in Sources */,
+				D90F628B266D754300C52BC4 /* PieceModel.swift in Sources */,
+				D90F628C266D754300C52BC4 /* PieceType.swift in Sources */,
+				D90F628D266D754300C52BC4 /* ScoreManager.swift in Sources */,
+				D90F628E266D754300C52BC4 /* SettingsManager.swift in Sources */,
+				D90F628F266D754300C52BC4 /* SKNodeExtension.swift in Sources */,
+				D90F6290266D754300C52BC4 /* SoundManager.swift in Sources */,
+				D90F6291266D754300C52BC4 /* ToggleButtonNode.swift in Sources */,
+				D90F6292266D754300C52BC4 /* ValueDisplayNode.swift in Sources */,
+				D90F6293266D754300C52BC4 /* VirtualGamepadKey.swift in Sources */,
+				D90F6294266D754300C52BC4 /* BlockTransformComponent.swift in Sources */,
+				D90F6295266D754300C52BC4 /* GridBlockContainerComponent.swift in Sources */,
+				D90F6296266D754300C52BC4 /* GridTransformComponent.swift in Sources */,
+				D90F6297266D754300C52BC4 /* PieceComponent.swift in Sources */,
+				D90F6298266D754300C52BC4 /* BlinkComponent.swift in Sources */,
+				D90F6299266D754300C52BC4 /* SceneSizeAdapterComponent.swift in Sources */,
+				D90F629A266D754300C52BC4 /* VirtualGamepadComponent.swift in Sources */,
+				D90F629B266D754300C52BC4 /* VirtualGamepadKeyComponent.swift in Sources */,
+				D90F629C266D754300C52BC4 /* GameFallingPieceState.swift in Sources */,
+				D90F629D266D754300C52BC4 /* GameIdleState.swift in Sources */,
+				D90F629E266D754300C52BC4 /* GameOverState.swift in Sources */,
+				D90F629F266D754300C52BC4 /* GameResolutionState.swift in Sources */,
+				D90F62A0266D754300C52BC4 /* GameStateMachine.swift in Sources */,
+				D90F62A1266D754300C52BC4 /* GameMainTitleState.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D945A20925F18B9500FAE62D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -513,6 +663,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		D90F6276266D70FF00C52BC4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D90F6277266D70FF00C52BC4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
 		D99888622654E087002A22EA /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -524,6 +682,49 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		D90F627A266D70FF00C52BC4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "tvOS Assets";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5L9YG7YEUA;
+				INFOPLIST_FILE = "SKTetris-tvOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.xhaleera.SKTetris.tvOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 13.0;
+			};
+			name = Debug;
+		};
+		D90F627B266D70FF00C52BC4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "tvOS Assets";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5L9YG7YEUA;
+				INFOPLIST_FILE = "SKTetris-tvOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.xhaleera.SKTetris.tvOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 13.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		D945A21E25F18B9700FAE62D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -743,6 +944,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		D90F627C266D70FF00C52BC4 /* Build configuration list for PBXNativeTarget "SKTetris-tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D90F627A266D70FF00C52BC4 /* Debug */,
+				D90F627B266D70FF00C52BC4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		D945A20825F18B9500FAE62D /* Build configuration list for PBXProject "SKTetris" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

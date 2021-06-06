@@ -16,7 +16,7 @@ SpriteKit being a proprietary framework from Apple, the game will only be avaiab
 
 - macOS 10.15+
 - iOS / iPadOS 13+
-- tvOS (coming soon)
+- tvOS 13+ (in progress)
 
 ## iOS / iPadOS Availability
 
