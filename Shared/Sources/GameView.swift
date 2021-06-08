@@ -10,7 +10,7 @@ import SpriteKit
 import GameplayKit
 import GameController
 
-class GameView: SKView {
+class GameView: SKView, VirtualGamepadDelegate {
 
     private let gkScene: GKScene
 	private let gameScene: GameScene
@@ -21,6 +21,8 @@ class GameView: SKView {
     private var trackingArea: NSTrackingArea?
     #endif
 
+    var inMenu: Bool { gameScene.isInMenu }
+    
 	override init(frame frameRect: CGRect) {
         gkScene = GKScene(fileNamed: "Background")!
         gameScene = gkScene.rootNode! as! GameScene
@@ -87,8 +89,7 @@ class GameView: SKView {
             
             #if os(iOS)
             virtualGamepad.bindKeys()
-            virtualGamepad.onKeyDown.on(onVirtualGamepadKeyDown(key:sender:))
-            virtualGamepad.onKeyUp.on(onVirtualGamepadKeyUp(key:sender:))
+            virtualGamepad.delegate = self
             #else
             guard let virtualGamepadNode = entity.component(ofType: GKSKNodeComponent.self)?.node else {
                 break
@@ -124,7 +125,11 @@ class GameView: SKView {
             currentController = nil
             
             if FocusManager.inputMode == .gameController {
+                #if os(tvOS)
+                FocusManager.inputMode = .remote
+                #else
                 FocusManager.inputMode = .pointer
+                #endif
             }
         }
     }
@@ -340,50 +345,86 @@ class GameView: SKView {
         addTrackingArea(trackingArea)
         return trackingArea
     }
+    
+    func onVirtualGamepadKeyDown(_ key: VirtualGamepadKey) {
+        // do nothing
+    }
+    
+    func onVirtualGamepadKeyUp(_ key: VirtualGamepadKey) {
+        // do nothing
+    }
     #else
-    func onVirtualGamepadKeyDown(key: VirtualGamepadKey, sender: Any?) {
-        guard let pieceComponent = gameScene.currentPiece?.component(ofType: PieceComponent.self) else {
-            return
+    func onVirtualGamepadKeyDown(_ key: VirtualGamepadKey) {
+        if !inMenu {
+            let pieceComponent = gameScene.currentPiece?.component(ofType: PieceComponent.self)
+            
+            switch key {
+            case .dpadLeft:
+                pieceComponent?.startMovingLeft()
+                break
+            case .dpadRight:
+                pieceComponent?.startMovingRight()
+                break
+            case .dpadDown:
+                pieceComponent?.speedUp()
+                break
+            case .buttonX:
+                pieceComponent?.turnLeft()
+                break
+            case .buttonA:
+                pieceComponent?.turnRight()
+                break
+            default:
+                break
+            }
         }
         
-        switch key {
-        case .dpadLeft:
-            pieceComponent.startMovingLeft()
-            break
-        case .dpadRight:
-            pieceComponent.startMovingRight()
-            break
-        case .dpadDown:
-            pieceComponent.speedUp()
-            break
-        case .buttonX:
-            pieceComponent.turnLeft()
-            break
-        case .buttonA:
-            pieceComponent.turnRight()
-            break
-        default:
-            break
+        if key == .buttonMenu {
+            gameScene.toggleOptions()
         }
     }
     
-    func onVirtualGamepadKeyUp(key: VirtualGamepadKey, sender: Any?) {
-        guard let pieceComponent = gameScene.currentPiece?.component(ofType: PieceComponent.self) else {
-            return
+    func onVirtualGamepadKeyUp(_ key: VirtualGamepadKey) {
+        if !inMenu {
+            guard let pieceComponent = gameScene.currentPiece?.component(ofType: PieceComponent.self) else {
+                return
+            }
+            
+            switch key {
+            case .dpadLeft:
+                pieceComponent.stopMovingLeft()
+                break
+            case .dpadRight:
+                pieceComponent.stopMovingRight()
+                break
+            case .dpadDown:
+                pieceComponent.resetSpeed()
+                break
+            default:
+                break
+            }
         }
-        
-        switch key {
-        case .dpadLeft:
-            pieceComponent.stopMovingLeft()
-            break
-        case .dpadRight:
-            pieceComponent.stopMovingRight()
-            break
-        case .dpadDown:
-            pieceComponent.resetSpeed()
-            break
-        default:
-            break
+        else {
+            #if os(tvOS)
+            switch key {
+            case .dpadLeft:
+                FocusManager.moveTowards(direction: .left)
+                break
+            case .dpadRight:
+                FocusManager.moveTowards(direction: .right)
+                break
+            case .dpadUp:
+                FocusManager.moveTowards(direction: .up)
+                break
+            case .dpadDown:
+                FocusManager.moveTowards(direction: .down)
+                break
+            case .buttonA:
+                FocusManager.doTrigger()
+            default:
+                break
+            }
+            #endif
         }
     }
     #endif

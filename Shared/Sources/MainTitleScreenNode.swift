@@ -27,8 +27,12 @@ class MainTitleScreenNode: SKNode, FocusHandler {
         
         playButton = buttonsContainer!.childNode(withName: "Play Button")! as? ButtonNode
         playButton?.onClicked.on(playButtonClicked)
+        
         creditsButton = buttonsContainer!.childNode(withName: "Credits Button")! as? ButtonNode
         creditsButton?.onClicked.on(creditsButtonClicked)
+        #if os(tvOS)
+        creditsButton?.isHidden = true
+        #endif        
         
         let versionLabel = childNode(withName: "Version Anchor/Version Label")! as! SKLabelNode
         #if os(macOS)
@@ -84,6 +88,9 @@ class MainTitleScreenNode: SKNode, FocusHandler {
     }
     
     func nextFocusTarget(forDirection direction: FocusDirection, fromFocusTarget: ButtonNode) -> ButtonNode? {
+        #if os(tvOS)
+        return nil
+        #else
         switch (direction, fromFocusTarget) {
         case (.down, playButton):
             return creditsButton
@@ -92,6 +99,7 @@ class MainTitleScreenNode: SKNode, FocusHandler {
         default:
             return nil
         }
+        #endif
     }
     
 }

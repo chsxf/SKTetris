@@ -11,6 +11,7 @@ enum InputMode {
     case keyboard
     case pointer
     case gameController
+    case remote
 }
 
 enum FocusDirection {

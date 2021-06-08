@@ -10,10 +10,9 @@ import GameplayKit
 @objc(VirtualGamepadComponent)
 class VirtualGamepadComponent: GKComponent {
 
-    let onKeyDown = EventEmitter<VirtualGamepadKey>()
-    let onKeyUp = EventEmitter<VirtualGamepadKey>()
-    
     private var keyMap: [ButtonNode:VirtualGamepadKey] = [:]
+    
+    var delegate: VirtualGamepadDelegate?
     
     override class var supportsSecureCoding: Bool { true }
     
@@ -48,7 +47,7 @@ class VirtualGamepadComponent: GKComponent {
             return
         }
         
-        onKeyDown.notify(keyFromButton)
+        delegate?.onVirtualGamepadKeyDown(keyFromButton)
     }
     
     private func onButtonUp(sender: Any?) {
@@ -60,7 +59,7 @@ class VirtualGamepadComponent: GKComponent {
             return
         }
         
-        onKeyUp.notify(keyFromButton)
+        delegate?.onVirtualGamepadKeyUp(keyFromButton)
     }
     
 }

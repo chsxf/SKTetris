@@ -12,4 +12,5 @@ enum VirtualGamepadKey: Int {
     case dpadDown   = 0x8
     case buttonA    = 0x10
     case buttonX    = 0x20
+    case buttonMenu = 0x40
 }

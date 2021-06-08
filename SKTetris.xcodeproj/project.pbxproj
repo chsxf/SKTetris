@@ -55,8 +55,10 @@
 		D90F62A7266D759200C52BC4 /* UIColor~Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9646665265A4D1000F9FA9D /* UIColor~Helpers.swift */; };
 		D90F62A8266D764200C52BC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D945A21425F18B9700FAE62D /* Assets.xcassets */; };
 		D90F62A9266D780800C52BC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99888572654E086002A22EA /* AppDelegate.swift */; };
-		D90F62AA266D780800C52BC4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9241B6B265A3CF2009B4FBD /* ViewController.swift */; };
 		D912E2B72605CEF400A6AD88 /* GridBounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = D912E2B62605CEF400A6AD88 /* GridBounds.swift */; };
+		D9146A262671C32B00551A94 /* VirtualGamepadDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9146A252671C32B00551A94 /* VirtualGamepadDelegate.swift */; };
+		D9146A272671C32B00551A94 /* VirtualGamepadDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9146A252671C32B00551A94 /* VirtualGamepadDelegate.swift */; };
+		D9146A282671C32B00551A94 /* VirtualGamepadDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9146A252671C32B00551A94 /* VirtualGamepadDelegate.swift */; };
 		D921651925F1F935007005E7 /* BlockTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = D921651825F1F935007005E7 /* BlockTools.swift */; };
 		D922A359266B736D00B839A8 /* VirtualGamepadKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D922A358266B736D00B839A8 /* VirtualGamepadKey.swift */; };
 		D922A35A266B736D00B839A8 /* VirtualGamepadKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D922A358266B736D00B839A8 /* VirtualGamepadKey.swift */; };
@@ -116,6 +118,8 @@
 		D95AFB662621EEA100A82677 /* ScoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95AFB652621EEA100A82677 /* ScoreManager.swift */; };
 		D9646666265A4D1000F9FA9D /* UIColor~Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9646665265A4D1000F9FA9D /* UIColor~Helpers.swift */; };
 		D964666A265A99A000F9FA9D /* ButtonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9646669265A99A000F9FA9D /* ButtonManager.swift */; };
+		D96DF956266F2B1800F842EA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96DF955266F2B1800F842EA /* ViewController.swift */; };
+		D96DF958266F2C9A00F842EA /* SiriRemoteGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96DF957266F2C9A00F842EA /* SiriRemoteGestureRecognizer.swift */; };
 		D983367F263D5B220064F53F /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D983367E263D5B220064F53F /* SettingsManager.swift */; };
 		D985252E26085FF100370D85 /* GameStateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D985252D26085FF100370D85 /* GameStateMachine.swift */; };
 		D9884289264815EC0023E8B9 /* GameOverContainerNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9884288264815EC0023E8B9 /* GameOverContainerNode.swift */; };
@@ -166,6 +170,7 @@
 		D90F6277266D70FF00C52BC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D90F6279266D70FF00C52BC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D912E2B62605CEF400A6AD88 /* GridBounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridBounds.swift; sourceTree = "<group>"; };
+		D9146A252671C32B00551A94 /* VirtualGamepadDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualGamepadDelegate.swift; sourceTree = "<group>"; };
 		D921651825F1F935007005E7 /* BlockTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockTools.swift; sourceTree = "<group>"; };
 		D922A358266B736D00B839A8 /* VirtualGamepadKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualGamepadKey.swift; sourceTree = "<group>"; };
 		D922A35E266B747200B839A8 /* VirtualGamepadComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualGamepadComponent.swift; sourceTree = "<group>"; };
@@ -194,6 +199,8 @@
 		D95AFB652621EEA100A82677 /* ScoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreManager.swift; sourceTree = "<group>"; };
 		D9646665265A4D1000F9FA9D /* UIColor~Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor~Helpers.swift"; sourceTree = "<group>"; };
 		D9646669265A99A000F9FA9D /* ButtonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonManager.swift; sourceTree = "<group>"; };
+		D96DF955266F2B1800F842EA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D96DF957266F2C9A00F842EA /* SiriRemoteGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiriRemoteGestureRecognizer.swift; sourceTree = "<group>"; };
 		D983367E263D5B220064F53F /* SettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
 		D985252D26085FF100370D85 /* GameStateMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStateMachine.swift; sourceTree = "<group>"; };
 		D9884288264815EC0023E8B9 /* GameOverContainerNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverContainerNode.swift; sourceTree = "<group>"; };
@@ -251,6 +258,8 @@
 			children = (
 				D90F6279266D70FF00C52BC4 /* Info.plist */,
 				D90F6276266D70FF00C52BC4 /* LaunchScreen.storyboard */,
+				D96DF955266F2B1800F842EA /* ViewController.swift */,
+				D96DF957266F2C9A00F842EA /* SiriRemoteGestureRecognizer.swift */,
 			);
 			path = "SKTetris-tvOS";
 			sourceTree = "<group>";
@@ -352,6 +361,7 @@
 				D9BB3B36263D8D5800FA2707 /* SoundManager.swift */,
 				D93D7515263CB73600800E8E /* ToggleButtonNode.swift */,
 				D9A2CF73265CD9240068D89A /* ValueDisplayNode.swift */,
+				D9146A252671C32B00551A94 /* VirtualGamepadDelegate.swift */,
 				D922A358266B736D00B839A8 /* VirtualGamepadKey.swift */,
 				D9AB889B25F4320200896FDF /* Components */,
 				D9474F2625F4C6460088CAD6 /* States */,
@@ -523,7 +533,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D90F62A9266D780800C52BC4 /* AppDelegate.swift in Sources */,
-				D90F62AA266D780800C52BC4 /* ViewController.swift in Sources */,
 				D90F62A7266D759200C52BC4 /* UIColor~Helpers.swift in Sources */,
 				D90F62A6266D758200C52BC4 /* ButtonManager.swift in Sources */,
 				D90F627D266D754300C52BC4 /* BlockTools.swift in Sources */,
@@ -540,8 +549,10 @@
 				D90F6288266D754300C52BC4 /* Keycode.swift in Sources */,
 				D90F6289266D754300C52BC4 /* MainTitleScreenNode.swift in Sources */,
 				D90F628A266D754300C52BC4 /* OptionsScreenNode.swift in Sources */,
+				D96DF956266F2B1800F842EA /* ViewController.swift in Sources */,
 				D90F628B266D754300C52BC4 /* PieceModel.swift in Sources */,
 				D90F628C266D754300C52BC4 /* PieceType.swift in Sources */,
+				D96DF958266F2C9A00F842EA /* SiriRemoteGestureRecognizer.swift in Sources */,
 				D90F628D266D754300C52BC4 /* ScoreManager.swift in Sources */,
 				D90F628E266D754300C52BC4 /* SettingsManager.swift in Sources */,
 				D90F628F266D754300C52BC4 /* SKNodeExtension.swift in Sources */,
@@ -558,6 +569,7 @@
 				D90F629A266D754300C52BC4 /* VirtualGamepadComponent.swift in Sources */,
 				D90F629B266D754300C52BC4 /* VirtualGamepadKeyComponent.swift in Sources */,
 				D90F629C266D754300C52BC4 /* GameFallingPieceState.swift in Sources */,
+				D9146A282671C32B00551A94 /* VirtualGamepadDelegate.swift in Sources */,
 				D90F629D266D754300C52BC4 /* GameIdleState.swift in Sources */,
 				D90F629E266D754300C52BC4 /* GameOverState.swift in Sources */,
 				D90F629F266D754300C52BC4 /* GameResolutionState.swift in Sources */,
@@ -602,6 +614,7 @@
 				D9474F3225F4C6E70088CAD6 /* GameOverState.swift in Sources */,
 				D951A0E92662706100AC99FC /* SceneSizeAdapterComponent.swift in Sources */,
 				D988428B264817A60023E8B9 /* GameUIContainerNode.swift in Sources */,
+				D9146A262671C32B00551A94 /* VirtualGamepadDelegate.swift in Sources */,
 				D9A5FFD525F390EF00582E21 /* PieceType.swift in Sources */,
 				D9474F3825F4E0300088CAD6 /* GridTransformComponent.swift in Sources */,
 				D945A21125F18B9500FAE62D /* AppDelegate.swift in Sources */,
@@ -644,6 +657,7 @@
 				D9646666265A4D1000F9FA9D /* UIColor~Helpers.swift in Sources */,
 				D9241B78265A3E41009B4FBD /* GridRow.swift in Sources */,
 				D9241B79265A3E41009B4FBD /* Keycode.swift in Sources */,
+				D9146A272671C32B00551A94 /* VirtualGamepadDelegate.swift in Sources */,
 				D9241B7A265A3E41009B4FBD /* MainTitleScreenNode.swift in Sources */,
 				D9241B7B265A3E41009B4FBD /* OptionsScreenNode.swift in Sources */,
 				D9A2CF75265CD9240068D89A /* ValueDisplayNode.swift in Sources */,
