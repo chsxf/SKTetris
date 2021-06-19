@@ -1,10 +1,12 @@
 {
   "images" : [
     {
+      "filename" : "tvOS-appicon-400x240-middle.png",
       "idiom" : "tv",
       "scale" : "1x"
     },
     {
+      "filename" : "tvOS-appicon-800x480-middle.png",
       "idiom" : "tv",
       "scale" : "2x"
     }
