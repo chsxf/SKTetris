@@ -16,12 +16,12 @@ SpriteKit being a proprietary framework from Apple, the game will only be avaiab
 
 - macOS 10.15+
 - iOS / iPadOS 13+
-- tvOS 13+ (in progress)
+- tvOS 13+
 
-## iOS / iPadOS Availability
+## iOS / iPadOS / tvOS Availability
 
 Due to obvious potential copyright infringements, SKTetris is not available directly from the App Store.
-If you want to play on your iPhone or iPad, please clone this repository, open the project directly in Xcode and run the game directly on your device.
+If you want to play on your iPhone, iPad or Apple TV, please clone this repository, open the project directly in Xcode and run the game directly on your device.
 
 # 🎮 Controls
 
@@ -70,7 +70,22 @@ The game uses the Game Controller framework, so only [natively supported control
 
 ## Siri Remote
 
-TBD
+### During Gameplay
+
+| Control                                  | Command                                    |
+| ---------------------------------------- | ------------------------------------------ |
+| Press the touch area (top of the remote) | Rotates the current piece clockwise        |
+| Swipe downwards                          | Speeds up the descent of the current piece |
+| Swipe to the Left                        | Moves the current piece to the left        |
+| Swipe to the Right                       | Moves the current piece to the right       |
+| Play / Pause button                      | Toggles options + pause (macOS only)       |
+
+### In the Menus
+
+| Control                                  | Command                                                  |
+| ---------------------------------------- | -------------------------------------------------------- |
+| Swipe on the touch area                  | Moves to the next control in the corresponding direction |
+| Press the touch area (top of the remote) | Triggers the selected control                            |
 
 # ⚖️ Licence
 

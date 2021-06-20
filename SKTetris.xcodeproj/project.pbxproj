@@ -100,7 +100,6 @@
 		D9241B8D265A3E4F009B4FBD /* GameMainTitleState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AD3B37264090A20019075F /* GameMainTitleState.swift */; };
 		D93D7516263CB73700800E8E /* ToggleButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93D7515263CB73600800E8E /* ToggleButtonNode.swift */; };
 		D945A21125F18B9500FAE62D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D945A21025F18B9500FAE62D /* AppDelegate.swift */; };
-		D945A21525F18B9700FAE62D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D945A21425F18B9700FAE62D /* Assets.xcassets */; };
 		D945A22825F18C4900FAE62D /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D945A22725F18C4900FAE62D /* GameView.swift */; };
 		D945A22D25F18DC600FAE62D /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D945A22C25F18DC600FAE62D /* GameScene.swift */; };
 		D9474F2825F4C66B0088CAD6 /* GameIdleState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9474F2725F4C66B0088CAD6 /* GameIdleState.swift */; };
@@ -129,7 +128,6 @@
 		D990A41A26617BD2002864B8 /* BlinkComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D990A41826617BD2002864B8 /* BlinkComponent.swift */; };
 		D99888582654E086002A22EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99888572654E086002A22EA /* AppDelegate.swift */; };
 		D99888642654E087002A22EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D99888622654E087002A22EA /* LaunchScreen.storyboard */; };
-		D998886B2654E2CF002A22EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D945A21425F18B9700FAE62D /* Assets.xcassets */; };
 		D9A2CF74265CD9240068D89A /* ValueDisplayNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A2CF73265CD9240068D89A /* ValueDisplayNode.swift */; };
 		D9A2CF75265CD9240068D89A /* ValueDisplayNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A2CF73265CD9240068D89A /* ValueDisplayNode.swift */; };
 		D9A5FFD525F390EF00582E21 /* PieceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A5FFD425F390EF00582E21 /* PieceType.swift */; };
@@ -144,6 +142,8 @@
 		D9B8D964265ABC950008FCD1 /* LondrinaSolid-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D9FFD2D5261AE8470054CEF5 /* LondrinaSolid-Regular.ttf */; };
 		D9BB3B35263D8A7800FA2707 /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = D9BB3B34263D8A7800FA2707 /* Sounds */; };
 		D9BB3B37263D8D5800FA2707 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BB3B36263D8D5800FA2707 /* SoundManager.swift */; };
+		D9C11074267F0720009327DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D945A21425F18B9700FAE62D /* Assets.xcassets */; };
+		D9C11075267F0721009327DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D945A21425F18B9700FAE62D /* Assets.xcassets */; };
 		D9CF6DFF25FCCB5F0068F712 /* PieceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CF6DFE25FCCB5F0068F712 /* PieceModel.swift */; };
 		D9F344EB261898DF0096183C /* EventEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F344EA261898DF0096183C /* EventEmitter.swift */; };
 		D9FFD2D7261AE8A90054CEF5 /* LondrinaSolid-Regular.ttf in CopyFiles */ = {isa = PBXBuildFile; fileRef = D9FFD2D5261AE8470054CEF5 /* LondrinaSolid-Regular.ttf */; };
@@ -507,7 +507,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9BB3B35263D8A7800FA2707 /* Sounds in Resources */,
-				D945A21525F18B9700FAE62D /* Assets.xcassets in Resources */,
+				D9C11075267F0721009327DF /* Assets.xcassets in Resources */,
 				D9A5FFE025F3C2A700582E21 /* Background.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -520,7 +520,7 @@
 				D9B8D964265ABC950008FCD1 /* LondrinaSolid-Regular.ttf in Resources */,
 				D9B8D960265AB9110008FCD1 /* Sounds in Resources */,
 				D99888642654E087002A22EA /* LaunchScreen.storyboard in Resources */,
-				D998886B2654E2CF002A22EA /* Assets.xcassets in Resources */,
+				D9C11074267F0720009327DF /* Assets.xcassets in Resources */,
 				D9B8D961265AB9150008FCD1 /* Background.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -793,7 +793,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -851,7 +851,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -869,7 +869,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 5L9YG7YEUA;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -894,7 +894,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 5L9YG7YEUA;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -916,6 +916,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 5L9YG7YEUA;
 				ENABLE_PREVIEWS = YES;
@@ -938,6 +939,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 5L9YG7YEUA;
 				ENABLE_PREVIEWS = YES;
