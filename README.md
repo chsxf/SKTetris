@@ -59,7 +59,7 @@ The game uses the Game Controller framework, so only [natively supported control
 | D-pad Down                                                                                                             | Speeds up the descent of the current piece  |
 | D-pad Left                                                                                                             | Moves the current piece to the left         |
 | D-pad Right                                                                                                            | Moves the current piece to the right        |
-| Menu / Options                                                                                                         | Toggles options + pause (macOS only)        |
+| Menu / Options                                                                                                         | Toggles options + pause        |
 
 ### In the Menus
 
@@ -78,7 +78,7 @@ The game uses the Game Controller framework, so only [natively supported control
 | Swipe downwards                          | Speeds up the descent of the current piece |
 | Swipe to the Left                        | Moves the current piece to the left        |
 | Swipe to the Right                       | Moves the current piece to the right       |
-| Play / Pause button                      | Toggles options + pause (macOS only)       |
+| Play / Pause button                      | Toggles options + pause       |
 
 ### In the Menus
 
