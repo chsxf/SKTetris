@@ -87,9 +87,9 @@ The game uses the Game Controller framework, so only [natively supported control
 | Swipe on the touch area                  | Moves to the next control in the corresponding direction |
 | Press the touch area (top of the remote) | Triggers the selected control                            |
 
-# ⚖️ Licence
+# ⚖️ License
 
-To the exception of those mentioned below, all source code and assets are distributed under the [MIT Licence](LICENSE).
+To the exception of those mentioned below, all source code and assets are distributed under the [MIT License](LICENSE).
 
 ## Londrina Solid Font
 
